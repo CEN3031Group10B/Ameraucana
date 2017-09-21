@@ -11,6 +11,7 @@ MEAN.JS is a full-stack JavaScript open-source solution, which provides a solid 
 This repository is strictly for practicing git commands, refer to the PDF "Git & Github by Some Guy That Learned It 4 Months Ago"
 * Hello! I'm Joe Doe. I play the clarinet!
 * Hello! I'm César C. González P., I speak 3 languages - Spanish, English, and French.
+* Hello! I'm Elise Falck. I am half Taiwanese.
 * Hi, I'm Franky. I go to the University of Florida.
 * Hey! My name is Travis DeMint, I play beach volleyball.
 
