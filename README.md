@@ -10,7 +10,7 @@ MEAN.JS is a full-stack JavaScript open-source solution, which provides a solid 
 ## Team Introduction
 This repository is strictly for practicing git commands, refer to the PDF "Git & Github by Some Guy That Learned It 4 Months Ago"
 * Hello! I'm César C. González P., I speak 3 languages - Spanish, English, and French.
-* Hello! I'm Kevin Almanzar and I don't have a gall gladder!
+* Hello! I'm Kevin Almanzar and I don't have a gall gladder.
 
 ## Before You Begin
 Before you begin we recommend you read about the basic building blocks that assemble a MEAN.JS application:
