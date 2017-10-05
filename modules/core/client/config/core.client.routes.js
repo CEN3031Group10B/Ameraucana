@@ -40,7 +40,7 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
     })
     .state('admin-panel', {
       url: '/admin-panel',
-      templateUrl: 'modules/core/client/views/adminPanel.html',
+      templateUrl: 'modules/core/client/views/adminPanel.client.view.html',
     });
   }
 ]);
