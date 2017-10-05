@@ -5,23 +5,23 @@
     <link rel="stylesheet" href="../css/login.css">
   </head>
   <body>
-    <div class="container">
+    <div class="container" ng-controller="LoginController">
       <div class="row login-row">
         <h1>Please login with your credentials:</h1>
       </div><br><br><br>
-    </div>
-    <div class="row login-row">
-      <input type="text" class="form-control login-box" placeholder="Username">
-    </div><br><br>
-    <div class="row login-row">
-      <input type="password" class="form-control login-box" placeholder="Password">
-    </div><br><br><br>
-    <div class="row login-row">
-      <div class="col-md-2 col-md-offset-4">
-        <button class="btn btn-primary">Login</button>
-      </div>
-      <div class="col-md-2">
-        <button class="btn btn-link">or Create New User</button>
+      <div class="row login-row">
+        <input type="text" class="form-control login-box" placeholder="Email" ng-model="email">
+      </div><br><br>
+      <div class="row login-row">
+        <input type="password" class="form-control login-box" placeholder="Password" ng-model="password">
+      </div><br><br><br>
+      <div class="row login-row">
+        <div class="col-md-2 col-md-offset-4">
+          <button class="btn btn-primary" ng-click="loginUser()">Login</button>
+        </div>
+        <div class="col-md-2">
+          <button class="btn btn-link">or Create New User</button>
+        </div>
       </div>
     </div>
   </body>
