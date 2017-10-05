@@ -37,6 +37,10 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
       data: {
         ignoreState: true
       }
+    })
+    .state('admin-panel', {
+      url: '/admin-panel',
+      templateUrl: 'modules/core/client/views/adminPanel.html',
     });
   }
 ]);
