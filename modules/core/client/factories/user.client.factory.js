@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('users', []).factory('Users', function($http) {
   var methods = {
     getAll: function() {

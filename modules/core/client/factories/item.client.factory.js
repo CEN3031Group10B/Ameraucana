@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('items', []).factory('Items', function($http) {
   var methods = {
     getAll: function() {

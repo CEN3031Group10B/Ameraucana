@@ -1,9 +1,9 @@
 'use strict';
 
 /* Dependencies */
-var items = require('../controllers/items.server.controller.js'),
-    users = require('../controllers/users.server.controller.js'),
-    express = require('express');
+var items = require('../controllers/items.server.controller.js');
+var users = require('../controllers/users.server.controller.js');
+var express = require('express');
 
 module.exports = function (app) {
   // Root routing
