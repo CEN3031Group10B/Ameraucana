@@ -12,7 +12,7 @@ angular.module('core').controller('adminPanelController', ['$scope', '$state',
 
     // TOGGLE TAB CONTENT
     $scope.showAnalytics = function() {
-      console.log("ANALYTICS");
+      console.log('ANALYTICS');
       $scope.analytics = true;
       $scope.menu = false;
       $scope.customers = false;
@@ -21,7 +21,7 @@ angular.module('core').controller('adminPanelController', ['$scope', '$state',
     };
 
     $scope.showMenu = function() {
-      console.log("MENU");
+      console.log('MENU');
       $scope.analytics = false;
       $scope.menu = true;
       $scope.customers = false;
@@ -30,7 +30,7 @@ angular.module('core').controller('adminPanelController', ['$scope', '$state',
     };
 
     $scope.showCustomers = function() {
-      console.log("CUSTOMERS");
+      console.log('CUSTOMERS');
       $scope.analytics = false;
       $scope.menu = false;
       $scope.customers = true;
@@ -39,7 +39,7 @@ angular.module('core').controller('adminPanelController', ['$scope', '$state',
     };
 
     $scope.showOrderHistory = function() {
-      console.log("ORDER HISTORY");
+      console.log('ORDER HISTORY');
       $scope.analytics = false;
       $scope.menu = false;
       $scope.customers = false;
@@ -48,7 +48,7 @@ angular.module('core').controller('adminPanelController', ['$scope', '$state',
     };
 
     $scope.showLoyaltyProgram = function() {
-      console.log("LOYALTY PROGRAM");
+      console.log('LOYALTY PROGRAM');
       $scope.analytics = false;
       $scope.menu = false;
       $scope.customers = false;
