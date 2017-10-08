@@ -7,6 +7,16 @@
 
 MEAN.JS is a full-stack JavaScript open-source solution, which provides a solid starting point for [MongoDB](http://www.mongodb.org/), [Node.js](http://www.nodejs.org/), [Express](http://expressjs.com/), and [AngularJS](http://angularjs.org/) based applications. The idea is to solve the common issues with connecting those frameworks, build a robust framework to support daily development needs, and help developers use better practices while working with popular JavaScript components.
 
+## Team Introduction
+This repository is strictly for practicing git commands, refer to the PDF "Git & Github by Some Guy That Learned It 4 Months Ago"
+* Hello! I'm Joe Doe. I play the clarinet!
+* Hello! I'm César C. González P., I speak 3 languages - Spanish, English, and French.
+* Hello! I'm Kevin Almanzar and I don't have a gall gladder.
+* Hello! I'm Elise Falck. I am half Taiwanese.
+* Hi, I'm Franky. I go to the University of Florida.
+* Hey! My name is Travis DeMint, I play beach volleyball.
+* Hey! I'm Kazi Rashad. I'm a 3rd year Commputer Engineering student. 
+
 ## Before You Begin
 Before you begin we recommend you read about the basic building blocks that assemble a MEAN.JS application:
 * MongoDB - Go through [MongoDB Official Website](http://mongodb.org/) and proceed to their [Official Manual](http://docs.mongodb.org/manual/), which should help you understand NoSQL and MongoDB better.
@@ -18,7 +28,7 @@ Before you begin we recommend you read about the basic building blocks that asse
 ## Prerequisites
 Make sure you have installed all of the following prerequisites on your development machine:
 * Node.js - [Download & Install Node.js](https://nodejs.org/en/download/) and the npm package manager. If you encounter any problems, you can also use this [GitHub Gist](https://gist.github.com/isaacs/579814) to install Node.js.
-  * Node v5 IS NOT SUPPORTED AT THIS TIME! 
+  * Node v5 IS NOT SUPPORTED AT THIS TIME!
 * MongoDB - [Download & Install MongoDB](http://www.mongodb.org/downloads), and make sure it's running on the default port (27017).
 * Ruby - [Download & Install Ruby](https://www.ruby-lang.org/en/documentation/installation/)
 * Bower - You're going to use the [Bower Package Manager](http://bower.io/) to manage your front-end packages. Make sure you've installed Node.js and npm first, then install bower globally using npm:
@@ -176,7 +186,7 @@ or
 $ gulp default
 ```
 
-The server is now running on http://localhost:3000 if you are using the default settings. 
+The server is now running on http://localhost:3000 if you are using the default settings.
 
 ### Running Gulp Development Environment
 
@@ -276,7 +286,7 @@ for hosting applications in the cloud.  After you have an account follow the bel
 * Deploy MEANJS to Cloud Foundry
   * `$ cf push`
 
-After `cf push` completes you will see the URL to your running MEANJS application 
+After `cf push` completes you will see the URL to your running MEANJS application
 (your URL will be different).
 
     requested state: started
