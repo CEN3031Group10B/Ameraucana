@@ -38,9 +38,9 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
         ignoreState: true
       }
     })
-    .state('order', {
-      url: '/order',
-      templateUrl: 'modules/core/client/views/order.client.view.html',
+    .state('checkout', {
+      url: '/checkout',
+      templateUrl: 'modules/core/client/views/checkout.client.view.html',
       data: {
         ignoreState: true
       }
