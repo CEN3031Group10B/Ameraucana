@@ -17,8 +17,4 @@ module.exports = function (app) {
 
   // Define application route
   app.route('/*').get(core.renderIndex);
-
-  // User route
-  app.route('/:email')
-    .get(users.get);
 };

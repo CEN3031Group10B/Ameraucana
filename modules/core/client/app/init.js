@@ -1,9 +1,5 @@
 'use strict';
 
-// Add extra modules for the database
-angular.module('items', []);
-angular.module('users', []);
-
 //Start by defining the main module and adding the module dependencies
 angular.module(ApplicationConfiguration.applicationModuleName, ApplicationConfiguration.applicationModuleVendorDependencies);
 
