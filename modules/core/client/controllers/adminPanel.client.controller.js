@@ -4,11 +4,13 @@ angular.module('core').controller('adminPanelController', ['$scope', '$state',
   function($scope) {
 
     // SET INITIAL VARIABLES TO DETERMINE CONTENT TO SHOW
-    $scope.analytics = true;
+    $scope.analytics = false;
     $scope.menu = false;
     $scope.customers = false;
     $scope.orderHistory = false;
     $scope.loyaltyProgram = false;
+    $scope.editModal = false;
+    $scope.deleteModal = false;
 
     // TOGGLE TAB CONTENT
     $scope.showAnalytics = function() {
@@ -55,5 +57,23 @@ angular.module('core').controller('adminPanelController', ['$scope', '$state',
       $scope.orderHistory = false;
       $scope.loyaltyProgram = true;
     };
+
+    $scope.showEditModal = function() {
+      if(editModal === false){
+        editModal = true;
+      }
+      else {
+        editModal =  false;
+      }
+    };
+
+    $scope.showDeleteModal = function() {
+      if(deleteModal === false){
+        deleteModal = true;
+      }
+      else {
+        deleteModal =  false;
+      }
+    }
   }
 ]);
