@@ -1,0 +1,105 @@
+<section ng-controller="OrderController">
+    <link rel="stylesheet" href="order.css">
+<div class="row" style="background-color:#3c342f">
+    <div class="col half">
+        <a href="#"><img src="modules/core/client/img/test/amer_logo.png" class="logo"></a>
+    </div>
+    <div class="col half">
+        <div id="menu-outer">
+            <div class="table">
+                <ul id="horizontal-list">
+                    <li>
+                        <a href="#" id="current">
+                            <span class="glyphicon glyphicon-shopping-cart"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="link">
+                            <span>ORDER</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="link">
+                            <span>SHIRTS</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="link">
+                            <span>MENU</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="link">
+                            <span>ABOUT</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row" style="background-color: rgba(60,52,47,.9)">
+    <div class="col order middle">
+        <h1 class="page-title" style="letter-spacing: 0.0121951em;">CHECKOUT</h1>
+    </div>
+</div>
+
+<div class="row" ng-controller="CartController">
+    <div class="col order main">
+        <div class="tableWrapper">
+            <table class="table table-striped table-hover">
+                <tr>
+                    <th>Code</th>
+                    <th>Item Name</th>
+                    <th></th>
+                </tr>
+                <tr ng-repeat="item in cart">
+                    <td>
+                        {{item.code}}
+                    </td>
+                    <td>
+                        {{item.name}}
+                    </td>
+                    <td>
+                        <button type="button" ng-click="deleteItem(item)" class="glyphicon glyphicon-remove"></button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</div>
+
+<div class="row">
+    <div class="footer">
+        <div class="footer-wrapper">
+            <h3>LOCATION</h3>
+            <p>
+                2410 NW 43rd St
+                <br>
+                Gainesville, FL - 32606
+                <br>
+                (352) 505-6575
+            </p>
+            <h3>HOURS</h3>
+            <p>
+                Tues -&nbsp;Thurs
+                <br>
+                5 - 9pm
+            </p>
+            <p>
+                Fri -&nbsp;Sat
+                <br>
+                5 - 10pm (Or When Dough Runs Out)
+            </p>
+            <p>
+                Sun - Mon
+                <br>
+                CLOSED
+            </p>
+        </div>
+    </div>
+</div>
+
+</section>
