@@ -37,6 +37,10 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
       data: {
         ignoreState: true
       }
+    })
+    .state('login', {
+      url: '/login',
+      templateUrl: 'modules/core/client/views/login.client.view.html'
     });
   }
 ]);
