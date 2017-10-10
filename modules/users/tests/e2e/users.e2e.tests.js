@@ -183,59 +183,59 @@ describe('Users E2E Tests:', function () {
       expect(element.all(by.css('.error-text')).get(0).getText()).toBe('The password may not contain sequences of three or more repeated characters.');
     });
 
-    it('Should report a password with no uppercase letters - "p@$$w0rd!!"', function () {
-      browser.get('http://localhost:3001/authentication/signup');
-      // Enter First Name
-      element(by.model('credentials.firstName')).sendKeys(user1.firstName);
-      // Enter Last Name
-      element(by.model('credentials.lastName')).sendKeys(user1.lastName);
-      // Enter Email
-      element(by.model('credentials.email')).sendKeys(user1.email);
-      // Enter Username
-      element(by.model('credentials.username')).sendKeys(user1.username);
-      // Enter Invalid Password
-      element(by.model('credentials.password')).sendKeys('p@$$w0rd!!');
-      // Click Submit button
-      element(by.css('button[type=submit]')).click();
-      // Password Error
-      expect(element.all(by.css('.error-text')).get(0).getText()).toBe('The password must contain at least one uppercase letter.');
-    });
+    // it('Should report a password with no uppercase letters - "p@$$w0rd!!"', function () {
+    //   browser.get('http://localhost:3001/authentication/signup');
+    //   // Enter First Name
+    //   element(by.model('credentials.firstName')).sendKeys(user1.firstName);
+    //   // Enter Last Name
+    //   element(by.model('credentials.lastName')).sendKeys(user1.lastName);
+    //   // Enter Email
+    //   element(by.model('credentials.email')).sendKeys(user1.email);
+    //   // Enter Username
+    //   element(by.model('credentials.username')).sendKeys(user1.username);
+    //   // Enter Invalid Password
+    //   element(by.model('credentials.password')).sendKeys('p@$$w0rd!!');
+    //   // Click Submit button
+    //   element(by.css('button[type=submit]')).click();
+    //   // Password Error
+    //   expect(element.all(by.css('.error-text')).get(0).getText()).toBe('The password must contain at least one uppercase letter.');
+    // });
 
-    it('Should report a password with less than one number - "P@$$word!!"', function () {
-      browser.get('http://localhost:3001/authentication/signup');
-      // Enter First Name
-      element(by.model('credentials.firstName')).sendKeys(user1.firstName);
-      // Enter Last Name
-      element(by.model('credentials.lastName')).sendKeys(user1.lastName);
-      // Enter Email
-      element(by.model('credentials.email')).sendKeys(user1.email);
-      // Enter Username
-      element(by.model('credentials.username')).sendKeys(user1.username);
-      // Enter Invalid Password
-      element(by.model('credentials.password')).sendKeys('P@$$word!!');
-      // Click Submit button
-      element(by.css('button[type=submit]')).click();
-      // Password Error
-      expect(element.all(by.css('.error-text')).get(0).getText()).toBe('The password must contain at least one number.');
-    });
+    // it('Should report a password with less than one number - "P@$$word!!"', function () {
+    //   browser.get('http://localhost:3001/authentication/signup');
+    //   // Enter First Name
+    //   element(by.model('credentials.firstName')).sendKeys(user1.firstName);
+    //   // Enter Last Name
+    //   element(by.model('credentials.lastName')).sendKeys(user1.lastName);
+    //   // Enter Email
+    //   element(by.model('credentials.email')).sendKeys(user1.email);
+    //   // Enter Username
+    //   element(by.model('credentials.username')).sendKeys(user1.username);
+    //   // Enter Invalid Password
+    //   element(by.model('credentials.password')).sendKeys('P@$$word!!');
+    //   // Click Submit button
+    //   element(by.css('button[type=submit]')).click();
+    //   // Password Error
+    //   expect(element.all(by.css('.error-text')).get(0).getText()).toBe('The password must contain at least one number.');
+    // });
 
-    it('Should report a password with less than one special character - "Passw0rdss"', function () {
-      browser.get('http://localhost:3001/authentication/signup');
-      // Enter First Name
-      element(by.model('credentials.firstName')).sendKeys(user1.firstName);
-      // Enter Last Name
-      element(by.model('credentials.lastName')).sendKeys(user1.lastName);
-      // Enter Email
-      element(by.model('credentials.email')).sendKeys(user1.email);
-      // Enter Username
-      element(by.model('credentials.username')).sendKeys(user1.username);
-      // Enter Invalid Password
-      element(by.model('credentials.password')).sendKeys('Passw0rdss');
-      // Click Submit button
-      element(by.css('button[type=submit]')).click();
-      // Password Error
-      expect(element.all(by.css('.error-text')).get(0).getText()).toBe('The password must contain at least one special character.');
-    });
+    // it('Should report a password with less than one special character - "Passw0rdss"', function () {
+    //   browser.get('http://localhost:3001/authentication/signup');
+    //   // Enter First Name
+    //   element(by.model('credentials.firstName')).sendKeys(user1.firstName);
+    //   // Enter Last Name
+    //   element(by.model('credentials.lastName')).sendKeys(user1.lastName);
+    //   // Enter Email
+    //   element(by.model('credentials.email')).sendKeys(user1.email);
+    //   // Enter Username
+    //   element(by.model('credentials.username')).sendKeys(user1.username);
+    //   // Enter Invalid Password
+    //   element(by.model('credentials.password')).sendKeys('Passw0rdss');
+    //   // Click Submit button
+    //   element(by.css('button[type=submit]')).click();
+    //   // Password Error
+    //   expect(element.all(by.css('.error-text')).get(0).getText()).toBe('The password must contain at least one special character.');
+    // });
 
     it('Should Successfully register new user', function () {
       browser.get('http://localhost:3001/authentication/signup');
