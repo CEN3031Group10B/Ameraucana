@@ -1,5 +1,5 @@
 <div ng-controller="AuthenticationController">
-  <h3 class="col-md-12 text-center">Or sign up using your email</h3>
+  <h2 class="col-md-12 text-center"><b>Sign Up Using Your E-Mail<b></h2>
   <div class="col-xs-offset-2 col-xs-8 col-md-offset-4 col-md-4">
     <form name="userForm" ng-submit="signup(userForm.$valid)" class="signin" novalidate autocomplete="off">
       <fieldset>
@@ -42,6 +42,16 @@
             </div>
           </div>
         </div>
+        <div class="form-group" show-errors>
+          <label for="password">Confirm Passowrd</label>
+            <input type="password" id="password" name="password" class="form-control" ng-model="credentials.password" placeholder="Confrim Password" popover="{{popoverMsg}}" popover-trigger="focus" password-validator required>
+          <div ng-messages="userForm.password.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Confirm password is required.</p>
+            <div ng-repeat="passwordError in passwordErrors">
+              <p class="help-block error-text" ng-show="userForm.password.$error.requirements">{{passwordError}}</p>
+            </div>
+          </div>
+        </div>
         <div class="form-group" ng-show="!userForm.password.$error.required">
           <label>Password Requirements</label>
           <progressbar value="requirementsProgress" type="{{requirementsColor}}"><span style="color:white; white-space:nowrap;">{{requirementsProgress}}%</span></progressbar>
@@ -55,6 +65,12 @@
           <strong ng-bind="error"></strong>
         </div>
       </fieldset>
+      <h3 class="col-md-12 text-center"><b>Sign In w/ Your Social Accounts<b></h3>
+        <div class="col-md-12 text-center">
+          <!-- Flush out the outdated logos and incorporate the new logos -->
+          <img ng-click="callOauthProvider('/api/auth/facebook')" ng-src="/modules/users/client/img/buttons/facebook.jpg"> 
+          <img ng-click="callOauthProvider('/api/auth/google')" ng-src="/modules/users/client/img/buttons/google.jpg">
+        </div>
     </form>
   </div>
 </div>
