@@ -44,7 +44,8 @@
         </div>
         <div class="form-group" show-errors>
           <label for="password">Confirm Passowrd</label>
-            <input type="password" id="password" name="password" class="form-control" ng-model="credentials.Confrim" placeholder="Confrim Password" popover="{{popoverMsg}}" popover-trigger="focus" password-validator required>
+            <input type="password" id="confirmPassword" name="confirmPassword" onkeyup="confirmPass(); return false;" class="form-control" ng-model="credentials.Confrim" placeholder="Confrim Password" popover="{{popoverMsg}}" popover-trigger="focus" password-validator required>
+            <span id = 'message' class = 'message'></span>
           <div ng-messages="userForm.password.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Confirm password is required.</p>
             <div ng-repeat="passwordError in passwordErrors">
@@ -52,6 +53,7 @@
             </div>
           </div>
         </div>
+
         <div class="form-group" ng-show="!userForm.password.$error.required">
           <label>Password Requirements</label>
           <progressbar value="requirementsProgress" type="{{requirementsColor}}"><span style="color:white; white-space:nowrap;">{{requirementsProgress}}%</span></progressbar>
@@ -74,3 +76,5 @@
     </form>
   </div>
 </div>
+
+<script type = 'text/javascript' scr = '../setting/confirmPass.js'></script>
