@@ -59,21 +59,21 @@ angular.module('core').controller('adminPanelController', ['$scope', '$state',
     };
 
     $scope.showEditModal = function() {
-      if(editModal === false){
-        editModal = true;
+      if($scope.editModal === false){
+        $scope.editModal = true;
       }
       else {
-        editModal =  false;
+        $scope.editModal = false;
       }
     };
 
     $scope.showDeleteModal = function() {
-      if(deleteModal === false){
-        deleteModal = true;
+      if($scope.deleteModal === false){
+        $scope.deleteModal = true;
       }
       else {
-        deleteModal =  false;
+        $scope.deleteModal = false;
       }
-    }
+    };
   }
 ]);
