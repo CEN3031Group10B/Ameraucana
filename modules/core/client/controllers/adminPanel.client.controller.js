@@ -3,16 +3,22 @@
 angular.module('core').controller('adminPanelController', ['$scope', '$state',
   function($scope) {
 
-    // SET INITIAL VARIABLES TO DETERMINE CONTENT TO SHOW
-    $scope.analytics = false;
+    // SET INITIAL VARIABLES TO DETERMINE TAB CONTENT TO SHOW
+    $scope.analytics = true;
     $scope.menu = false;
     $scope.customers = false;
     $scope.orderHistory = false;
     $scope.loyaltyProgram = false;
-    $scope.editModal = false;
-    $scope.deleteModal = false;
 
-    // TOGGLE TAB CONTENT
+    // SET INITIAL VARIABLES TO DETERMINE WHEN TO SHOW MODALS
+    $scope.addMenuItem = false;
+    $scope.addCategory = false;
+    $scope.editMenuItem = false;
+    $scope.editCategory = false;
+    $scope.deleteMenuItem = false;
+    $scope.deleteCategory = false;
+
+    // TAB CONTENT
     $scope.showAnalytics = function() {
       console.log('ANALYTICS');
       $scope.analytics = true;
@@ -58,22 +64,55 @@ angular.module('core').controller('adminPanelController', ['$scope', '$state',
       $scope.loyaltyProgram = true;
     };
 
-    $scope.showEditModal = function() {
-      if($scope.editModal === false){
-        $scope.editModal = true;
-      }
-      else {
-        $scope.editModal = false;
-      }
+    // MODALS
+    $scope.showAddMenuItem = function() {
+      $scope.addMenuItem = true;
     };
 
-    $scope.showDeleteModal = function() {
-      if($scope.deleteModal === false){
-        $scope.deleteModal = true;
-      }
-      else {
-        $scope.deleteModal = false;
-      }
+    $scope.showAddCategory = function() {
+      $scope.addCategory = true;
     };
+
+    $scope.showEditMenuItem = function() {
+      $scope.editMenuItem = true;
+    };
+
+    $scope.showEditCategory = function() {
+      $scope.editCategory = true;
+    };
+
+    $scope.showDeleteMenuItem = function() {
+      $scope.deleteMenuItem = true;
+    };
+
+    $scope.showDeleteCategory = function() {
+      $scope.deleteCategory = true;
+    };
+
+    $scope.hideAddMenuItem = function() {
+      $scope.addMenuItem = false;
+    };
+
+    $scope.hideAddCategory = function() {
+      $scope.addCategory = false;
+    };
+
+    $scope.hideEditMenuItem = function() {
+      $scope.editMenuItem = false;
+    };
+
+    $scope.hideEditCategory = function() {
+      $scope.editCategory = false;
+    };
+
+    $scope.hideDeleteMenuItem = function() {
+      $scope.deleteMenuItem = false;
+    };
+
+    $scope.hideDeleteCategory = function() {
+      $scope.deleteCategory = false;
+    };
+
+
   }
 ]);
