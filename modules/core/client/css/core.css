@@ -36,3 +36,6 @@ a:hover .header-profile-image {
   display: inline;
 }
 
+.button-group {
+  padding-top: 20px;
+}
