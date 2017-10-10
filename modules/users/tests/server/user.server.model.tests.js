@@ -293,36 +293,36 @@ describe('User Model Unit Tests:', function () {
       });
     });
 
-    // it('should not allow a password with no uppercase letters - "p@$$w0rd!!"', function (done) {
-    //   var _user1 = new User(user1);
-    //   _user1.password = 'p@$$w0rd!!';
-    //
-    //   _user1.validate(function (err) {
-    //     err.errors.password.message.should.equal('The password must contain at least one uppercase letter.');
-    //     done();
-    //   });
-    // });
+    it('should not allow a password with no uppercase letters - "p@$$w0rd!!"', function (done) {
+      var _user1 = new User(user1);
+      _user1.password = 'p@$$w0rd!!';
 
-    // it('should not allow a password with less than one number - "P@$$word!!"', function (done) {
-    //   var _user1 = new User(user1);
-    //   _user1.password = 'P@$$word!!';
-    //
-    //   _user1.validate(function (err) {
-    //     err.errors.password.message.should.equal('The password must contain at least one number.');
-    //     done();
-    //   });
-    // });
+      _user1.validate(function (err) {
+        err.errors.password.message.should.equal('The password must contain at least one uppercase letter.');
+        done();
+      });
+    });
 
-  //   it('should not allow a password with less than one special character - "Passw0rdss"', function (done) {
-  //     var _user1 = new User(user1);
-  //     _user1.password = 'Passw0rdss';
-  //
-  //     _user1.validate(function (err) {
-  //       err.errors.password.message.should.equal('The password must contain at least one special character.');
-  //       done();
-  //     });
-  //   });
-  // });
+    it('should not allow a password with less than one number - "P@$$word!!"', function (done) {
+      var _user1 = new User(user1);
+      _user1.password = 'P@$$word!!';
+
+      _user1.validate(function (err) {
+        err.errors.password.message.should.equal('The password must contain at least one number.');
+        done();
+      });
+    });
+
+    it('should not allow a password with less than one special character - "Passw0rdss"', function (done) {
+      var _user1 = new User(user1);
+      _user1.password = 'Passw0rdss';
+
+      _user1.validate(function (err) {
+        err.errors.password.message.should.equal('The password must contain at least one special character.');
+        done();
+      });
+    });
+  });
 
   describe('User E-mail Validation Tests', function() {
     it('should not allow invalid email address - "123"', function (done) {
