@@ -67,6 +67,10 @@ angular.module('core').controller('adminPanelController', ['$scope', '$state',
     // MODALS
     $scope.showAddMenuItem = function() {
       $scope.addMenuItem = true;
+
+      $(function () {
+        $('#addMenuItemModal').modal('toogle');
+      });
     };
 
     $scope.showAddCategory = function() {

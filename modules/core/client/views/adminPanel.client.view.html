@@ -35,7 +35,7 @@
       <div class="row">
         <div class="col-sm-12">
           <div class="button-group">
-            <button type="button" class="btn btn-default" ng-click="showAddMenuItem()">Add item</button>
+            <button type="button" class="btn btn-default" ng-click="showAddMenuItem()" data-target="#addMenuItemModal">Add item</button>
             <button type="button" class="btn btn-default" ng-click="showAddCategory()">Add category</button>
           </div>
           <hr>
@@ -355,7 +355,6 @@
       </div>
     </div>
 
-
     <!-- CUSTOMERS  -->
     <div role="tabpanel" class="tab-pane active" ng-if="customers" id="customers">
       <h2>Customers</h2>
@@ -424,7 +423,7 @@
   </div>
 
   <!-- ADD MENU ITEM -->
-  <div class="modal-fade" ng-if="addMenuItem">
+  <div class="modal-fade" id="addMenuItemModal" ng-if="addMenuItem">
     <div class="modal-dialog">
       <div class="modal-content">
 
@@ -615,3 +614,5 @@
   </div>
 
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
