@@ -38,13 +38,19 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
         ignoreState: true
       }
     })
+
     .state('order', {
       url: '/order',
       templateUrl: 'modules/core/client/views/order.client.view.html',
       data: {
         ignoreState: true
-        
+
       }
+
+    .state('admin-panel', {
+      url: '/admin-panel',
+      templateUrl: 'modules/core/client/views/adminPanel.client.view.html',
+
     });
   }
 ]);

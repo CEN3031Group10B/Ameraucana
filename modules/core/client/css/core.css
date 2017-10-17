@@ -41,6 +41,7 @@ a:hover .header-profile-image {
   display: inline;
 }
 
+
 /*NAV-BAR-*/
 .navbar-nav.navbar-right li a{
   align-items: flex-end;
@@ -328,4 +329,8 @@ h1{
     letter-spacing: .015em;
     text-decoration: none;
     line-height: 1.2em;
+
+.button-group {
+  padding-top: 20px;
+
 }
