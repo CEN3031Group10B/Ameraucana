@@ -1,3 +1,4 @@
+ 
 function confirmPass() {
 	var password = document.getElementById('password');
 	var confirmPassword = document.getElementById('confirmPassword');
@@ -5,13 +6,13 @@ function confirmPass() {
 	var goodColor = '#66cc66';
 	var badColor = '#ff6666';
 
-	if (password == confirmPassword) {
+	if (password === confirmPassword) {
 		confirmPassword.style.backgroundColor = goodColor;
 		message.style.color = goodColor;
-		message.innerHTML = 'Password match'
+		message.innerHTML = 'Password match';
 	} else {
 		confirmPassword.style.backgroundColor = badColor;
 		message.style.color = badColor;
-		message.innerHTML = 'Password do not match' 
+		message.innerHTML = 'Password do not match'; 
 	}
 }
