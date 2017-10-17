@@ -1,4 +1,3 @@
- 
 function confirmPass() {
 	var password = document.getElementById('password');
 	var confirmPassword = document.getElementById('confirmPassword');
