@@ -43,6 +43,7 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
       templateUrl: 'modules/core/client/views/order.client.view.html',
       data: {
         ignoreState: true
+        
       }
     });
   }

@@ -3,6 +3,7 @@
 }
 .container{
   width: 100%;
+
 }
 
 .undecorated-link:hover {
@@ -129,7 +130,6 @@ padding-bottom: 3em;
 
 /*TEXT and parallax*/
 p{
-  padding-top: 100px;
   position: relative;
   text-align: center;
   font-family: cooper-black-std;
@@ -138,10 +138,19 @@ p{
   color: white;
 }
 .parallax{
-  min-height: 300px;
-   margin: 0;
-   padding: 0;
-   max-width: 100%;
+
+
+      /* Set a specific height */
+      height: 200px;
+      padding: 0;
+
+      /* Create the parallax scrolling effect */
+      background-attachment: fixed;
+      background-position: bottom;
+      background-repeat: no-repeat;
+      background-size: cover;
+      transform: translate3d(0px, 0px, 0px);
+      opacity: .90;
 }
 
 
