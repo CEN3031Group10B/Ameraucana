@@ -46,6 +46,7 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
         ignoreState: true
 
       }
+    })
 
     .state('admin-panel', {
       url: '/admin-panel',
