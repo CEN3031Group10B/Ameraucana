@@ -1,4 +1,5 @@
 function confirmPass() {
+	use strict;
 	var password = document.getElementById('password');
 	var confirmPassword = document.getElementById('confirmPassword');
 	var message = document.getElementById('confirmMessage');
