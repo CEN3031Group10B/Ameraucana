@@ -105,7 +105,7 @@ var UserSchema = new Schema({
   orders: [{ type: Schema.Types.ObjectId, ref: 'Order' }],
 });
 
-var OrderSchema = new Schema({ order: [{ type: Schema.Types.ObjectId, ref: 'Item' }], date: Date, fulfilled: Boolean });
+var OrderSchema = new Schema({ order: [{ type: Schema.Types.ObjectId, ref: 'Item' }], date: Date, fulfilled: Boolean, paid: Boolean });
 
 
 /**
