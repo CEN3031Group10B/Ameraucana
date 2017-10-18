@@ -10,6 +10,8 @@ var mongoose = require('mongoose'),
   generatePassword = require('generate-password'),
   owasp = require('owasp-password-strength-test');
 
+var Item = require('../../../core/server/models/items.server.model.js');
+
 /**
  * A Validation function for local strategy properties
  */
@@ -26,6 +28,10 @@ var validateLocalStrategyEmail = function (email) {
 
 /**
  * User Schema
+ */
+ /*
+  * Reference documents in other collections
+  * http://mongoosejs.com/docs/populate.html
  */
 var UserSchema = new Schema({
   firstName: {
@@ -95,8 +101,12 @@ var UserSchema = new Schema({
   },
   resetPasswordExpires: {
     type: Date
-  }
+  },
+  orders: [{ type: Schema.Types.ObjectId, ref: 'Order' }],
 });
+
+var OrderSchema = new Schema({ order: [{ type: Schema.Types.ObjectId, ref: 'Item' }], date: Date, fulfilled: Boolean });
+
 
 /**
  * Hook a pre save method to hash the password
@@ -202,3 +212,4 @@ UserSchema.statics.generateRandomPassphrase = function () {
 };
 
 mongoose.model('User', UserSchema);
+mongoose.model('Order', OrderSchema);
