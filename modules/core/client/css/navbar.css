@@ -1,4 +1,4 @@
-/*.container {
+.container {
     padding: 0;
     width: 100%;
   }
@@ -90,7 +90,7 @@
   }
 
   h1.page-title {
-    font-family: Cooper Blue;
+    font-family: Cooper Black;
     font-size: 82px;
     font-weight: 400;
     text-transform: uppercase;
@@ -142,4 +142,4 @@
   .tableWrapper {
     max-height: 400px;
     overflow: auto;
-  }*/
+  }
