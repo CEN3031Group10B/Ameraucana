@@ -4,7 +4,7 @@
     <form name="userForm" ng-submit="signup(userForm.$valid)" class="signin" novalidate autocomplete="off">
       <fieldset>
         <div class="form-group" show-errors>
-          <label for="firstName">First Name</label>
+          <b><label for="firstName">First Name</label><b>
           <input type="text" id="firstName" name="firstName" class="form-control" ng-model="credentials.firstName" placeholder="First Name" required>
           <div ng-messages="userForm.firstName.$error" role="alert">
             <p class="help-block error-text" ng-message="required">First name is required.</p>
