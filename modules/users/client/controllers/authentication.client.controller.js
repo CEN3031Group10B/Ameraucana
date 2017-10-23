@@ -24,7 +24,7 @@ angular.module('users').controller('AuthenticationController', ['$scope', '$stat
 
       if ($scope.credentials.password !== $scope.credentials.confirmPassword) {
         // Confirm password does not match password
-        $scope.error = "Passwords must match";
+        $scope.error = 'Passwords must match';
 
         return false;
       }
