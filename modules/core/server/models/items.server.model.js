@@ -23,6 +23,6 @@ var itemSchema = new Schema({
   }
 });
 
-var item = mongoose.model('item', itemSchema);
+var Item = mongoose.model('Item', itemSchema);
 
-module.exports = item;
+module.exports = Item;
