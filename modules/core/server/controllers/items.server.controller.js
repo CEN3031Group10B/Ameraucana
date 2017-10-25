@@ -5,34 +5,41 @@ var User = require('../../../users/server/models/user.server.model.js');
 /* Here is where you will implement any functions you need
    to access/change anything from the item table */
 exports.getItemsAnalytics = function(req, res) {
-  Item.find({}, '', function (err, items) {
-    /* Do something with all the items
-    */
-    if(err) {
-      res.status(400).send(err);
-    } else {
-      var itemsAnalytics = []
-
-      items.forEach(function (currentItem) {
-        var count = 0
-
-        User.find({}, 'orders', function(err, orders) {
-
-            orders.forEach(function (err, order) {
-              if (order.order == currentItem) {
-                count += 1
-              }
-            });
-
-        });
-        itemsAnalytics.push({
-          item: currentItem,
-          count: count
-        });
-      });
-
-      res.send(itemsAnalytics);
-    }
+  const itemsPromise = new Promise((resolve, reject) => {
+    Item.find({}, '', (err, items) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(items);
+      }
+    });
   });
 
+  const userPromise = new Promise((resolve, reject) => {
+    User.find({}, '', (err, users) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(users);
+      }
+    });
+  });
+
+  const analyticsPromise = Promise.all([itemsPromise, userPromise]).then((resolved) => {
+    const items = resolved[0];
+    const users = resolved[1];
+    const itemsAnalytics = [];
+    items.forEach((currentItem) => {
+      let count = 0;
+      users.forEach((user) => {
+        count += user.orders.filter((e) => e == currentItem.id).length;
+      });
+
+      itemsAnalytics.push({
+        item: currentItem,
+        count: count
+      });
+    });
+    res.send( itemsAnalytics );
+  });
 };
