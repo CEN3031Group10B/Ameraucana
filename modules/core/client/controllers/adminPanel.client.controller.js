@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('core').controller('adminPanelController', ['$scope', '$state',
-  function($scope) {
+angular.module('core').controller('adminPanelController', ['$scope', '$stateParams', '$state', 'Users',
+  function($scope, $stateParams, $state, users) {
 
     // SET INITIAL VARIABLES TO DETERMINE TAB CONTENT TO SHOW
     $scope.analytics = true;
@@ -67,10 +67,6 @@ angular.module('core').controller('adminPanelController', ['$scope', '$state',
     // MODALS
     $scope.showAddMenuItem = function() {
       $scope.addMenuItem = true;
-
-      // $(function () {
-      //   $('#addMenuItemModal').modal('toogle');
-      // });
     };
 
     $scope.showAddCategory = function() {
@@ -117,6 +113,10 @@ angular.module('core').controller('adminPanelController', ['$scope', '$state',
       $scope.deleteCategory = false;
     };
 
+    // FIND CUSTOMERS
+    $scope.find = function() {
+      users.getAll().then
+    }
 
   }
 ]);

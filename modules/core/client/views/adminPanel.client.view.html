@@ -358,11 +358,29 @@
     <!-- CUSTOMERS  -->
     <div role="tabpanel" class="tab-pane active" ng-if="customers" id="customers">
       <h2>Customers</h2>
+
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">
+          <span class="glyphicon glyphicon-search"></span>
+        </span>
+        <input type="text" class="tab-pane active" placeholder="Search" aria-describedby="basic-addon1">
+      </div>
+
+      <table class="table table-striped">
+        <tr>
+          <th>Last</th>
+          <th>First</th>
+          <th>Phone #</th>
+          <th>E-mail</th>
+        </tr>
+
+      </table>
     </div>
 
     <!-- ORDER HISTORY -->
     <div role="tabpanel" class="tab-pane active" ng-if="orderHistory" id="orderHistory">
       <h2>Order History</h2>
+
       <div class="input-group">
         <span class="input-group-addon" id="basic-addon1">
         <span class="glyphicon glyphicon-search"></span>
