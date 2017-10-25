@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('core').controller('adminPanelController', ['$scope', '$stateParams', '$state', 'Users',
-  function($scope, $stateParams, $state, users) {
+  function($scope, $stateParams, $state, Users) {
 
     // SET INITIAL VARIABLES TO DETERMINE TAB CONTENT TO SHOW
     $scope.analytics = true;
@@ -44,6 +44,13 @@ angular.module('core').controller('adminPanelController', ['$scope', '$statePara
       $scope.customers = true;
       $scope.orderHistory = false;
       $scope.loyaltyProgram = false;
+
+      Users.getAll().then(function(response) {
+        console.log(response);
+      }, function(error) {
+        console.log(error);
+        $scope.error = 'Unable to retrieve users!' + error;
+      });
     };
 
     $scope.showOrderHistory = function() {
@@ -112,11 +119,6 @@ angular.module('core').controller('adminPanelController', ['$scope', '$statePara
     $scope.hideDeleteCategory = function() {
       $scope.deleteCategory = false;
     };
-
-    // FIND CUSTOMERS
-    $scope.find = function() {
-      users.getAll().then
-    }
 
   }
 ]);
