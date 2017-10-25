@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('core').controller('adminPanelController', ['$scope', '$state',
+angular.module('core').controller('adminPanelController', ['$scope', '$state', 'Items',
   function($scope) {
 
     // SET INITIAL VARIABLES TO DETERMINE TAB CONTENT TO SHOW
@@ -21,6 +21,9 @@ angular.module('core').controller('adminPanelController', ['$scope', '$state',
     // TAB CONTENT
     $scope.showAnalytics = function() {
       console.log('ANALYTICS');
+      Items.getItemsAnalytics.then((response) => {
+        $scope.itemsAnalytics = response.data;
+      });
       $scope.analytics = true;
       $scope.menu = false;
       $scope.customers = false;

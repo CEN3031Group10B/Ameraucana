@@ -1,3 +1,4 @@
+"use strict";
 var mongoose = require('mongoose');
 var Item = require('../models/items.server.model.js');
 var User = require('../../../users/server/models/user.server.model.js');
@@ -5,8 +6,8 @@ var User = require('../../../users/server/models/user.server.model.js');
 /* Here is where you will implement any functions you need
    to access/change anything from the item table */
 exports.getItemsAnalytics = function(req, res) {
-  const itemsPromise = new Promise((resolve, reject) => {
-    Item.find({}, '', (err, items) => {
+  var itemsPromise = new Promise(function(resolve, reject) {
+    Item.find({}, '', function(err, items) {
       if (err) {
         reject(err);
       } else {
@@ -15,8 +16,8 @@ exports.getItemsAnalytics = function(req, res) {
     });
   });
 
-  const userPromise = new Promise((resolve, reject) => {
-    User.find({}, '', (err, users) => {
+  var userPromise = new Promise(function(resolve, reject) {
+    User.find({}, '', function(err, users) {
       if (err) {
         reject(err);
       } else {
@@ -25,14 +26,14 @@ exports.getItemsAnalytics = function(req, res) {
     });
   });
 
-  const analyticsPromise = Promise.all([itemsPromise, userPromise]).then((resolved) => {
-    const items = resolved[0];
-    const users = resolved[1];
-    const itemsAnalytics = [];
-    items.forEach((currentItem) => {
+  var analyticsPromise = Promise.all([itemsPromise, userPromise]).then(function(resolved) {
+    var items = resolved[0];
+    var users = resolved[1];
+    var itemsAnalytics = [];
+    items.forEach( function(currentItem) {
       let count = 0;
-      users.forEach((user) => {
-        count += user.orders.filter((e) => e == currentItem.id).length;
+      users.forEach(function(user) {
+        count += user.orders.filter(function(e) {return e === currentItem.id;}).length;
       });
 
       itemsAnalytics.push({

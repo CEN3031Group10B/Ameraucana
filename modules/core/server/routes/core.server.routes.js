@@ -1,11 +1,12 @@
 'use strict';
 
 /* Dependencies */
-var items = require('../controllers/items.server.controller.js');
 var express = require('express');
+var Items = require('../controllers/items.server.controller.js');
 
 module.exports = function (app) {
   // Root routing
+  var Items = require('../controllers/items.server.controller.js');
   var core = require('../controllers/core.server.controller');
 
   // Define error pages
@@ -16,4 +17,6 @@ module.exports = function (app) {
 
   // Define application route
   app.route('/*').get(core.renderIndex);
+
+  app.route('/items-analytics').get(Items.getItemsAnalytics);
 };
