@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('core').controller('adminPanelController', ['$scope', '$state', 'Items',
+angular.module('core').controller('adminPanelController', ['$scope', '$state',
   function($scope) {
 
     // SET INITIAL VARIABLES TO DETERMINE TAB CONTENT TO SHOW
@@ -21,8 +21,11 @@ angular.module('core').controller('adminPanelController', ['$scope', '$state', '
     // TAB CONTENT
     $scope.showAnalytics = function() {
       console.log('ANALYTICS');
-      Items.getItemsAnalytics.then((response) => {
-        $scope.itemsAnalytics = response.data;
+      $http.get('http://localhost:3000/server-error').then(function(results) {
+        console.log('WTFFFF');
+      });
+      $http.get('http://localhost:3000/lol').then(function (results) {
+        console.log(results);
       });
       $scope.analytics = true;
       $scope.menu = false;

@@ -30,8 +30,8 @@ exports.getItemsAnalytics = function(req, res) {
     var items = resolved[0];
     var users = resolved[1];
     var itemsAnalytics = [];
-    items.forEach( function(currentItem) {
-      let count = 0;
+    items.forEach(function(currentItem) {
+      var count = 0;
       users.forEach(function(user) {
         count += user.orders.filter(function(e) {return e === currentItem.id;}).length;
       });
@@ -41,6 +41,6 @@ exports.getItemsAnalytics = function(req, res) {
         count: count
       });
     });
-    res.send( itemsAnalytics );
+    res.send(itemsAnalytics);
   });
 };
