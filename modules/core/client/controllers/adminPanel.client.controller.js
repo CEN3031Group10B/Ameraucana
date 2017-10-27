@@ -1,7 +1,9 @@
 'use strict';
 
-angular.module('core').controller('adminPanelController', ['$scope', '$stateParams', '$state', 'Users',
-  function($scope, $stateParams, $state, Users) {
+angular.module('core').controller('adminPanelController', ['$scope', '$stateParams', '$state', 'Users', '$http',
+  function($scope, $stateParams, $state, Users, $http) {
+
+    console.log("hello world");
 
     // SET INITIAL VARIABLES TO DETERMINE TAB CONTENT TO SHOW
     $scope.analytics = true;
