@@ -112,14 +112,14 @@ exports.oauthCallback = function (strategy) {
         return res.redirect('/authentication/signin?err=' + encodeURIComponent(errorHandler.getErrorMessage(err)));
       }
       if (!user) {
-        return res.redirect('/authentication/signin');
+        return res.redirect('/authentication/signup');
       }
       req.login(user, function (err) {
         if (err) {
-          return res.redirect('/authentication/signin');
+          return res.redirect('/authentication/signup');
         }
 
-        return res.redirect(redirectURL || sessionRedirectURL || '/');
+        return res.redirect('http://localhost:3000/order');
       });
     })(req, res, next);
   };
