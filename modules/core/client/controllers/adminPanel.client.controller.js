@@ -116,9 +116,9 @@ angular.module('core').controller('adminPanelController', ['$scope', '$statePara
     };
 
     $scope.find = function() {
-      $http.get('http://localhost:3000/api/menu-items-analytics').success(function(response) {
+      $http.get('http://localhost:3000/api/users').success(function(response) {
         console.log(response);
-        $scope.analytics = response.data;
+        $scope.users = response.data;
         console.log(response.data);
       });
     };

@@ -1,5 +1,5 @@
 .content {
-  
+
   margin-top: 0px;
   margin-left: 0px;
   margin-right: 0px;
@@ -69,7 +69,7 @@ a:hover .header-profile-image {
   height: 150px;
   background: none;
   border: none;
-
+  overflow: auto;
 }
 
 /*MENU STYLES*/
@@ -430,6 +430,7 @@ body {
   font-size: 16px;
   letter-spacing: .015em;
   line-height: 1.8em;
+  padding-top: 150px;
 }
 
 .tableWrapper {

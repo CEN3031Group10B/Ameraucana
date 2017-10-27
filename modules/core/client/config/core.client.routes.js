@@ -48,7 +48,7 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
 
       }
     })
-    
+
     .state('checkout', {
       url: '/checkout',
       templateUrl: 'modules/core/client/views/checkout.client.view.html',
@@ -58,8 +58,10 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
     })
     .state('admin-panel', {
       url: '/admin-panel',
-      templateUrl: 'modules/core/client/views/adminPanel.client.view.html'
-      
+      templateUrl: 'modules/core/client/views/adminPanel.client.view.html',
+      data: {
+        ignoreState: true,
+      }
     });
   }
 ]);
