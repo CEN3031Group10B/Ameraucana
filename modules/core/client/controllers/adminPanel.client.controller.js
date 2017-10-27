@@ -114,12 +114,11 @@ angular.module('core').controller('adminPanelController', ['$scope', '$statePara
     };
 
     $scope.find = function() {
-      Users.getAllUsers().then(function(response) {
-        $scope.users = response.data;
-      }, function(error) {
-        $scope.error = 'Unable to retrieve users!' + error;
+      $http.get('http://localhost:3000/api/menu-items-analytics').success(function(response) {
+        console.log(response);
+        $scope.analytics = response.data;
+        console.log(response.data);
       });
-    }
-
+    };
   }
 ]);
