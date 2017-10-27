@@ -1,6 +1,6 @@
-'use strict';
+"use strict";
 var mongoose = require('mongoose');
-var Item = require('../models/items.server.model.js');
+var Item = require('../models/menu-items.server.model.js');
 var User = require('../../../users/server/models/user.server.model.js');
 // http://mongoosejs.com/docs/populate.html
 /* Here is where you will implement any functions you need
@@ -29,6 +29,7 @@ exports.getItemsAnalytics = function(req, res) {
   var analyticsPromise = Promise.all([itemsPromise, userPromise]).then(function(resolved) {
     var items = resolved[0];
     var users = resolved[1];
+    console.log(users);
     var itemsAnalytics = [];
     items.forEach(function(currentItem) {
       var count = 0;
@@ -41,47 +42,8 @@ exports.getItemsAnalytics = function(req, res) {
         count: count
       });
     });
-    res.send(itemsAnalytics);
-  });
-};
-
-/**
- * Render the main application page
- */
-exports.renderIndex = function (req, res) {
-  res.render('modules/core/server/views/index', {
-    user: req.user || null
-  });
-};
-
-/**
- * Render the server error page
- */
-exports.renderServerError = function (req, res) {
-  res.status(500).render('modules/core/server/views/500', {
-    error: 'Oops! Something went wrong...'
-  });
-};
-
-/**
- * Render the server not found responses
- * Performs content-negotiation on the Accept HTTP header
- */
-exports.renderNotFound = function (req, res) {
-
-  res.status(404).format({
-    'text/html': function () {
-      res.render('modules/core/server/views/404', {
-        url: req.originalUrl
-      });
-    },
-    'application/json': function () {
-      res.json({
-        error: 'Path not found'
-      });
-    },
-    'default': function () {
-      res.send('Path not found');
-    }
+    console.log("DOG");
+    res.json(users);
+    console.log(itemsAnalytics);
   });
 };

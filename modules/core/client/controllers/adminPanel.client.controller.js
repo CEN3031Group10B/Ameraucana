@@ -23,6 +23,12 @@ angular.module('core').controller('adminPanelController', ['$scope', '$statePara
     // TAB CONTENT
     $scope.showAnalytics = function() {
       console.log('ANALYTICS');
+      $http.get('http://localhost:3000/server-error').then(function(results) {
+        console.log('WTFFFF');
+      });
+      $http.get('http://localhost:3000/lol').then(function (results) {
+        console.log(results);
+      });
       $scope.analytics = true;
       $scope.menu = false;
       $scope.customers = false;
