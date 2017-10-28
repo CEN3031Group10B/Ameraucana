@@ -1,9 +1,7 @@
 'use strict';
 
-angular.module('core').controller('adminPanelController', ['$scope', '$stateParams', '$state', 'Users', '$http',
-  function($scope, $stateParams, $state, Users, $http) {
-
-    console.log("hello world");
+angular.module('core').controller('adminPanelController', ['$scope', '$stateParams', '$state', '$http',
+  function($scope, $stateParams, $state, $http) {
 
     // SET INITIAL VARIABLES TO DETERMINE TAB CONTENT TO SHOW
     $scope.analytics = true;
@@ -23,12 +21,6 @@ angular.module('core').controller('adminPanelController', ['$scope', '$statePara
     // TAB CONTENT
     $scope.showAnalytics = function() {
       console.log('ANALYTICS');
-      $http.get('http://localhost:3000/server-error').then(function(results) {
-        console.log('WTFFFF');
-      });
-      $http.get('http://localhost:3000/lol').then(function (results) {
-        console.log(results);
-      });
       $scope.analytics = true;
       $scope.menu = false;
       $scope.customers = false;
@@ -43,6 +35,11 @@ angular.module('core').controller('adminPanelController', ['$scope', '$statePara
       $scope.customers = false;
       $scope.orderHistory = false;
       $scope.loyaltyProgram = false;
+
+      $http.get('http://localhost:3000/api/menu-items-two').success(function(response) {
+        $scope.items = response;
+        console.log($scope.items);
+      });
     };
 
     $scope.showCustomers = function() {
@@ -52,6 +49,11 @@ angular.module('core').controller('adminPanelController', ['$scope', '$statePara
       $scope.customers = true;
       $scope.orderHistory = false;
       $scope.loyaltyProgram = false;
+
+      $http.get('http://localhost:3000/api/menu-items-analytics').success(function(response) {
+        $scope.users = response;
+        console.log($scope.users);
+      });
     };
 
     $scope.showOrderHistory = function() {
@@ -119,14 +121,6 @@ angular.module('core').controller('adminPanelController', ['$scope', '$statePara
 
     $scope.hideDeleteCategory = function() {
       $scope.deleteCategory = false;
-    };
-
-    $scope.find = function() {
-      $http.get('http://localhost:3000/api/users').success(function(response) {
-        console.log(response);
-        $scope.users = response.data;
-        console.log(response.data);
-      });
     };
   }
 ]);

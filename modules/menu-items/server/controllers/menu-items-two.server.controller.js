@@ -5,7 +5,8 @@ var User = require('../../../users/server/models/user.server.model.js');
 // http://mongoosejs.com/docs/populate.html
 /* Here is where you will implement any functions you need
    to access/change anything from the item table */
-exports.getItemsAnalytics = function(req, res) {
+exports.getMenuItems = function(req, res) {
+
 
   var itemsPromise = new Promise(function(resolve, reject) {
     Item.find({}, '', function(err, items) {
@@ -30,7 +31,7 @@ exports.getItemsAnalytics = function(req, res) {
   var analyticsPromise = Promise.all([itemsPromise, userPromise]).then(function(resolved) {
     var items = resolved[0];
     var users = resolved[1];
-    console.log(users);
+    console.log(items);
     var itemsAnalytics = [];
     items.forEach(function(currentItem) {
       var count = 0;
@@ -43,8 +44,8 @@ exports.getItemsAnalytics = function(req, res) {
         count: count
       });
     });
-    console.log("MENU ITEMS");
-    res.json(users);
+    console.log("MENU ITEMS TWO");
+    res.json(items);
     console.log(itemsAnalytics);
   });
 };

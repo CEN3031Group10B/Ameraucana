@@ -72,10 +72,10 @@
               <th>Edit</th>
               <th>Delete</th>
             </tr>
-            <tr>
-              <td>Marinated Olives with Burnt Citrus & Rosemary</td>
-              <td>Olives, Burnt Citrus, Hearty Herbs *Vegan</td>
-              <td>$6</td>
+            <tr ng-repeat="item in items">
+              <td>{{ item.name }}</td>
+              <td>{{ item.description }}</td>
+              <td>{{ item.price }}</td>
               <td>
                 <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
               </td>
@@ -117,10 +117,10 @@
               <th>Edit</th>
               <th>Delete</th>
             </tr>
-            <tr>
-              <td>Marinated Olives with Burnt Citrus & Rosemary</td>
-              <td>Olives, Burnt Citrus, Hearty Herbs *Vegan</td>
-              <td>$6</td>
+            <tr ng-repeat="item in items">
+              <td>{{ item.name }}</td>
+              <td>{{ item.description }}</td>
+              <td>{{ item.price }}</td>
               <td>
                 <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
               </td>
@@ -162,10 +162,10 @@
               <th>Edit</th>
               <th>Delete</th>
             </tr>
-            <tr>
-              <td>Marinated Olives with Burnt Citrus & Rosemary</td>
-              <td>Olives, Burnt Citrus, Hearty Herbs *Vegan</td>
-              <td>$6</td>
+            <tr ng-repeat="item in items">
+              <td>{{ item.name }}</td>
+              <td>{{ item.description }}</td>
+              <td>{{ item.price }}</td>
               <td>
                 <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
               </td>
@@ -207,10 +207,10 @@
               <th>Edit</th>
               <th>Delete</th>
             </tr>
-            <tr>
-              <td>Marinated Olives with Burnt Citrus & Rosemary</td>
-              <td>Olives, Burnt Citrus, Hearty Herbs *Vegan</td>
-              <td>$6</td>
+            <tr ng-repeat="item in items">
+              <td>{{ item.name }}</td>
+              <td>{{ item.description }}</td>
+              <td>{{ item.price }}</td>
               <td>
                 <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
               </td>
@@ -231,7 +231,7 @@
     </div>
 
     <!-- CUSTOMERS  -->
-    <div role="tabpanel" class="tab-pane active" ng-if="customers" ng-init="find()" id="customers">
+    <div role="tabpanel" class="tab-pane active" ng-if="customers" id="customers">
       <h2>Customers</h2>
 
       <div class="input-group">
@@ -249,9 +249,9 @@
         </tr>
 
         <tr ng-repeat="user in users">
-          <th>{{ user.lastname }}</th>
-          <th>{{ user.firstname }}</th>
-          <th>{{ user.email }}</th>
+          <td>{{ user.lastName }}</td>
+          <td>{{ user.firstName }}</td>
+          <td>{{ user.email }}</td>
         </tr>
 
       </table>

@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('menu-items').controller('MenuItemsController', ['$scope', '$state', 'MenuItems', '$http',
   function($scope, $state, MenuItems, $http) {
     $scope.getAnalytics = function() {
@@ -7,8 +9,6 @@ angular.module('menu-items').controller('MenuItemsController', ['$scope', '$stat
         $scope.analytics = response.data;
         console.log(response.data);
       });
-
-
       console.log("asdasd");
     };
   }
