@@ -22,7 +22,6 @@ angular.module('core').controller('adminPanelController', ['$scope', '$statePara
 
     // TAB CONTENT
     $scope.showAnalytics = function() {
-      console.log('ANALYTICS');
       $scope.analytics = true;
       $scope.menu = false;
       $scope.customers = false;
@@ -31,7 +30,6 @@ angular.module('core').controller('adminPanelController', ['$scope', '$statePara
     };
 
     $scope.showMenu = function() {
-      console.log('MENU');
       $scope.analytics = false;
       $scope.menu = true;
       $scope.customers = false;
@@ -45,7 +43,6 @@ angular.module('core').controller('adminPanelController', ['$scope', '$statePara
     };
 
     $scope.showCustomers = function() {
-      console.log('CUSTOMERS');
       $scope.analytics = false;
       $scope.menu = false;
       $scope.customers = true;
@@ -58,7 +55,6 @@ angular.module('core').controller('adminPanelController', ['$scope', '$statePara
     };
 
     $scope.showOrderHistory = function() {
-      console.log('ORDER HISTORY');
       $scope.analytics = false;
       $scope.menu = false;
       $scope.customers = false;
@@ -67,7 +63,6 @@ angular.module('core').controller('adminPanelController', ['$scope', '$statePara
     };
 
     $scope.showLoyaltyProgram = function() {
-      console.log('LOYALTY PROGRAM');
       $scope.analytics = false;
       $scope.menu = false;
       $scope.customers = false;
@@ -103,7 +98,6 @@ angular.module('core').controller('adminPanelController', ['$scope', '$statePara
     };
 
     $scope.confirmDeleteMenuItem = function(item) {
-      console.log(item);
 
       $http.delete('http://localhost:3000/' + item._id).success(function (response) {
         console.log(response);
@@ -113,6 +107,23 @@ angular.module('core').controller('adminPanelController', ['$scope', '$statePara
       $scope.items.splice(indexNum, 1);
 
       $scope.deleteMenuItem = false;
+    };
+
+    $scope.confirmCreateMenuItem = function(item) {
+
+      var newMenuItem = {
+        name: item.name,
+        description: item.description,
+        price:  item.price,
+        category: item.category,
+        show: true
+      };
+
+      $http.post('http://localhost:3000/api/menu-item', newMenuItem).success(function(response) {
+        console.log(response);
+      });
+
+      $scope.items.push(newMenuItem);
     };
 
   }

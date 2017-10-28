@@ -84,8 +84,6 @@ exports.deleteMenuItem = function(req, res) {
 
   var item = req.item;
 
-  console.log(item);
-
   item.remove(function(err) {
     if (err) {
       console.log(err);
