@@ -61,12 +61,7 @@ exports.getItemsAnalytics = function(req, res) {
         count: count
       });
     });
-<<<<<<< HEAD
-    console.log("MENU ITEMS");
-    res.json(users);
-    console.log(itemsAnalytics);
-=======
+
     res.json(itemsAnalytics);
->>>>>>> development
   });
 };
