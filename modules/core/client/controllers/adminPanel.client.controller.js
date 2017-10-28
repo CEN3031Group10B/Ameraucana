@@ -18,6 +18,8 @@ angular.module('core').controller('adminPanelController', ['$scope', '$statePara
     $scope.deleteMenuItem = false;
     $scope.deleteCategory = false;
 
+    $scope.item = {};
+
     // TAB CONTENT
     $scope.showAnalytics = function() {
       console.log('ANALYTICS');
@@ -78,35 +80,18 @@ angular.module('core').controller('adminPanelController', ['$scope', '$statePara
       $scope.addMenuItem = true;
     };
 
-    $scope.showAddCategory = function() {
-      $scope.addCategory = true;
-    };
-
     $scope.showEditMenuItem = function() {
       $scope.editMenuItem = true;
     };
 
     $scope.showDeleteMenuItem = function(item) {
       $scope.deleteMenuItem = true;
-      console.log(item);
+
       $scope.item = item;
-
-      $http.delete('http://localhost:3000/' + item._id).success(function (response) {
-        console.log("HELLO WORLD");
-        console.log(response);
-      });
-
-      var indexNum = $scope.items.indexOf(item);
-      $scope.items.splice(indexNum, 1);
-
     };
 
     $scope.hideAddMenuItem = function() {
       $scope.addMenuItem = false;
-    };
-
-    $scope.hideAddCategory = function() {
-      $scope.addCategory = false;
     };
 
     $scope.hideEditMenuItem = function() {
@@ -116,5 +101,19 @@ angular.module('core').controller('adminPanelController', ['$scope', '$statePara
     $scope.hideDeleteMenuItem = function() {
       $scope.deleteMenuItem = false;
     };
+
+    $scope.confirmDeleteMenuItem = function(item) {
+      console.log(item);
+
+      $http.delete('http://localhost:3000/' + item._id).success(function (response) {
+        console.log(response);
+      });
+
+      var indexNum = $scope.items.indexOf(item);
+      $scope.items.splice(indexNum, 1);
+
+      $scope.deleteMenuItem = false;
+    };
+
   }
 ]);
