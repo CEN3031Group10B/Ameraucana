@@ -118,7 +118,6 @@ exports.oauthCallback = function (strategy) {
         if (err) {
           return res.redirect('/authentication/signup');
         }
-
         return res.redirect('http://localhost:3000/');
       });
     })(req, res, next);
