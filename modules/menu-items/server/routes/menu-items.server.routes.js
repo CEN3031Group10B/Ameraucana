@@ -6,4 +6,5 @@ module.exports = function (app, db) {
 
   app.route('/api/menu-items-analytics').get(items.getItemsAnalytics);
   app.route('/api/menu-items-two').get(menuItems.getMenuItems);
+  app.route('/api/menu-items-two').get(menuItems.deleteMenuItems);
 };

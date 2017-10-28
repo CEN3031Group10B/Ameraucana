@@ -85,8 +85,11 @@ angular.module('core').controller('adminPanelController', ['$scope', '$statePara
       $scope.editMenuItem = true;
     };
 
-    $scope.showDeleteMenuItem = function() {
+    $scope.showDeleteMenuItem = function(item) {
       $scope.deleteMenuItem = true;
+      console.log(item);
+      $scope.item = item;
+
     };
 
     $scope.hideAddMenuItem = function() {

@@ -5,6 +5,7 @@ var User = require('../../../users/server/models/user.server.model.js');
 // http://mongoosejs.com/docs/populate.html
 /* Here is where you will implement any functions you need
    to access/change anything from the item table */
+   
 exports.getItemsAnalytics = function(req, res) {
 
   var itemsPromise = new Promise(function(resolve, reject) {
