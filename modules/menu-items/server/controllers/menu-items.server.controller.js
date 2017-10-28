@@ -46,7 +46,7 @@ exports.getItemsAnalytics = function(req, res) {
       var count = 0;
       users.forEach(function(user) {
         user.orders.forEach(function(user_order) {
-          ordersCollection.forEach(function (oc) {
+          ordersCollection.forEach(function(oc) {
             if (String(oc.id) === String(user_order)) {
               if (String(oc.order) === String(currentItem.id)) {
                 count += 1;
@@ -63,5 +63,47 @@ exports.getItemsAnalytics = function(req, res) {
     });
 
     res.json(itemsAnalytics);
+  });
+};
+
+exports.createMenuItem = function(req, res) {
+
+  var item = new Item(req.body);
+
+  item.save(function(err) {
+    if (err) {
+      console.log(err);
+      res.status(400).send(err);
+    } else {
+      res.json(item);
+    }
+  });
+};
+
+exports.deleteMenuItem = function(req, res) {
+
+  var item = req.item;
+
+  console.log(item);
+
+  item.remove(function(err) {
+    if (err) {
+      console.log(err);
+      res.status(400).send(err);
+    } else {
+      res.end();
+    }
+  });
+};
+
+exports.menuItemById = function(req, res, next, id) {
+  Item.findById(id).exec(function(err, item) {
+    if(err){
+      console.log(err);
+      res.status(400).send(err);
+    } else {
+      req.item = item;
+      next();
+    }
   });
 };

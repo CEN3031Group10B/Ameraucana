@@ -38,6 +38,7 @@ angular.module('core').controller('adminPanelController', ['$scope', '$statePara
 
       $http.get('http://localhost:3000/api/menu-items-two').success(function(response) {
         $scope.items = response;
+        console.log(response);
       });
     };
 
@@ -89,6 +90,14 @@ angular.module('core').controller('adminPanelController', ['$scope', '$statePara
       $scope.deleteMenuItem = true;
       console.log(item);
       $scope.item = item;
+
+      $http.delete('http://localhost:3000/' + item._id).success(function (response) {
+        console.log("HELLO WORLD");
+        console.log(response);
+      });
+
+      var indexNum = $scope.items.indexOf(item);
+      $scope.items.splice(indexNum, 1);
 
     };
 

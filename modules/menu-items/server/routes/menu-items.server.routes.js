@@ -1,3 +1,5 @@
+// IGNORE THIS FILE - TRANSFER TO MENU-ITEMS.SERVER.ROUTE.JS
+
 'use strict';
 
 module.exports = function (app, db) {

@@ -210,6 +210,5 @@ UserSchema.statics.generateRandomPassphrase = function () {
 };
 
 var User = mongoose.model('User', UserSchema);
-var Order = mongoose.model('Order', OrderSchema);
 
 module.exports = User;
