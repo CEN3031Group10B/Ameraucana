@@ -38,7 +38,6 @@ angular.module('core').controller('adminPanelController', ['$scope', '$statePara
 
       $http.get('http://localhost:3000/api/menu-items-two').success(function(response) {
         $scope.items = response;
-        console.log($scope.items);
       });
     };
 
@@ -52,7 +51,6 @@ angular.module('core').controller('adminPanelController', ['$scope', '$statePara
 
       $http.get('http://localhost:3000/api/menu-items-analytics').success(function(response) {
         $scope.users = response;
-        console.log($scope.users);
       });
     };
 
@@ -87,16 +85,8 @@ angular.module('core').controller('adminPanelController', ['$scope', '$statePara
       $scope.editMenuItem = true;
     };
 
-    $scope.showEditCategory = function() {
-      $scope.editCategory = true;
-    };
-
     $scope.showDeleteMenuItem = function() {
       $scope.deleteMenuItem = true;
-    };
-
-    $scope.showDeleteCategory = function() {
-      $scope.deleteCategory = true;
     };
 
     $scope.hideAddMenuItem = function() {
@@ -111,16 +101,8 @@ angular.module('core').controller('adminPanelController', ['$scope', '$statePara
       $scope.editMenuItem = false;
     };
 
-    $scope.hideEditCategory = function() {
-      $scope.editCategory = false;
-    };
-
     $scope.hideDeleteMenuItem = function() {
       $scope.deleteMenuItem = false;
-    };
-
-    $scope.hideDeleteCategory = function() {
-      $scope.deleteCategory = false;
     };
   }
 ]);
