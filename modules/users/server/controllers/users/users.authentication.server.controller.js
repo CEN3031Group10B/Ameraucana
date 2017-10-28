@@ -119,7 +119,7 @@ exports.oauthCallback = function (strategy) {
           return res.redirect('/authentication/signup');
         }
 
-        return res.redirect('http://localhost:3000/order');
+        return res.redirect('http://localhost:3000/');
       });
     })(req, res, next);
   };

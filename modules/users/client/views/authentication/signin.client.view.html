@@ -29,6 +29,12 @@
           <span ng-bind="error"></span>
         </alert>
       </fieldset>
+      <h3 class="col-md-12 text-center"><b>Sign In w/ Your Social Accounts<b></h3>
+        <div class="col-md-12 text-center">
+          <!-- Flush out the outdated logos and incorporate the new logos -->
+          <img ng-click="callOauthProvider('/api/auth/facebook')" ng-src="/modules/users/client/img/buttons/facebook.jpg">
+          <img ng-click="callOauthProvider('/api/auth/google')" ng-src="/modules/users/client/img/buttons/google.jpg">
+        </div>
     </form>
   </div>
 </div>
