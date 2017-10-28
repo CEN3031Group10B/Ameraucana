@@ -4,8 +4,8 @@ angular.module('menu-items').controller('MenuItemsController', ['$scope', '$stat
     $scope.getAnalytics = function() {
       $http.get('http://localhost:3000/api/menu-items-analytics').success(function(response) {
         console.log(response);
-        $scope.analytics = response.data;
-        console.log(response.data);
+        $scope.analytics = response;
+        console.log($scope.analytics[0].count)
       });
 
 
