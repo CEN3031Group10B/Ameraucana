@@ -105,8 +105,6 @@ var UserSchema = new Schema({
   orders: [{ type: Schema.Types.ObjectId, ref: 'Order' }],
 });
 
-var OrderSchema = new Schema({ order: { type: Schema.Types.ObjectId, ref: 'Item' }, date: Date, fulfilled: Boolean, paid: Boolean });
-
 
 /**
  * Hook a pre save method to hash the password
@@ -212,6 +210,5 @@ UserSchema.statics.generateRandomPassphrase = function () {
 };
 
 var User = mongoose.model('User', UserSchema);
-var Order = mongoose.model('Order', OrderSchema);
 
 module.exports = User;
