@@ -1,5 +1,5 @@
 .content {
-  
+
   margin-top: 0px;
   margin-left: 0px;
   margin-right: 0px;
@@ -101,23 +101,30 @@ a:hover .header-profile-image {
 }
 .menu-items{
   column-width: 19em;
-    column-gap: 2em;
-    color: #a3a3a3;
+  column-gap: 2em;
+  color: #333;
+  font-family: Futura-pt;
+  font-weight: 300;
+  font-size: 22px;
 
 }
 .menu-item{
-  page-break-inside: avoid;
+page-break-inside: avoid;
 break-inside: avoid;
 width: 100%;
 padding-bottom: 3em;
+
 }
 
 .menu-item-price-top{
   float: right;
   padding-left: 20px;
 }
-.menu-item-price-bottom{
-  display: none;
+.menu-item-description{
+font-family: Proxima Nova;
+font-style: normal;
+font-weight: 300;
+font-size: 16px;
 }
 .menu-item-options{
   font-size: .8em;
@@ -133,10 +140,10 @@ padding-bottom: 3em;
 }
 
 /*TEXT and parallax*/
-p{
+p#title{
   position: relative;
   text-align: center;
-  font-family: cooper-black-std;
+  font-family: Copper Black;
   font-size: 100px;
   font-weight: 900;
   color: white;
@@ -324,7 +331,7 @@ h1{
     /*font-size: 2em;*/
     font-weight: 600;
     /*letter-spacing: 2px;*/
-    font-family: "cooper-black-std";
+    font-family: Cooper Black;
     font-size: 36px;
     /*font-weight: 400;*/
     text-transform: uppercase;

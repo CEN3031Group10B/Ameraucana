@@ -6,24 +6,24 @@
     height: 125px;
     float: left;
   }
-  
+
   .col.order.middle {
     height: 400px;
     width: 100%;
     text-align: center;
     line-height: 400px;
   }
-  
+
   .col.order.main {
     height: 500px;
     width: 100%;
   }
-  
+
   .row {
     max-width: 100%;
     margin: 0;
   }
-  
+
   .col.half {
     width: 50%;
     display: table-cell;
@@ -31,28 +31,28 @@
     padding-top: 20px;
     padding-left: 80px;
   }
-  
+
   .col.third {
     width: 33.33%;
   }
-  
+
   img.logo {
     width: 400px;
     height: 68px;
     float: left;
     vertical-align: bottom;
   }
-  
+
   #menu-outer {
     height: 84 px;
     padding-right: 40px;
   }
-  
+
   .table {
     display: table;
     margin: 0 auto;
   }
-  
+
   ul#horizontal-list {
     min-width: 696 px;
     list-style: none;
@@ -60,7 +60,7 @@
     float: right;
     text-decoration: none;
   }
-  
+
   ul#horizontal-list li {
     display: inline;
     font-family: Futura;
@@ -73,22 +73,22 @@
     margin: 1em;
     text-decoration: none;
   }
-  
+
   li a:hover {
     opacity: .5;
     text-decoration: none;
   }
-  
+
   a#current {
     color: rgba(255,255,255,.4);
     text-decoration: none;
   }
-  
+
   a#link {
     color: #fff;
     text-decoration: none;
   }
-  
+
   h1.page-title {
     font-family: Cooper Black;
     font-size: 82px;
@@ -105,21 +105,23 @@
     z-index: inherit;
     color: #fff;
   }
-  
+
   .footer {
     width: 100%;
     background-color: #3c342f;
     float: left;
   }
-  
+
   .footer-wrapper {
     max-width: 960px;
     margin: 0 auto;
     padding: 80px 8%;
     color: #fff;
   }
-  
-  h3 {
+
+
+
+  h3.footer-wrapper {
     font-family: Futura;
     font-size: 22px;
     font-weight: 300;
@@ -129,7 +131,7 @@
     text-decoration: none;
     line-height: 1.8em;
   }
-  
+
   body {
     font-family: Proxima-Nova;
     font-style: normal;
@@ -138,7 +140,7 @@
     letter-spacing: .015em;
     line-height: 1.8em;
   }
-  
+
   .tableWrapper {
     max-height: 400px;
     overflow: auto;
