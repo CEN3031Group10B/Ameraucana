@@ -7,6 +7,7 @@
       <span class="icon-bar"></span>
     </button>
 
+
     <!--<a href="https://www.gnvpizza.com/"/>
       <img class="image" src="modules/core/client/img/Kevin/pizza.png" alt="pizza">
     </a>
@@ -113,4 +114,98 @@
           </div>
       </div>
   </div>
+   <nav class="collapse navbar-collapse" collapse="!isCollapsed" role="navigation" style="background-color:#3c342f">
+     <!-- <ul class="nav navbar-nav" ng-if="menu.shouldRender(authentication.user);">
+       <li ng-repeat="item in menu.items | orderBy: 'position'" ng-if="item.shouldRender(authentication.user);" ng-switch="item.type" ng-class="{ active: $state.includes(item.state), dropdown: item.type === 'dropdown' }" class="{{item.class}}" dropdown="item.type === 'dropdown'">
+         <a ng-switch-when="dropdown" class="dropdown-toggle" dropdown-toggle role="button">{{::item.title}}&nbsp;<span class="caret"></span></a>
+         <ul ng-switch-when="dropdown" class="dropdown-menu">
+           <li ng-repeat="subitem in item.items | orderBy: 'position'" ng-if="subitem.shouldRender(authentication.user);" ui-sref-active="active">
+             <a ui-sref="{{subitem.state}}" ng-bind="subitem.title"></a>
+           </li>
+         </ul>
+         <a ng-switch-default ui-sref="{{item.state}}" ng-bind="item.title"></a>
+       </li>
+     </ul> -->
+     <div class="col half">
+         <a href="https://www.gnvpizza.com/"><img src="modules/core/client/img/brand/amer_logo.png" class="logo"></a>
+     </div>
+     <ul class="nav navbar-nav navbar-right" ng-hide="authentication.user">
+       <li>
+         <a href="#" id="current">
+           <span class="glyphicon glyphicon-shopping-cart"></span>
+         </a>
+       </li>
+       <li>
+         <a href="/order">
+           <span class="menu-item">ORDER</span>
+         </a>
+       </li>
+       <li>
+         <a href="https://www.gnvpizza.com/menu">
+           <span class="menu-item">MENU</span>
+         </a>
+       </li>
+       <li>
+         <a href="https://www.gnvpizza.com/locations/">
+           <span class="menu-item">ABOUT</span>
+         </a>
+       </li>
+       <li>
+         <a ui-sref="authentication.signup">
+           <span class="menu-item">SIGNUP</span>
+         </a>
+       </li>
+       <li class="divider-vertical"></li>
+       <li>
+         <a ui-sref="authentication.signin">
+           <span class="menu-item">SIGNIN</span>
+         </a>
+       </li>
+     </ul>
+     <ul class="nav navbar-nav navbar-right" ng-show="authentication.user">
+       <li>
+         <a href="#" id="current">
+           <span class="glyphicon glyphicon-shopping-cart"></span>
+         </a>
+       </li>
+       <li>
+         <a href="/order">
+           <span class="menu-item">ORDER</span>
+         </a>
+       </li>
+       <li>
+         <a href="https://www.gnvpizza.com/menu">
+           <span class="menu-item">MENU</span>
+         </a>
+       </li>
+       <li>
+         <a href="https://www.gnvpizza.com/locations/">
+           <span class="menu-item">ABOUT</span>
+         </a>
+       </li>
+       <li dropdown>
+         <a class="dropdown-toggle user-header-dropdown-toggle" dropdown-toggle role="button">
+           <span class="menu-item" ng-bind="authentication.user.firstName"></span> <b class="caret"></b>
+         </a>
+         <ul class="dropdown-menu" role="menu">
+           <li>
+             <a ui-sref="settings.profile">
+               <span class="menu-item">EDIT PROFILE</span>
+             </a>
+           </li>
+           <li ng-show="authentication.user.provider === 'local'">
+             <a ui-sref="settings.password">
+               <span class="menu-item">CHANGE PASSWORD</span>
+             </a>
+           </li>
+           <li class="divider"></li>
+           <li>
+             <a href="/api/auth/signout" target="_self">
+               <span class="menu-item">SIGNOUT</span>
+             </a>
+           </li>
+         </ul>
+       </li>
+     </ul>
+   </nav>
 </section>
