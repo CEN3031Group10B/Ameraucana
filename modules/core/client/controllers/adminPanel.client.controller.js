@@ -50,6 +50,8 @@ angular.module('core').controller('adminPanelController', ['$scope', '$statePara
       $scope.loyaltyProgram = false;
 
       $http.get('http://localhost:3000/api/menu-items-analytics').success(function(response) {
+        console.log("SHOW CUSTOMERS: ");
+        console.log(response);
         $scope.users = response;
       });
     };
