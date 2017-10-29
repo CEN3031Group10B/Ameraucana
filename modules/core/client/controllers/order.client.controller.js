@@ -4,27 +4,29 @@ angular.module('core').controller('OrderController', ['$scope', 'Authentication'
   function ($scope, Authentication, $modal, $log) {
     // This provides Authentication context.
     $scope.authentication = Authentication;
+
     //modal
-    // this.ordering = function (size, selectedPlate){
-    //   var modalInstance = $modal.open({
-    //     templateUrl: "modules/core/client/views/modal.client.view.html",
-    //     controller: function ($scope, $modalInstance, plate){
-    //       $scope.plate = plate;
-    //     },
-    //     size: size,
-    //     resolve: {
-    //       item: function () {
-    //         return selectedPlate;
-    //       }
-    //     }
-    //   });
-    //
-    //   // modalInstance.result.then(function (selectedItem)){
-    //   //   $scope.selected = selectedItem;
-    //   // }, function () {
-    //   //   $log.info('Modal dismissed at: ' + new Date());
-    //   // });
-    // };
+    this.modalUpdate = function (size, selectedItem){
+      var modalInstance = $modal.open({
+        templateUrl: "modules/core/client/views/modal.client.view.html",
+        controller: function ($scope, $modalInstance, item){
+          $scope.item = item;
+        },
+        size: size,
+        resolve: {
+          item: function () {
+            return selectedItem;
+          }
+        }
+      });
+
+
+      modalInstance.result.then(function (selectedItem)){
+        $scope.selected = selectedItem;
+      }, function () {
+        $log.info('Modal dismissed at: ' + new Date());
+      });
+    };
 
     $scope.items = [
       {
