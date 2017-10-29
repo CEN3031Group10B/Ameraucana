@@ -13,23 +13,23 @@
   <div class="parallax"></div>
   <div style="height:1000px;background-color:white;">
 
-<div class="menu-wrapper">
+<div class="menu-wrapper" ng-init="getMenu()">
   <div class="menu-section-header">
     <div class="menu-section-title">SMALL PLATES</div>
   </div>
   <div class="menu-items">
     <div class="menu-item" ng-repeat="item in items">
-      <div class="menu-item-title" ng-class="item.title">
-        {{item.title}}
+      <div class="menu-item-title">
+        {{ item.item.name }}
       </div>
-      <div class="menu-item-description" ng-class="item.description">
-        {{item.description}}
+      <div class="menu-item-description">
+        {{ item.item.description }}
       </div>
-      <div class="menu-item-price-top" ng-class="item.price">
-        {{item.price}}
+      <div class="menu-item-price-top">
+        {{ item.item.price }}
       </div>
       <div class="menu-item-options">
-        <div class="menu-item-option" ng-class="item.option"><b>{{item.option}}</b>
+        <div class="menu-item-option"><b>{{item.option}}</b>
           <div class="add-item">
             <button type="button" class="btn btn-default">Add to Cart</button>
           </div>
