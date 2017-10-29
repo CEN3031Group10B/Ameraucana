@@ -71,6 +71,11 @@
            <span class="menu-item">ABOUT</span>
          </a>
        </li>
+       <li ng-show="authentication.user.admin">
+         <a href="/admin-panel">
+           <span class="menu-item">ADMIN PANEL</span>
+         </a>
+       </li>
        <li dropdown>
          <a class="dropdown-toggle user-header-dropdown-toggle" dropdown-toggle role="button">
            <span class="menu-item" ng-bind="authentication.user.firstName"></span> <b class="caret"></b>
