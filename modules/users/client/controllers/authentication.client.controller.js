@@ -34,7 +34,7 @@ angular.module('users').controller('AuthenticationController', ['$scope', '$stat
         $scope.authentication.user = response;
 
         // And redirect to the previous or home page
-        $state.go($state.previous.state.name || 'home', $state.previous.params);
+        $state.go('order', $state.previous.params);
       }).error(function (response) {
         $scope.error = response.message;
       });
@@ -54,7 +54,13 @@ angular.module('users').controller('AuthenticationController', ['$scope', '$stat
         $scope.authentication.user = response;
 
         // And redirect to the previous or home page
-        $state.go($state.previous.state.name || 'home', $state.previous.params);
+        if ($scope.authentication.user.admin == 'true'){
+          console.log("Admin\n");
+          $state.go('admin-panel', $state.previous.params);
+        } else {
+          console.log("User\n");
+          $state.go('order', $state.previous.params);
+        }
       }).error(function (response) {
         $scope.error = response.message;
       });
