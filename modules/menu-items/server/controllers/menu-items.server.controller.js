@@ -95,13 +95,22 @@ exports.deleteMenuItem = function(req, res) {
 };
 
 exports.editMenuItem = function(req, res){
-  var menuItem = req.item;
 
-  menuItem.name = req.body.name;
-  menuItem.description = req.body.description;
-  menuItem.price = req.body.price;
-  menuItem.category = req.body.category;
-  menuItem.show = req.body.show;
+  console.log("EDIT MENU ITEM - LINE 99\n");
+  console.log(req.body);
+  console.log("\n");
+
+  var item = req.body;
+
+  item.name = req.body.name;
+  item.description = req.body.description;
+  item.price = req.body.price;
+  item.category = req.body.category;
+  item.show = req.body.show;
+
+  console.log("LINE 111\n");
+  console.log(item);
+  console.log("\n");
 
   item.save(function(err) {
     if (err) {
@@ -111,6 +120,11 @@ exports.editMenuItem = function(req, res){
     }
   });
 };
+
+exports.findOne = function(req, res){
+  res.json(req.body);
+  console.log(req.body);
+}
 
 exports.menuItemById = function(req, res, next, id) {
   Item.findById(id).exec(function(err, item) {

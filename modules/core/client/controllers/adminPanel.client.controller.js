@@ -134,6 +134,7 @@ angular.module('core').controller('adminPanelController', ['$scope', '$statePara
 
     $scope.confirmEditMenuItem = function(item) {
 
+
       var menuItem = {
         name: item.name,
         description: item.description,
@@ -142,7 +143,10 @@ angular.module('core').controller('adminPanelController', ['$scope', '$statePara
         show: true
       };
 
-      $http.put('http://localhost:3000/api/menu-item', menuItem).success(function(response) {
+      console.log("ITEM - LINE 146");
+      console.log(item);
+
+      $http.put('http://localhost:3000/api/menu-item-edit', menuItem).success(function(response) {
         console.log(response);
       });
 

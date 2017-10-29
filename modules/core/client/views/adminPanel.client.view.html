@@ -232,28 +232,28 @@
 
         <div class="modal-body">
 
-          <form role="form">
+          <form role="form" name="editMenuItemForm">
             <div class="form-group">
               <label for="name">Name</label>
-              <input type="text" class="form-control" id="name">
+              <input type="text" class="form-control" ng-model="item.name" id="name">
             </div>
 
             <div class="form-group">
               <label for="description">Description</label>
-              <textarea class="form-control" id="description" rows="3"></textarea>
+              <textarea class="form-control" ng-model="item.description"  id="description" rows="3"></textarea>
             </div>
 
             <div class="form-group">
               <label for="price">Price</label>
               <div class="input-group">
                 <div class="input-group-addon">$</div>
-                <input type="text" class="form-control" id="price">
+                <input type="text" class="form-control" ng-model="item.price" id="price">
               </div>
             </div>
 
             <div class="form-group">
               <label for="category">Category</label>
-              <select class="form-control" ng-model="menuItem.category" id="category">
+              <select class="form-control" ng-model="item.category" id="category">
                 <option>Small Plate</option>
                 <option>Pizza</option>
                 <option>Dessert</option>
@@ -265,7 +265,7 @@
         </div>
 
         <div class="modal-footer">
-          <button type="button" class="btn btn-success">Submit</button>
+          <button type="button" class="btn btn-success" ng-click="confirmEditMenuItem(item)">Submit</button>
           <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="hideEditMenuItem()">Cancel</button>
         </div>
 
