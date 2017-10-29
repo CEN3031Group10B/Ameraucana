@@ -49,6 +49,7 @@ angular.module('core').controller('adminPanelController', ['$scope', '$statePara
       $scope.orderHistory = false;
       $scope.loyaltyProgram = false;
 
+      // CREATE NEW ROUTES FOR CUSTOMERS AND USERS - TODO
       $http.get('http://localhost:3000/api/menu-items-analytics').success(function(response) {
         console.log("SHOW CUSTOMERS: ");
         console.log(response);
@@ -77,8 +78,11 @@ angular.module('core').controller('adminPanelController', ['$scope', '$statePara
       $scope.addMenuItem = true;
     };
 
-    $scope.showEditMenuItem = function() {
+    $scope.showEditMenuItem = function(item) {
       $scope.editMenuItem = true;
+
+      $scope.item = item;
+      console.log(item);
     };
 
     $scope.showDeleteMenuItem = function(item) {
@@ -126,6 +130,22 @@ angular.module('core').controller('adminPanelController', ['$scope', '$statePara
       });
 
       $scope.items.push(newMenuItem);
+    };
+
+    $scope.confirmEditMenuItem = function(item) {
+
+      var menuItem = {
+        name: item.name,
+        description: item.description,
+        price: item.price,
+        category: item.category,
+        show: true
+      };
+
+      $http.put('http://localhost:3000/api/menu-item', menuItem).success(function(response) {
+        console.log(response);
+      });
+
     };
 
   }

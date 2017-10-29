@@ -94,6 +94,24 @@ exports.deleteMenuItem = function(req, res) {
   });
 };
 
+exports.editMenuItem = function(req, res){
+  var menuItem = req.item;
+
+  menuItem.name = req.body.name;
+  menuItem.description = req.body.description;
+  menuItem.price = req.body.price;
+  menuItem.category = req.body.category;
+  menuItem.show = req.body.show;
+
+  item.save(function(err) {
+    if (err) {
+      res.status(400).send(err);
+    } else {
+      res.json(item);
+    }
+  });
+};
+
 exports.menuItemById = function(req, res, next, id) {
   Item.findById(id).exec(function(err, item) {
     if(err){
