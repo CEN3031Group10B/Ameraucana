@@ -54,7 +54,7 @@ angular.module('users').controller('AuthenticationController', ['$scope', '$stat
         $scope.authentication.user = response;
 
         // And redirect to the previous or home page
-        if ($scope.authentication.user.admin == 'true'){
+        if ($scope.authentication.user.admin === 'true'){
           console.log("Admin\n");
           $state.go('admin-panel', $state.previous.params);
         } else {
