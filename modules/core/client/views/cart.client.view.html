@@ -1,4 +1,5 @@
 <div ng-controller="CartController" style="padding-top: 200px;">
+  <div class="well text-center"><ngcart-summary></ngcart-summary></div>
   <div class="row text-center">
     <div class="col-xs-6 col-sm-3">
       <img src="https://placehold.it/262x150" alt="image" />
@@ -44,3 +45,10 @@
     </span>
     </div>
     </script>
+
+<script type="text/ng-template" id="template/ngCart/summary.html">
+  <span class="">{{ ngCart.getTotalItems() }}
+    <ng-pluralize count="ngCart.getTotalItems()" when="{1: 'item', 'other':'items'}"></ng-pluralize>
+    <br/>{{ ngCart.totalCost() | currency }}
+  </span>
+</script>
