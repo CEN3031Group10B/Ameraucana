@@ -1,19 +1,26 @@
 'use strict';
 
-angular.module('core').controller('OrderController', ['$scope', 'Authentication', '$modal', '$log', '$http',
-  function ($scope, Authentication, $modal, $log, $http) {
+angular.module('core').controller('OrderController', ['$scope', 'Authentication', '$http',
+  function ($scope, Authentication, $http) {
     // This provides Authentication context.
 
     $scope.item = {};
     $scope.authentication = Authentication;
+    $scope.addItem = false;
 
     $scope.getMenu = function(){
-      console.log("hello world");
       $http.get('http://localhost:3000/api/menu-items-analytics').success(function(response){
         $scope.items = response;
-        console.log("LINE 11");
         console.log($scope.items);
       });
+    };
+
+    //Modal for Adding Item
+    $scope.showAddItem = function (){
+      $scope.addItem = true;
+    };
+    $scope.hideAddItem = function() {
+      $scope.addItem = false;
     };
 
     // $scope.items = [

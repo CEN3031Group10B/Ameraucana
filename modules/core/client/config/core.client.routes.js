@@ -48,14 +48,6 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
 
       }
     })
-    .state('modal', {
-      url: '/modal',
-      templateUrl: 'modules/core/client/views/modal.client.view.html',
-      data: {
-        ignoreState: true
-
-      }
-    })
 
     .state('checkout', {
       url: '/checkout',

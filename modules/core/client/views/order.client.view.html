@@ -1,117 +1,265 @@
 <section ng-controller="OrderController" class="container">
   <link rel="stylesheet" href="order.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
   <div class="row">
     <img class="img-cover" src="modules/core/client/img/Kevin/Oven.jpg"  data-image-dimensions="2500x1669" data-image-focal-point="0.5,0.5" alt="Fire"/>
   </div>
+
   <div class="title-wrapper">
     <div class="row">
       <div class="col"><p id="title">ORDER</p></div>
     </div>
   </div>
 
-<div class="row">
-  <div class="parallax"></div>
-  <div style="height:1000px;background-color:white;">
 
-<div class="menu-wrapper" ng-init="getMenu()">
-  <div class="menu-section-header">
-    <div class="menu-section-title">SMALL PLATES</div>
-  </div>
-  <div class="menu-items">
-    <div class="menu-item" ng-repeat="item in items">
-      <div class="menu-item-title">
-        {{ item.item.name }}
-      </div>
-      <div class="menu-item-description">
-        {{ item.item.description }}
-      </div>
-      <div class="menu-item-price-top">
-        {{ item.item.price }}
-      </div>
-      <div class="menu-item-options">
-        <div class="menu-item-option"><b>{{item.option}}</b>
-          <div class="add-item">
-            <button type="button" class="btn btn-default">Add to Cart</button>
+  <div class="row">
+    <!-- Parallax effect-->
+    <div class="parallax"></div>
+      <div style="height:1000px;background-color:white;">
+
+        <!-- Get menu items from database -->
+        <div class="menu-wrapper" ng-init="getMenu()" >
+          <div class="menu-section-header">
+            <!-- Small Plate Items -->
+            <div class="menu-section-title">SMALL PLATES</div>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="menu-section">
-    <div class="menu-section-header">
-      <div class="menu-section-title">PIZZA</div>
-    </div>
-      <div class="menu-items">
-        <div class="menu-item" ng-repeat="pizza in pizzas">
-          <div class="menu-item-title" ng-class="pizza.title">
-            {{pizza.title}}
+          <!-- Adding Item to Order MODAL-->
+          <div id="myModal" class="w3-modal w3-animate-opacity" ng-repeat="item in items | filter: 'Small Plate'">
+            <div class="w3-modal-content w3-animate-bottom w3-card-4">
+              <header class="w3-container w3-blue-grey">
+                <span onclick="document.getElementById('myModal').style.display='none'"
+                class="w3-button w3-large w3-display-topright">&times;</span>
+                  <h2>Item</h2>
+              </header>
+              <div class="w3-container">
+                <p>{{ item.item.name }} ${{ item.item.price }}</p>
+
+                <p>{{ item.item.description }}</p>
+              </div>
+              <footer class="w3-container w3-blue-grey">
+                <button type="button" class="btn btn-success"><a href="/cart">Submit</a></button>
+              </footer>
+            </div>
           </div>
-          <div class="menu-item-description" ng-class="pizza.description">
-            {{pizza.description}}
-          </div>
-          <div class="menu-item-price-top" ng-class="pizza.price">
-            {{pizza.price}}
-          </div>
-          <div class="menu-item-options">
-            <div class="menu-item-option" ng-class="pizza.option"><b>{{pizza.option}}</b>
-              <div class="add-item">
-                <button type="button" class="btn btn-default">Add to Cart</button>
+            <div class="row justify-content-md-center">
+              <div class="col-sm-4" ng-repeat="item in items | filter: 'Small Plate'">
+
+                <div class="row">
+                  <div class="col-md-6 col-md-offset-2">
+                    <!-- Picture of Item-->
+                    <img src="http://via.placeholder.com/200x200">
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-sm-6 col-sm-offset-2">
+                    {{ item.item.name }}
+                  </div>
+                  <div class="col-xs-2 col-sm-offset-2">
+                    ${{ item.item.price }}
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-xs-9 col-xs-offset-2">
+                    {{ item.item.description }}
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-4 col-xs-offset-10">
+                    <!-- Add Item to Cart-->
+                    <button type="button" class="btn btn-default" onclick="document.getElementById('myModal').style.display='block'" class="w3-button w3-black">
+                      <span class="glyphicon glyphicon-shopping-cart"></span>Add
+                    </button>
+
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="menu-section">
-      <div class="menu-section-header">
-        <div class="menu-section-title">DESSERTS</div>
-      </div>
-      <div class="menu-items">
-        <div class="menu-item" ng-repeat="dessert in desserts">
-          <div class="menu-item-title" ng-class="dessert.title">
-            {{dessert.title}}
-          </div>
-          <div class="menu-item-description" ng-class="dessert.description">
-            {{dessert.description}}
-          </div>
-          <div class="menu-item-price-top" ng-class="dessert.price">
-            {{dessert.price}}
-          </div>
-          <div class="menu-item-options">
-            <div class="menu-item-option" ng-class="dessert.option"><b>{{dessert.option}}</b>
-              <div class="add-item">
-                <button type="button" class="btn btn-default">Add to Cart</button>
+            <!-- Pizza Items -->
+            <div class="menu-section">
+              <div class="menu-section-header">
+                <div class="menu-section-title">PIZZA</div>
+                <!-- Adding Item to Order MODAL-->
+                <div id="myModal2" class="w3-modal w3-animate-opacity" ng-repeat="item in items | filter: 'Pizza'">
+                  <div class="w3-modal-content w3-animate-bottom w3-card-4">
+                    <header class="w3-container w3-blue-grey">
+                      <span onclick="document.getElementById('myModal2').style.display='none'"
+                      class="w3-button w3-large w3-display-topright">&times;</span>
+                        <h2>Item</h2>
+                    </header>
+                    <div class="w3-container">
+                      <p>{{ item.item.name }} ${{ item.item.price }}</p>
+
+                      <p>{{ item.item.description }}</p>
+                      <p>Add:</p>
+                      <form>
+                        <div class="checkbox">
+                          <label><input type="checkbox" value="">Extra Cheese</label>
+                        </div>
+                        <div class="checkbox">
+                          <label><input type="checkbox" value="">Pepperoni</label>
+                        </div>
+                        <div class="checkbox">
+                          <label><input type="checkbox" value="">Basil</label>
+                        </div>
+                      </form>
+                    </div>
+                    <footer class="w3-container w3-blue-grey">
+                      <button type="button" class="btn btn-success"><a href="/cart">Submit</a></button>
+                    </footer>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row justify-content-md-center">
+                <div class="col-sm-4" ng-repeat="item in items | filter: 'Pizza'">
+                  <div class="row">
+                    <div class="col-md-6 col-md-offset-2">
+                      <!-- Picture of Item-->
+                      <img src="http://via.placeholder.com/200x200">
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm-6 col-sm-offset-2">
+                      {{ item.item.name }}
+                    </div>
+                    <div class="col-xs-2 col-sm-offset-2">
+                      ${{ item.item.price }}
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-9 col-xs-offset-2">
+                      {{ item.item.description }}
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-4 col-xs-offset-10">
+                      <!-- Add Item to Cart-->
+                      <button type="button" class="btn btn-default" onclick="document.getElementById('myModal2').style.display='block'" class="w3-button w3-black">
+                        <span class="glyphicon glyphicon-shopping-cart"></span>Add
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-      <div class="menu-section">
-        <div class="menu-section-header">
-          <div class="menu-section-title">BEVERAGES</div>
-        </div>
-        <div class="menu-items">
-          <div class="menu-item" ng-repeat="beverage in beverages">
-            <div class="menu-item-title" ng-class="beverage.title">
-              {{beverage.title}}
+            <!-- Dessert Items -->
+            <div class="menu-section">
+              <div class="menu-section-header">
+                <div class="menu-section-title">DESSERTS</div>
+                <!-- Adding Item to Order MODAL-->
+                <div id="myModal3" class="w3-modal w3-animate-opacity" ng-repeat="item in items | filter: 'Dessert'">
+                  <div class="w3-modal-content w3-animate-bottom w3-card-4">
+                    <header class="w3-container w3-blue-grey">
+                      <span onclick="document.getElementById('myModal3').style.display='none'"
+                      class="w3-button w3-large w3-display-topright">&times;</span>
+                        <h2>Item</h2>
+                    </header>
+                    <div class="w3-container">
+                      <p>{{ item.item.name }} ${{ item.item.price }}</p>
+
+                      <p>{{ item.item.description }}</p>
+                    </div>
+                    <footer class="w3-container w3-blue-grey">
+                      <button type="button" class="btn btn-success"><a href="/cart">Submit</a></button>
+                    </footer>
+                  </div>
+                </div>
+              </div>
+              <div class="row justify-content-md-center">
+                <div class="col-sm-4" ng-repeat="item in items | filter: 'Dessert'">
+                  <div class="row">
+                    <div class="col-md-6 col-md-offset-2">
+                      <!-- Picture of Item-->
+                      <img src="http://via.placeholder.com/200x200">
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm-6 col-sm-offset-2">
+                      {{ item.item.name }}
+                    </div>
+                    <div class="col-xs-2 col-sm-offset-2">
+                      ${{ item.item.price }}
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-9 col-xs-offset-2">
+                      {{ item.item.description }}
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-4 col-xs-offset-10">
+                      <!-- Add Item to Cart-->
+                      <button type="button" class="btn btn-default" onclick="document.getElementById('myModal3').style.display='block'" class="w3-button w3-black">
+                        <span class="glyphicon glyphicon-shopping-cart"></span>Add
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="menu-item-description" ng-class="beverage.description">
-              {{beverage.description}}
-            </div>
-            <div class="menu-item-price-top" ng-class="beverage.price">
-              {{beverage.price}}
-            </div>
-            <div class="menu-item-options">
-              <div class="menu-item-option" ng-class="beverage.option"><b>{{beverage.option}}</b>
-                <div class="add-item">
-                  <button type="button" class="btn btn-default">Add to Cart</button>
+            <!-- Beverage Items -->
+            <div class="menu-section">
+              <div class="menu-section-header">
+                <div class="menu-section-title">BEVERAGES</div>
+                <!-- Adding Item to Order MODAL-->
+                <div id="myModal4" class="w3-modal w3-animate-opacity" ng-repeat="item in items | filter: 'Beverage'">
+                  <div class="w3-modal-content w3-animate-bottom w3-card-4">
+                    <header class="w3-container w3-blue-grey">
+                      <span onclick="document.getElementById('myModal4').style.display='none'"
+                      class="w3-button w3-large w3-display-topright">&times;</span>
+                        <h2>Item</h2>
+                    </header>
+                    <div class="w3-container">
+                      <p>{{ item.item.name }} ${{ item.item.price }}</p>
+
+                      <p>{{ item.item.description }}</p>
+                    </div>
+                    <footer class="w3-container w3-blue-grey">
+                      <button type="button" class="btn btn-success"><a href="/cart">Submit</a></button>
+                    </footer>
+                  </div>
+                </div>
+              </div>
+              <div class="row justify-content-md-center">
+                <div class="col-sm-4" ng-repeat="item in items | filter: 'Beverage'">
+                  <div class="row">
+                    <div class="col-md-6 col-md-offset-2">
+                      <!-- Picture of Item-->
+                      <img src="http://via.placeholder.com/200x200">
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm-6 col-sm-offset-2">
+                      {{ item.item.name }}
+                    </div>
+                    <div class="col-xs-2 col-sm-offset-2">
+                      ${{ item.item.price }}
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-9 col-xs-offset-2">
+                      {{ item.item.description }}
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-4 col-xs-offset-10">
+                      <!-- Add Item to Cart-->
+                      <button type="button" class="btn btn-default" onclick="document.getElementById('myModal4').style.display='block'" class="w3-button w3-black">
+                        <span class="glyphicon glyphicon-shopping-cart"></span>Add
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
 </section>

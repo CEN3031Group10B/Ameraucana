@@ -75,14 +75,14 @@ a:hover .header-profile-image {
 /*MENU STYLES*/
 .menu-section-title{
   text-align: center;
-  font-family: cooper-black-std;
+  font-family: Cooper Black;
   font-weight: 800;
-  font-size: 36px;
+  font-size: 40px;
   text-transform: uppercase;
   font-style: normal;
   letter-spacing: .015em;
+  line-height: 2.25em;
   text-decoration: none;
-
   color: #333;
 
 }
@@ -99,46 +99,18 @@ a:hover .header-profile-image {
     color: #333;
     padding: 100px 9%;
 }
-.menu-items{
-  column-width: 19em;
-  column-gap: 2em;
-  color: #333;
-  font-family: Futura-pt;
+.justify-content-md-center{
+  color: #a3a3a3;
+  font-family: Futura;
   font-weight: 300;
-  font-size: 22px;
+  font-size: 20px;
 
-}
-.menu-item{
-page-break-inside: avoid;
-break-inside: avoid;
-width: 100%;
-padding-bottom: 3em;
-
-}
-
-.menu-item-price-top{
-  float: right;
-  padding-left: 20px;
-}
-.menu-item-description{
-font-family: Proxima Nova;
-font-style: normal;
-font-weight: 300;
-font-size: 16px;
 }
 .menu-item-options{
   font-size: .8em;
   font-style: italic;
 
 }
-
-.add-item{
-  float: right;
-  padding: 0;
-  margin: 0;
-  font-style: normal;
-}
-
 /*TEXT and parallax*/
 p#title{
   position: relative;
@@ -163,13 +135,6 @@ p#title{
       transform: translate3d(0px, 0px, 0px);
       opacity: .90;
 }
-
-
-/*.img-wrapper {
-  width: auto;
-  margin: 0;
-  height: 500px;
-}*/
 
 .glyphicon-shopping-cart{
   padding-top: .2em;
@@ -199,18 +164,6 @@ p#title{
   z-index: inherit;
 
 }
-/*hello*/
-
-/*.img-amer {
-  padding-top: 25px;
-  padding-left: 50px;
-  margin: 0;
-  text-align: left;
-  opacity: 1;
-  transform: translate3d(0px, 0px, 0px);
-  position: absolute;
-  z-index: inherit;
-}*/
 .image{
   max-width: 68%;
   height: auto;
@@ -221,19 +174,6 @@ p#title{
   padding-top: 370px;
 
 }
-
-
-/*.btn-link {
-  background: none;
-  border: none;
-  margin: 0;
-  padding: 10;
-  color: white;
-  line-height: 2em;
-  font-family: futura-pt;
-  font-size: 20px;
-}
-*/
 
 u1 {
   list-style-type: none;
@@ -265,36 +205,11 @@ li a:hover{
   opacity: .75;
   text-decoration: none;
 }
-
-/*li a:active{
+a:hover{
   color: white;
-  opacity: .5;
+  opacity: .75;
   text-decoration: none;
 }
-
-a#link{
-  color: white;
-}
-
-a#current {
-  color: rgb(255, 255, 255);
-}
-
-
-
-span{
-font-family: cooper-black-std;
-color: black;
-font-size: 82px;
-font-weight: 400;
-text-transform: uppercase;
-font-style: normal;
-line-height: 1em;
-text-decoration: none;
-max-width: 100%;
-display: inline-block;
-
-}*/
 
 .title-wrapper {
 
@@ -442,4 +357,33 @@ body {
 .tableWrapper {
   max-height: 400px;
   overflow: auto;
+}
+
+.img-thumbnail{
+  background-color: #c2c2a3;
+  color: #333;
+  text-align: center;
+  font-size: 20px;
+  width: 200px;
+  height: 200px;
+}
+button.btn-success{
+  float: right;
+}
+
+#myModal{
+  margin-top: 100px;
+  z-index: 1001;
+}
+#myModal2{
+  margin-top: 100px;
+  z-index: 1001;
+}
+#myModal3{
+  margin-top: 100px;
+  z-index: 1001;
+}
+#myModal4{
+  margin-top: 100px;
+  z-index: 1001;
 }
