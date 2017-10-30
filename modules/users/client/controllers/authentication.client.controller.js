@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 angular.module('users').controller('AuthenticationController', ['$scope', '$state', '$http', '$location', '$window', 'Authentication', 'PasswordValidator',
   function ($scope, $state, $http, $location, $window, Authentication, PasswordValidator) {
@@ -21,11 +21,10 @@ angular.module('users').controller('AuthenticationController', ['$scope', '$stat
 
         return false;
       }
-
-      // Confirm password does not match password
+      
+       // Confirm password does not match password  
       if ($scope.credentials.password !== $scope.credentials.confirmPassword) {
         $scope.error = 'Passwords must match';
-
         return false;
       }
 
@@ -77,3 +76,5 @@ angular.module('users').controller('AuthenticationController', ['$scope', '$stat
     };
   }
 ]);
+
+
