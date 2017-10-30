@@ -133,7 +133,7 @@ padding-bottom: 3em;
 }
 
 /*TEXT and parallax*/
-p{
+p#title{
   position: relative;
   text-align: center;
   font-family: cooper-black-std;

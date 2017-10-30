@@ -1,21 +1,24 @@
-/*'use strict';
+'use strict';
 
-angular.module('core').controller('CartController', ['$scope', 'Cart', 
-function($scope, Cart) {
-    $scope.cart = Cart;
+angular.module('core').controller('CartController', ['$scope', 'ngCart', '$http',  
+function($scope, ngCart, $http) {
 
-    $scope.addtoCart = function() {
-        $scope.item = {
-            "code": item_code,
-            "name": item_name,
-            "price": item_price,
-            "description": item_description
-        };
-    $scope.cart.push($scope.item);
-    };
+  ngCart.setTaxRate(6.5);
 
-    $scope.deleteItem = function(item) {
-        var index = $scope.cart.indexOf(item);
-        $scope.cart.splice(index,1);
-    };
-}]); */
+    // $scope.cart = Cart;
+
+    // $scope.addtoCart = function() {
+    // $scope.item = {
+    //         "code": item_code,
+    //         "name": item_name,
+    //         "price": item_price,
+    //         "description": item_description
+    //     };
+    // $scope.cart.push($scope.item);
+    // };
+
+    // $scope.deleteItem = function(item) {
+    //     var index = $scope.cart.indexOf(item);
+    //     $scope.cart.splice(index,1);
+    // };
+}]);

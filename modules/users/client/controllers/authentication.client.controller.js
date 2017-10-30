@@ -17,14 +17,14 @@ angular.module('users').controller('AuthenticationController', ['$scope', '$stat
       $scope.error = null;
 
       if (!isValid) {
-        $scope.$broadcast("show-errors-check-validity", "userForm");
+        $scope.$broadcast('show-errors-check-validity', 'userForm');
 
         return false;
       }
 
       // Confirm password does not match password
       if ($scope.credentials.password !== $scope.credentials.confirmPassword) {
-        $scope.error = "Passwords must match";
+        $scope.error = 'Passwords must match';
 
         return false;
       }
@@ -55,10 +55,10 @@ angular.module('users').controller('AuthenticationController', ['$scope', '$stat
 
         // And redirect to the previous or home page
         if ($scope.authentication.user.admin === 'true'){
-          console.log("Admin\n");
+          console.log('Admin\n');
           $state.go('admin-panel', $state.previous.params);
         } else {
-          console.log("User\n");
+          console.log('User\n');
           $state.go('order', $state.previous.params);
         }
       }).error(function (response) {
