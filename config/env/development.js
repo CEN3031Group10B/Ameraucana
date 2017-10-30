@@ -35,20 +35,20 @@ module.exports = {
   app: {
     title: defaultEnvConfig.app.title + ' - Development Environment'
   },
-  facebook: {
-    clientID: process.env.FACEBOOK_ID || 'APP_ID',
-    clientSecret: process.env.FACEBOOK_SECRET || 'APP_SECRET',
-    callbackURL: '/api/auth/facebook/callback'
+  facebook: { // working 
+    clientID: process.env.FACEBOOK_ID || '357909061326192',
+    clientSecret: process.env.FACEBOOK_SECRET || 'eb1a8cee3ec68793869af1c73b96d385',
+    callbackURL: 'http://localhost:3000/api/auth/facebook/callback'
   },
   twitter: {
     clientID: process.env.TWITTER_KEY || 'CONSUMER_KEY',
     clientSecret: process.env.TWITTER_SECRET || 'CONSUMER_SECRET',
     callbackURL: '/api/auth/twitter/callback'
   },
-  google: {
-    clientID: process.env.GOOGLE_ID || 'APP_ID',
-    clientSecret: process.env.GOOGLE_SECRET || 'APP_SECRET',
-    callbackURL: '/api/auth/google/callback'
+  google: { // not working 
+    clientID: process.env.GOOGLE_ID || '1065955896059-ipho3rd1c60oim34f02ncblh0p0tbi82.apps.googleusercontent.com',
+    clientSecret: process.env.GOOGLE_SECRET || '6s01N6EmNAGft-4klEbQl0Hl',
+    callbackURL: 'http://localhost:3000/api/auth/google/callback' 
   },
   linkedin: {
     clientID: process.env.LINKEDIN_ID || 'APP_ID',
