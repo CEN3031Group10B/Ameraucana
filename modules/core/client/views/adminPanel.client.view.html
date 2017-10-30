@@ -4,33 +4,33 @@
 
   <!-- TABS -->
   <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" ng-click="showAnalytics()" class="active">
+    <!-- <li role="presentation" ng-click="showAnalytics()" class="active">
       <a href="#analytics" aria-controls="analytics" role="tab" data-toggle="tab">Analytics</a>
-    </li>
-    <li role="presentation" ng-click="showMenu()">
+    </li> -->
+    <li role="presentation" ng-click="showMenu()" ng-init="showMenu()" class="active">
       <a href="#menu" aria-controls="menu" role="tab" data-toggle="tab">Menu</a>
     </li>
     <li role="presentation" ng-click="showCustomers()">
       <a href="#customers" aria-controls="customers" role="tab" data-toggle="tab">Customers</a>
     </li>
-    <li role="presentation" ng-click="showOrderHistory()">
+    <!-- <li role="presentation" ng-click="showOrderHistory()">
       <a href="#orderHistory" aria-controls="orderHistory" role="tab" data-toggle="tab">Order History</a>
     </li>
     <li role="presentation" ng-click="showLoyaltyProgram()">
       <a href="#loyaltyProgram" aria-controls="loyaltyProgram" role="tab" data-toggle="tab">Loyalty Program</a>
-    </li>
+    </li> -->
   </ul>
 
   <!-- TABS CONTENT -->
   <div class="tab-content">
 
     <!-- ANALYTICS -->
-    <div role="tabpanel" class="tab-pane active" ng-if="analytics" id="analytics">
+    <!-- <div role="tabpanel" class="tab-pane active" ng-if="analytics" id="analytics">
       <h2>Analytics</h2>
       <tr ng-repeat="ia in itemsAnalytics">
         <td>{{ia.code}}</td>
       </tr>
-    </div>
+    </div> -->
 
     <!-- MENU -->
     <div role="tabpanel" class="tab-pane active" ng-if="menu" id="menu">
@@ -135,7 +135,7 @@
     </div>
 
     <!-- ORDER HISTORY -->
-    <div role="tabpanel" class="tab-pane active" ng-if="orderHistory" id="orderHistory">
+    <!-- <div role="tabpanel" class="tab-pane active" ng-if="orderHistory" id="orderHistory">
       <h2>Order History</h2>
 
       <div class="input-group">
@@ -161,13 +161,13 @@
           <td>10/05/2017</td>
         </tr>
       </table>
-    </div>
+    </div> -->
 
     <!-- LOYALTY PROGRAM  -->
-    <div role="tabpanel" class="tab-pane active" ng-if="loyaltyProgram" id="loyaltyProgram">
+    <!-- <div role="tabpanel" class="tab-pane active" ng-if="loyaltyProgram" id="loyaltyProgram">
       <h2>Loyalty Program</h2>
     </div>
-  </div>
+  </div> -->
 
   <!-- ADD MENU ITEM -->
   <div class="modal-fade" id="addMenuItemModal" ng-if="addMenuItem">
