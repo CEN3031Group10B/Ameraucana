@@ -15,13 +15,21 @@ angular.module('core').controller('OrderController', ['$scope', 'Authentication'
       });
     };
 
-    //Modal for Adding Item
-    $scope.showAddItem = function (){
-      $scope.addItem = true;
+    $scope.addToCart = function(item){
+      console.log(item);
+      $scope.item = item;
+
     };
-    $scope.hideAddItem = function() {
-      $scope.addItem = false;
-    };
+
+
+
+    // //Modal for Adding Item
+    // $scope.showAddItem = function (){
+    //   $scope.addItem = true;
+    // };
+    // $scope.hideAddItem = function() {
+    //   $scope.addItem = false;
+    // };
 
     // $scope.items = [
     //   {

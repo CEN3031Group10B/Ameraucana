@@ -65,14 +65,13 @@ a:hover .header-profile-image {
   background-color: none;
 }
 
-.navbar-header, .navbar-inverse{
-  height: 150px;
-  background: none;
-  border: none;
-
-}
-
 /*MENU STYLES*/
+@font-face {
+      font-family: Futura;
+      src: url(Futura.woff);
+      font-family: Copper Black;
+      src: url(Copper_Black.woff);
+    }
 .menu-section-title{
   text-align: center;
   font-family: Cooper Black;
@@ -115,25 +114,22 @@ a:hover .header-profile-image {
 p#title{
   position: relative;
   text-align: center;
-  font-family: Copper Black;
+  font-family: Cooper Black;
   font-size: 100px;
   font-weight: 900;
   color: white;
 }
 .parallax{
-
-
-      /* Set a specific height */
-      height: 200px;
-      padding: 0;
-
-      /* Create the parallax scrolling effect */
-      background-attachment: fixed;
-      background-position: bottom;
-      background-repeat: no-repeat;
-      background-size: cover;
-      transform: translate3d(0px, 0px, 0px);
-      opacity: .90;
+/* Set a specific height */
+  height: 230px;
+  padding: 0;
+/* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: translate3d(0px, 0px, 0px);
+  opacity: .90;
 }
 
 .glyphicon-shopping-cart{
@@ -148,7 +144,7 @@ p#title{
   height: auto;
   position: absolute;
   transform: translate3d(0px, 0px, 0px);
-  opacity: .90;
+  opacity: .78;
   border: 0;
   z-index: -1;
 }
@@ -193,24 +189,6 @@ li {
   text-transform: uppercase;
   color: white;
 }
-
-li a{
-color: white;
-padding: 10px;
-
-}
-
-li a:hover{
-  color: white;
-  opacity: .75;
-  text-decoration: none;
-}
-a:hover{
-  color: white;
-  opacity: .75;
-  text-decoration: none;
-}
-
 .title-wrapper {
 
   display: flex;
@@ -266,7 +244,7 @@ h1{
     width: 100%;
 }
 
-.menu-item {
+/*.menu-item {
     display: inline;
     font-family: Futura;
     font-style: normal;
@@ -277,7 +255,7 @@ h1{
     color: #a3a3a3;
     margin: 1em;
     text-decoration: none;
-}
+}*/
 
 .col {
   height: 125px;
@@ -299,10 +277,7 @@ img.logo {
   vertical-align: bottom;
 }
 
-li a:hover {
-  opacity: .5;
-  text-decoration: none;
-}
+
 
 h1.page-title {
   font-family: Cooper Black;
@@ -319,6 +294,15 @@ h1.page-title {
   position: relative;
   z-index: inherit;
   color: #fff;
+}
+
+.dropdown-menu{
+  background-color: #3c342f;
+  text-decoration: none;
+}
+.dropdown-menu span:hover {
+  opacity: .5;
+  text-decoration: none;
 }
 
 .footer {
@@ -359,31 +343,30 @@ body {
   overflow: auto;
 }
 
-.img-thumbnail{
-  background-color: #c2c2a3;
-  color: #333;
-  text-align: center;
-  font-size: 20px;
-  width: 200px;
-  height: 200px;
-}
-button.btn-success{
+button.sub{
   float: right;
+  background: none;
+  border: none;
+}
+.col-sm-8{
+  font-size: 20px;
+  color: #333;
+  font-family: futura-pt;
+  font-style: normal;
+  font-weight: 300;
+}
+.col-xs-2{
+  font-size: 22px;
+  color: #333;
+  font-family: futura-pt;
+  font-style: normal;
+  font-weight: 300;
+}
+.description{
+  font-size: 15px;
 }
 
 #myModal{
-  margin-top: 100px;
-  z-index: 1001;
-}
-#myModal2{
-  margin-top: 100px;
-  z-index: 1001;
-}
-#myModal3{
-  margin-top: 100px;
-  z-index: 1001;
-}
-#myModal4{
   margin-top: 100px;
   z-index: 1001;
 }
