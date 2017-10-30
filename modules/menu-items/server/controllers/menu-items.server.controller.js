@@ -124,7 +124,7 @@ exports.editMenuItem = function(req, res){
 exports.findOne = function(req, res){
   res.json(req.body);
   console.log(req.body);
-}
+};
 
 exports.menuItemById = function(req, res, next, id) {
   Item.findById(id).exec(function(err, item) {
