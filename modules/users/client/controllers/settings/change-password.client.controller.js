@@ -26,3 +26,4 @@ angular.module('users').controller('ChangePasswordController', ['$scope', '$http
     };
   }
 ]);
+

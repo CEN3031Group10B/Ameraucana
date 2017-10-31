@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 var mongoose = require('mongoose');
 var Item = require('../models/menu-items.server.model.js');
 var User = require('../../../users/server/models/user.server.model.js');

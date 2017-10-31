@@ -9,7 +9,7 @@ angular.module('menu-items').controller('MenuItemsController', ['$scope', '$stat
       });
 
 
-      console.log("asdasd");
+      console.log('asdasd');
     };
   }
 ]);
