@@ -8,16 +8,15 @@
 <br>
 
 <div class="row" ng-controller="MenuItemsController" ng-init="getAnalytics()">
-<h1>Menu Items Analytics</h1>
-<table ng-controller="MenuItemsController" ng-init="getAnalytics()" border="2">
+  <h1>Menu Items Analytics</h1>
+  <table ng-controller="MenuItemsController" ng-init="getAnalytics()" border="2">
     <tr>
       <td>Menu Item Name</td>
       <td>Count</td>
     </tr>
     <tr ng-repeat="x in analytics">
-        <td> {{x.item.name}} </td>
-        <td> {{x.count}} </td>
+      <td> {{x.item.name}} </td>
+      <td> {{x.count}} </td>
     </tr>
-</table>
-
+  </table>
 </div>

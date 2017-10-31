@@ -11,9 +11,13 @@ var menuItemSchema = new Schema({
   },
   description: {
     type: String,
-    required: true
+    required: false
   },
   price: {
+    type: String,
+    required: true
+  },
+  category: {
     type: String,
     required: true
   },

@@ -1,12 +1,13 @@
 'use strict';
 
 /* Dependencies */
-var items = require('../controllers/items.server.controller.js');
 var express = require('express');
+var items = require('../controllers/items.server.controller.js');
 
 module.exports = function (app) {
   // Root routing
-  var core = require('../controllers/core.server.controller');
+  var items = require('../controllers/items.server.controller.js');
+  var core = require('../controllers/core.server.controller.js');
 
   // Define error pages
   app.route('/server-error').get(core.renderServerError);
@@ -16,4 +17,7 @@ module.exports = function (app) {
 
   // Define application route
   app.route('/*').get(core.renderIndex);
+
+  app.route('/api/items-analytics').get(core.getItemsAnalytics);
+  app.route('/api/lol').get(items.getItemsAnalytics);
 };
