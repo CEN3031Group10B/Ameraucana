@@ -1,13 +1,11 @@
 .content {
-  
   margin-top: 0px;
   margin-left: 0px;
   margin-right: 0px;
-
 }
-.container{
-  width: 100%;
 
+.container{
+  width: 50%;
 }
 
 .undecorated-link:hover {
@@ -52,7 +50,7 @@ a:hover .header-profile-image {
   margin: 0;
   padding-top: 20px;
   border: none;
-
+  padding-right: 20px;
   line-height: 72px;
   height: 72px;
   color: white;
@@ -69,20 +67,26 @@ a:hover .header-profile-image {
   height: 150px;
   background: none;
   border: none;
-
+  overflow: auto;
 }
 
 /*MENU STYLES*/
+@font-face {
+      font-family: Futura;
+      src: url(Futura.woff);
+      font-family: Copper Black;
+      src: url(Copper_Black.woff);
+    }
 .menu-section-title{
   text-align: center;
-  font-family: cooper-black-std;
+  font-family: Cooper Black;
   font-weight: 800;
-  font-size: 36px;
+  font-size: 40px;
   text-transform: uppercase;
   font-style: normal;
   letter-spacing: .015em;
+  line-height: 2.25em;
   text-decoration: none;
-
   color: #333;
 
 }
@@ -99,70 +103,39 @@ a:hover .header-profile-image {
     color: #333;
     padding: 100px 9%;
 }
-.menu-items{
-  column-width: 19em;
-    column-gap: 2em;
-    color: #a3a3a3;
+.justify-content-md-center{
+  color: #a3a3a3;
+  font-family: Futura;
+  font-weight: 300;
+  font-size: 20px;
 
-}
-.menu-item{
-  page-break-inside: avoid;
-break-inside: avoid;
-width: 100%;
-padding-bottom: 3em;
-}
-
-.menu-item-price-top{
-  float: right;
-  padding-left: 20px;
-}
-.menu-item-price-bottom{
-  display: none;
 }
 .menu-item-options{
   font-size: .8em;
   font-style: italic;
 
 }
-
-.add-item{
-  float: right;
-  padding: 0;
-  margin: 0;
-  font-style: normal;
-}
-
 /*TEXT and parallax*/
 p#title{
   position: relative;
   text-align: center;
-  font-family: cooper-black-std;
+  font-family: Cooper Black;
   font-size: 100px;
   font-weight: 900;
   color: white;
 }
 .parallax{
-
-
-      /* Set a specific height */
-      height: 200px;
-      padding: 0;
-
-      /* Create the parallax scrolling effect */
-      background-attachment: fixed;
-      background-position: bottom;
-      background-repeat: no-repeat;
-      background-size: cover;
-      transform: translate3d(0px, 0px, 0px);
-      opacity: .90;
+/* Set a specific height */
+  height: 230px;
+  padding: 0;
+/* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: translate3d(0px, 0px, 0px);
+  opacity: .90;
 }
-
-
-/*.img-wrapper {
-  width: auto;
-  margin: 0;
-  height: 500px;
-}*/
 
 .glyphicon-shopping-cart{
   padding-top: .2em;
@@ -176,7 +149,7 @@ p#title{
   height: auto;
   position: absolute;
   transform: translate3d(0px, 0px, 0px);
-  opacity: .90;
+  opacity: .78;
   border: 0;
   z-index: -1;
 }
@@ -192,18 +165,6 @@ p#title{
   z-index: inherit;
 
 }
-/*hello*/
-
-/*.img-amer {
-  padding-top: 25px;
-  padding-left: 50px;
-  margin: 0;
-  text-align: left;
-  opacity: 1;
-  transform: translate3d(0px, 0px, 0px);
-  position: absolute;
-  z-index: inherit;
-}*/
 .image{
   max-width: 68%;
   height: auto;
@@ -214,19 +175,6 @@ p#title{
   padding-top: 370px;
 
 }
-
-
-/*.btn-link {
-  background: none;
-  border: none;
-  margin: 0;
-  padding: 10;
-  color: white;
-  line-height: 2em;
-  font-family: futura-pt;
-  font-size: 20px;
-}
-*/
 
 u1 {
   list-style-type: none;
@@ -246,49 +194,6 @@ li {
   text-transform: uppercase;
   color: white;
 }
-
-li a{
-color: white;
-padding: 10px;
-
-}
-
-li a:hover{
-  color: white;
-  opacity: .75;
-  text-decoration: none;
-}
-
-/*li a:active{
-  color: white;
-  opacity: .5;
-  text-decoration: none;
-}
-
-a#link{
-  color: white;
-}
-
-a#current {
-  color: rgb(255, 255, 255);
-}
-
-
-
-span{
-font-family: cooper-black-std;
-color: black;
-font-size: 82px;
-font-weight: 400;
-text-transform: uppercase;
-font-style: normal;
-line-height: 1em;
-text-decoration: none;
-max-width: 100%;
-display: inline-block;
-
-}*/
-
 .title-wrapper {
 
   display: flex;
@@ -324,7 +229,7 @@ h1{
     /*font-size: 2em;*/
     font-weight: 600;
     /*letter-spacing: 2px;*/
-    font-family: "cooper-black-std";
+    font-family: Cooper Black;
     font-size: 36px;
     /*font-weight: 400;*/
     text-transform: uppercase;
@@ -344,7 +249,7 @@ h1{
     width: 100%;
 }
 
-.menu-item {
+/*.menu-item {
     display: inline;
     font-family: Futura;
     font-style: normal;
@@ -355,7 +260,7 @@ h1{
     color: #a3a3a3;
     margin: 1em;
     text-decoration: none;
-}
+}*/
 
 .col {
   height: 125px;
@@ -377,10 +282,7 @@ img.logo {
   vertical-align: bottom;
 }
 
-li a:hover {
-  opacity: .5;
-  text-decoration: none;
-}
+
 
 h1.page-title {
   font-family: Cooper Black;
@@ -397,6 +299,15 @@ h1.page-title {
   position: relative;
   z-index: inherit;
   color: #fff;
+}
+
+.dropdown-menu{
+  background-color: #3c342f;
+  text-decoration: none;
+}
+.dropdown-menu span:hover {
+  opacity: .5;
+  text-decoration: none;
 }
 
 .footer {
@@ -430,9 +341,43 @@ body {
   font-size: 16px;
   letter-spacing: .015em;
   line-height: 1.8em;
+  padding-top: 150px;
 }
 
 .tableWrapper {
   max-height: 400px;
   overflow: auto;
+}
+
+button.sub{
+  float: right;
+  background: none;
+  border: none;
+}
+a.mit:hover{
+  color: #cccccc;
+  text-decoration: none;
+
+}
+.col-sm-8{
+  font-size: 20px;
+  color: #333;
+  font-family: futura-pt;
+  font-style: normal;
+  font-weight: 300;
+}
+.col-xs-2{
+  font-size: 22px;
+  color: #333;
+  font-family: futura-pt;
+  font-style: normal;
+  font-weight: 300;
+}
+.description{
+  font-size: 15px;
+}
+
+#myModal{
+  margin-top: 100px;
+  z-index: 1001;
 }

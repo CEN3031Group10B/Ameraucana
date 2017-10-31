@@ -18,7 +18,7 @@ var config = require('../config'),
   flash = require('connect-flash'),
   consolidate = require('consolidate'),
   path = require('path');
-
+  
 /**
  * Initialize local variables
  */
