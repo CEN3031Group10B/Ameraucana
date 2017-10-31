@@ -348,6 +348,11 @@ button.sub{
   background: none;
   border: none;
 }
+a.mit:hover{
+  color: #cccccc;
+  text-decoration: none;
+
+}
 .col-sm-8{
   font-size: 20px;
   color: #333;
