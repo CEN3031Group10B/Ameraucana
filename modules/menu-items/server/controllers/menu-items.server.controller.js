@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 var mongoose = require('mongoose');
 var Item = require('../models/menu-items.server.model.js');
 var User = require('../../../users/server/models/user.server.model.js');
@@ -46,7 +46,7 @@ exports.getItemsAnalytics = function(req, res) {
       var count = 0;
       users.forEach(function(user) {
         user.orders.forEach(function(user_order) {
-          ordersCollection.forEach(function (oc) {
+          ordersCollection.forEach(function(oc) {
             if (String(oc.id) === String(user_order)) {
               if (String(oc.order) === String(currentItem.id)) {
                 count += 1;
@@ -61,6 +61,79 @@ exports.getItemsAnalytics = function(req, res) {
         count: count
       });
     });
+
     res.json(itemsAnalytics);
+  });
+};
+
+exports.createMenuItem = function(req, res) {
+
+  var item = new Item(req.body);
+
+  item.save(function(err) {
+    if (err) {
+      console.log(err);
+      res.status(400).send(err);
+    } else {
+      res.json(item);
+    }
+  });
+};
+
+exports.deleteMenuItem = function(req, res) {
+
+  var item = req.item;
+
+  item.remove(function(err) {
+    if (err) {
+      console.log(err);
+      res.status(400).send(err);
+    } else {
+      res.end();
+    }
+  });
+};
+
+exports.editMenuItem = function(req, res){
+
+  console.log("EDIT MENU ITEM - LINE 99\n");
+  console.log(req);
+  console.log("\n");
+
+  var item = req.item;
+
+  item.name = req.body.name;
+  item.description = req.body.description;
+  item.price = req.body.price;
+  item.category = req.body.category;
+  item.show = req.body.show;
+
+  console.log("LINE 111\n");
+  console.log(item);
+  console.log("\n");
+
+  item.save(function(err) {
+    if (err) {
+      res.status(400).send(err);
+    } else {
+      res.json(item);
+    }
+  });
+};
+
+exports.findOne = function(req, res){
+  res.json(req.body);
+  console.log(req.body);
+};
+
+exports.menuItemById = function(req, res, next, id) {
+  Item.findById(id).exec(function(err, item) {
+    if(err){
+      console.log(err);
+      res.status(400).send(err);
+    } else {
+      req.item = item;
+      next();
+    }
   });
 };
