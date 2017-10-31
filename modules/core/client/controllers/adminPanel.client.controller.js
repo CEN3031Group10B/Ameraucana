@@ -50,11 +50,11 @@ angular.module('core').controller('adminPanelController', ['$scope', '$statePara
       $scope.loyaltyProgram = false;
 
       // CREATE NEW ROUTES FOR CUSTOMERS AND USERS - TODO
-      $http.get('http://localhost:3000/api/menu-items-analytics').success(function(response) {
-        console.log("SHOW CUSTOMERS: ");
-        console.log(response);
-        $scope.users = response;
-      });
+      // $http.get('http://localhost:3000/api/allUsers').success(function(response) {
+      //   console.log("SHOW CUSTOMERS: ");
+      //   console.log(response);
+      //   $scope.users = response;
+      // });
     };
 
     $scope.showOrderHistory = function() {
@@ -134,8 +134,8 @@ angular.module('core').controller('adminPanelController', ['$scope', '$statePara
 
     $scope.confirmEditMenuItem = function(item) {
 
-
       var menuItem = {
+        id: item.id,
         name: item.name,
         description: item.description,
         price: item.price,
@@ -146,7 +146,7 @@ angular.module('core').controller('adminPanelController', ['$scope', '$statePara
       console.log("ITEM - LINE 146");
       console.log(item);
 
-      $http.put('http://localhost:3000/api/menu-item-edit', menuItem).success(function(response) {
+      $http.put('http://localhost:3000/' + item._id, item).success(function(response) {
         console.log(response);
       });
 

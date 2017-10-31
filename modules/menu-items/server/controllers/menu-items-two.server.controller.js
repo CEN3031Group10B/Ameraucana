@@ -1,5 +1,3 @@
-// IGNORE THIS FILE - TRANSFER TO MENU-ITEMS.SERVER.CONTROLLER.JS
-
 "use strict";
 var mongoose = require('mongoose');
 var Item = require('../models/menu-items.server.model.js');
