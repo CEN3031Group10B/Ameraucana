@@ -5,7 +5,8 @@
 }
 
 .container{
-  width: 50%;
+  margin: auto;
+  width: 100%;
 }
 
 .undecorated-link:hover {
@@ -244,11 +245,6 @@ h1{
 
 }
 
-.container {
-    padding: 0;
-    width: 100%;
-}
-
 /*.menu-item {
     display: inline;
     font-family: Futura;
@@ -380,4 +376,27 @@ a.mit:hover{
 #myModal{
   margin-top: 100px;
   z-index: 1001;
+}
+
+/*================================*/
+/*++++++ ADMIN PANEL STYLES ++++++*/
+/*================================*/
+.admin-container {
+  margin: auto;
+  width: 75%;
+}
+
+.admin-section-title {
+  color: #333;
+  font-family: Cooper Black;
+  font-weight: 800;
+  font-size: 30px;
+  font-style: normal;
+  letter-spacing: .015em;
+  line-height: 2.25em;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  text-decoration: none;
+  text-transform: uppercase;
+
 }
