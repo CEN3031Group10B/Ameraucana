@@ -55,6 +55,7 @@
               <th>Price</th>
               <th>Edit</th>
               <th>Delete</th>
+              <th>Hide</th>
             </tr>
             <tr ng-repeat="item in items | filter: 'Small Plate' | orderBy: 'name'">
               <td>{{item.name}}</td>
@@ -70,6 +71,12 @@
                   <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                 </button>
               </td>
+              <td ng-show="item.show">
+                <input type="checkbox" ng-click="hideMenuItem(item)">
+              </td>
+              <td ng-hide="item.show">
+                <input type="checkbox" ng-click="hideMenuItem(item)" checked>
+              </td>
             </tr>
           </table>
 
@@ -81,6 +88,7 @@
               <th>Price</th>
               <th>Edit</th>
               <th>Delete</th>
+              <th>Hide</th>
             </tr>
             <tr ng-repeat="item in items | filter: 'Pizza' | orderBy: 'name'">
               <td>{{item.name}}</td>
@@ -96,6 +104,12 @@
                   <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                 </button>
               </td>
+              <td ng-show="item.show">
+                <input type="checkbox" ng-click="hideMenuItem(item)">
+              </td>
+              <td ng-hide="item.show">
+                <input type="checkbox" ng-click="hideMenuItem(item)" checked>
+              </td>
             </tr>
           </table>
 
@@ -107,6 +121,7 @@
               <th>Price</th>
               <th>Edit</th>
               <th>Delete</th>
+              <th>Hide</th>
             </tr>
             <tr ng-repeat="item in items | filter: 'Dessert' | orderBy: 'name'">
               <td>{{item.name}}</td>
@@ -122,6 +137,12 @@
                   <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                 </button>
               </td>
+              <td ng-show="item.show">
+                <input type="checkbox" ng-click="hideMenuItem(item)">
+              </td>
+              <td ng-hide="item.show">
+                <input type="checkbox" ng-click="hideMenuItem(item)" checked>
+              </td>
             </tr>
           </table>
 
@@ -133,6 +154,7 @@
               <th>Price</th>
               <th>Edit</th>
               <th>Delete</th>
+              <th>Hide</th>
             </tr>
             <tr ng-repeat="item in items | filter: 'Beverage' | orderBy: 'name'">
               <td>{{item.name}}</td>
@@ -147,6 +169,12 @@
                 <button type="button" class="btn btn-danger" aria-label="Left Align" ng-click="showDeleteMenuItem(item)">
                   <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                 </button>
+              </td>
+              <td ng-show="item.show">
+                <input type="checkbox" ng-click="hideMenuItem(item)">
+              </td>
+              <td ng-hide="item.show">
+                <input type="checkbox" ng-click="hideMenuItem(item)" checked>
               </td>
             </tr>
           </table>

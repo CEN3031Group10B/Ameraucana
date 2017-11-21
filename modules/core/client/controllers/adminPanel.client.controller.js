@@ -11,6 +11,7 @@ angular.module('core').controller('adminPanelController', ['$scope', '$statePara
     $scope.loyaltyProgram = false;
 
     // SET INITIAL VARIABLES TO DETERMINE WHEN TO SHOW MODALS
+    $scope.addCategory = false;
     $scope.addMenuItem = false;
     $scope.addCategory = false;
     $scope.editMenuItem = false;
@@ -140,16 +141,49 @@ angular.module('core').controller('adminPanelController', ['$scope', '$statePara
         description: item.description,
         price: item.price,
         category: item.category,
-        show: true
+        show: item.show
       };
 
       console.log("ITEM - LINE 146");
       console.log(item);
 
-      $http.put('http://localhost:3000/' + item._id, item).success(function(response) {
+      $http.put('http://localhost:3000/' + item._id, menuItem).success(function(response) {
         console.log(response);
       });
+    };
 
+    $scope.hideMenuItem = function(item) {
+      $scope.item = item;
+      var menuItem;
+
+      if (item.show === true) {
+        menuItem = {
+          id: item.id,
+          name: item.name,
+          description: item.description,
+          price: item.price,
+          category: item.category,
+          show: false
+        };
+      } else {
+        menuItem = {
+          id: item.id,
+          name: item.name,
+          description: item.description,
+          price: item.price,
+          category: item.category,
+          show: true
+        };
+      }
+
+      // console.log("--------OLD-------");
+      // console.log(item);
+      // console.log("--------NEW-------");
+      console.log(menuItem);
+
+      $http.put('http://localhost:3000/' + item._id, menuItem).success(function(response) {
+        console.log(response);
+      });
     };
 
   }
