@@ -19,7 +19,7 @@ mongoose.connect('mongodb://admin:password@ds161164.mlab.com:61164/ameraucana');
 var pizzaMenuItem, menuItem_id, app, agent;
 
 pizzaMenuItem = {
-  name: "Pizza",
+  name: "Pizza with Olives",
   description: "Yummy slice of zza",
   price: "1.89",
   category: "Food",
@@ -33,9 +33,26 @@ describe('MenuItem CRUD tests', function() {
     done();
   });
 
-  it('should be able to create a menu item', function(done) {
-    agent.post('/api/menu-item').send(pizzaMenuItem).expect(200).end(function (err, res) {
+  it('should be able to get menu items', function(done) {
+    agent.get('/api/menu-items').expect(200).end(function (err, res) {
       done();
     });
+  });
+
+  it('should be able to create a menu item', function(done) {
+    agent.post('/api/menu-item').send(pizzaMenuItem).expect(200).end(function (err, res) {
+      agent.get('/api/menu-items').end(function(err, res) {
+        res.body[0].name.should.match(pizzaMenuItem.name);
+        res.body[0].description.should.match(pizzaMenuItem.description);
+        res.body[0].price.should.match(pizzaMenuItem.price);
+        res.body[0].category.should.match(pizzaMenuItem.category);
+        res.body[0].show.should.match(pizzaMenuItem.show);
+        done();
+      });
+    });
+  });
+
+  afterEach(function (done) {
+    MenuItem.remove().exec(done);
   });
 });
