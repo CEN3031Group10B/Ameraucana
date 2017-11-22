@@ -137,3 +137,13 @@ exports.menuItemById = function(req, res, next, id) {
     }
   });
 };
+
+exports.getMenuItems = function(req,res) {
+  Item.find({}, '', function(err, items) {
+    if (err) {
+      res.status(400).send(err);
+    } else {
+      res.json(items);
+    }
+  });
+};
