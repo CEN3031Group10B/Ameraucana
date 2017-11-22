@@ -2,6 +2,8 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand:300" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Barlow" rel="stylesheet">
 
   <div class="row">
     <img class="img-cover" src="modules/core/client/img/Kevin/Oven.jpg"  data-image-dimensions="2500x1669" data-image-focal-point="0.5,0.5" alt="Fire"/>
@@ -9,7 +11,7 @@
 
   <div class="title-wrapper">
     <div class="row">
-      <div class="col"><p id="title">ORDER</p></div>
+      <div class="col"><h1 class="page-title">ORDER</h1></div>
     </div>
   </div>
 
@@ -21,175 +23,142 @@
 
         <!-- Get menu items from database -->
         <div class="menu-wrapper" ng-init="getMenu()" >
-          <div class="menu-section-header">
-            <!-- Small Plate Items -->
-            <div class="menu-section-title">SMALL PLATES</div>
-          </div>
-          <!-- Adding Item to Order MODAL-->
-          <div id="myModal" class="w3-modal w3-animate-opacity">
-            <div class="w3-modal-content w3-animate-bottom w3-card-4">
-              <header class="w3-container w3-blue-grey">
-                <span onclick="document.getElementById('myModal').style.display='none'"
-                class="w3-button w3-large w3-display-topright">&times;</span>
-                  <h2>Item</h2>
-              </header>
-              <div class="w3-container">
-                <img src="http://via.placeholder.com/200x200">
-                <p>{{ item.name }} {{ item.price | currency}}</p>
-                <p>{{ item.description }}</p>
-                <form>
-                  <div class="form-group">
-                    <label for="comment">Request</label>
-                    <textarea class="form-control" rows="5" id="comment"></textarea>
-                    <p>*You may be charged extra for certain requests</p>
-                  </div>
-                </form>
-              </div>
-              <footer class="w3-container w3-blue-grey">
-                <button type="button" class="sub"><a class="mit" href="/cart">Submit</a></button>
-              </footer>
-            </div>
-          </div>
-            <div class="row justify-content-md-center">
-              <div class="col-sm-3" ng-repeat="item in items | filter: 'Small Plate'">
 
-                <div class="row">
-                  <div class="col-md-6 col-md-offset-2">
-                    <!-- Picture of Item-->
-                    <img src="http://via.placeholder.com/200x200">
-                  </div>
+          <!-- SMALL PLATES -->
+          <div class="menu-section-title">SMALL PLATES</div>
+          <div class="row">
+            <div class="col-md-4" ng-repeat="item in items | filter: 'Small Plate'">
+              <div class="row" ng-show="item.item.show">
+                <div class="col-sm-8 col-sm-offset-2 item-header">
+                  {{ item.item.name }}
                 </div>
-
-                <div class="row">
-                  <div class="col-sm-8 col-sm-offset-2">
-                    {{ item.item.name }}
-                  </div>
-                  <div class="col-xs-2">
-                    {{ item.item.price | currency}}
-                  </div>
-                </div>
-
-                <div class="row description">
-                  <div class="col-xs-8 col-xs-offset-2">
-                    {{ item.item.description }}
-                  </div>
-                  <div class="col-xs-2">
-                    <!-- Add Item to Cart-->
-                    <button type="button" class="btn btn-default" ng-click="addToCart(item.item)" onclick="document.getElementById('myModal').style.display='block'" class="w3-button w3-black">
-                      <span class="glyphicon glyphicon-shopping-cart"></span>
-                    </button>
-                  </div>
+                <div class="col-xs-2 item-header">
+                  {{ item.item.price | currency}}
                 </div>
               </div>
-            </div>
-            <!-- Pizza Items -->
-            <div class="menu-section">
-              <div class="menu-section-header">
-                <div class="menu-section-title">PIZZA</div>
-              <div class="row justify-content-md-center">
-                <div class="col-sm-3" ng-repeat="item in items | filter: 'Pizza'">
-                  <div class="row">
-                    <div class="col-md-6 col-md-offset-2">
-                      <!-- Picture of Item-->
-                      <img src="http://via.placeholder.com/200x200">
-                    </div>
-                  </div>
 
-                  <div class="row">
-                    <div class="col-sm-8 col-sm-offset-2">
-                      {{ item.item.name }}
-                    </div>
-                    <div class="col-xs-2">
-                      {{ item.item.price | currency }}
-                    </div>
-                  </div>
-                  <div class="row description">
-                    <div class="col-xs-8 col-xs-offset-2">
-                      {{ item.item.description }}
-                    </div>
-                    <div class="col-xs-2">
-                      <!-- Add Item to Cart-->
-                      <button type="button" class="btn btn-default" ng-click="addToCart(item.item)" onclick="document.getElementById('myModal').style.display='block'" class="w3-button w3-black">
-                        <span class="glyphicon glyphicon-shopping-cart"></span>
-                      </button>
-                    </div>
-                  </div>
+              <div class="row" ng-show="item.item.show">
+                <div class="col-xs-8 col-xs-offset-2 item-description">
+                  {{ item.item.description }}
                 </div>
-              </div>
-            </div>
-            <!-- Dessert Items -->
-            <div class="menu-section">
-              <div class="menu-section-header">
-                <div class="menu-section-title">DESSERTS</div>
-              </div>
-              <div class="row justify-content-md-center">
-                <div class="col-sm-3" ng-repeat="item in items | filter: 'Dessert'">
-                  <div class="row">
-                    <div class="col-md-6 col-md-offset-2">
-                      <!-- Picture of Item-->
-                      <img src="http://via.placeholder.com/200x200">
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-sm-8 col-sm-offset-2">
-                      {{ item.item.name }}
-                    </div>
-                    <div class="col-xs-2">
-                      {{ item.item.price | currency }}
-                    </div>
-                  </div>
-                  <div class="row description">
-                    <div class="col-xs-8 col-xs-offset-2">
-                      {{ item.item.description }}
-                    </div>
-                    <div class="col-xs-2">
-                      <!-- Add Item to Cart-->
-                      <button type="button" class="btn btn-default" ng-click="addToCart(item.item)" onclick="document.getElementById('myModal').style.display='block'" class="w3-button w3-black">
-                        <span class="glyphicon glyphicon-shopping-cart"></span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Beverage Items -->
-            <div class="menu-section">
-              <div class="menu-section-header">
-                <div class="menu-section-title">BEVERAGES</div>
-              </div>
-              <div class="row justify-content-md-center">
-                <div class="col-sm-3" ng-repeat="item in items | filter: 'Beverage'">
-                  <div class="row">
-                    <div class="col-md-6 col-md-offset-2">
-                      <!-- Picture of Item-->
-                      <img src="http://via.placeholder.com/200x200">
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-sm-8 col-sm-offset-2">
-                      {{ item.item.name }}
-                    </div>
-                    <div class="col-xs-2">
-                      {{ item.item.price | currency }}
-                    </div>
-                  </div>
-                  <div class="row description">
-                    <div class="col-xs-8 col-xs-offset-2">
-                      {{ item.item.description }}
-                    </div>
-                    <div class="col-xs-2">
-                      <!-- Add Item to Cart-->
-                      <button type="button" class="btn btn-default" ng-click="addToCart(item.item)" onclick="document.getElementById('myModal').style.display='block'" class="w3-button w3-black">
-                        <span class="glyphicon glyphicon-shopping-cart"></span>
-                      </button>
-                    </div>
-                  </div>
+                <div class="col-xs-2">
+                  <!-- Add Item to Cart-->
+                  <button type="button" class="btn btn-default" ng-click="addToCart(item.item)" onclick="document.getElementById('myModal').style.display='block'" class="w3-button w3-black">
+                    <span class="glyphicon glyphicon-shopping-cart"></span>
+                  </button>
                 </div>
               </div>
             </div>
           </div>
+
+          <!-- PIZZA -->
+          <div class="menu-section-title">PIZZA</div>
+          <div class="row justify-content-md-center">
+            <div class="col-md-4" ng-repeat="item in items | filter: 'Pizza'">
+              <div class="row" ng-show="item.item.show">
+                <div class="col-sm-8 col-sm-offset-2 item-header">
+                  {{ item.item.name }}
+                </div>
+                <div class="col-xs-2 item-header">
+                  {{ item.item.price | currency }}
+                </div>
+              </div>
+
+              <div class="row" ng-show="item.item.show">
+                <div class="col-xs-8 col-xs-offset-2 item-description">
+                  {{ item.item.description }}
+                </div>
+                <div class="col-xs-2">
+                  <!-- Add Item to Cart-->
+                  <button type="button" class="btn btn-default" ng-click="addToCart(item.item)" onclick="document.getElementById('myModal').style.display='block'" class="w3-button w3-black">
+                    <span class="glyphicon glyphicon-shopping-cart"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- DESSERT -->
+          <div class="menu-section-title">DESSERTS</div>
+          <div class="row justify-content-md-center">
+            <div class="col-md-4" ng-repeat="item in items | filter: 'Dessert'">
+              <div class="row" ng-show="item.item.show">
+                <div class="col-sm-8 col-sm-offset-2 item-header">
+                  {{ item.item.name }}
+                </div>
+                <div class="col-xs-2 item-header">
+                  {{ item.item.price | currency }}
+                </div>
+              </div>
+
+              <div class="row" ng-show="item.item.show">
+                <div class="col-xs-8 col-xs-offset-2 item-description">
+                  {{ item.item.description }}
+                </div>
+                <div class="col-xs-2">
+                  <!-- Add Item to Cart-->
+                  <button type="button" class="btn btn-default" ng-click="addToCart(item.item)" onclick="document.getElementById('myModal').style.display='block'" class="w3-button w3-black">
+                    <span class="glyphicon glyphicon-shopping-cart"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- BEVERAGES -->
+          <div class="menu-section-title">BEVERAGES</div>
+          <div class="row justify-content-md-center">
+            <div class="col-md-4" ng-repeat="item in items | filter: 'Beverage'">
+              <div class="row" ng-show="item.item.show">
+                <div class="col-sm-8 col-sm-offset-2 item-header">
+                  {{ item.item.name }}
+                </div>
+                <div class="col-xs-2 item-header">
+                  {{ item.item.price | currency }}
+                </div>
+              </div>
+
+              <div class="row" ng-show="item.item.show">
+                <div class="col-xs-8 col-xs-offset-2 item-header">
+                  {{ item.item.description }}
+                </div>
+                <div class="col-xs-2">
+                  <!-- Add Item to Cart-->
+                  <button type="button" class="btn btn-default" ng-click="addToCart(item.item)" onclick="document.getElementById('myModal').style.display='block'" class="w3-button w3-black">
+                    <span class="glyphicon glyphicon-shopping-cart"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
+    </div>
+
+
+    <!-- Adding Item to Order MODAL-->
+    <div id="myModal" class="w3-modal w3-animate-opacity">
+      <div class="w3-modal-content w3-animate-bottom w3-card-4">
+        <header class="w3-container w3-blue-grey">
+          <span onclick="document.getElementById('myModal').style.display='none'"
+          class="w3-button w3-large w3-display-topright">&times;</span>
+            <h2>Item</h2>
+        </header>
+        <div class="w3-container">
+          <p>{{ item.name }} {{ item.price | currency}}</p>
+          <p>{{ item.description }}</p>
+          <form>
+            <div class="form-group">
+              <label for="comment">Request</label>
+              <textarea class="form-control" rows="5" id="comment"></textarea>
+              <p>*You may be charged extra for certain requests</p>
+            </div>
+          </form>
+        </div>
+        <footer class="w3-container w3-blue-grey">
+          <button type="button" class="sub"><a class="mit" href="/cart">Submit</a></button>
+        </footer>
+      </div>
+    </div>
 </section>
