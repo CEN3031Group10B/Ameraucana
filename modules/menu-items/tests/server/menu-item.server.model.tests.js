@@ -7,6 +7,8 @@ var should = require('should'),
   mongoose = require('mongoose'),
   MenuItem = require('../../server/models/menu-items.server.model.js');
 
+
+mongoose.connect('mongodb://admin:password@ds161164.mlab.com:61164/ameraucana')
 /**
  * Globals
  */
