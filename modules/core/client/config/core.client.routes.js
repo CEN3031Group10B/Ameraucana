@@ -14,7 +14,7 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
     // Home state routing
     $stateProvider
       .state('home', {
-        url: '/',
+        url: '/home',
         templateUrl: 'modules/core/client/views/home.client.view.html'
       })
       .state('not-found', {
@@ -55,13 +55,6 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
       .state('cart', {
         url: '/cart',
         templateUrl: 'modules/core/client/views/cart.client.view.html',
-        data: {
-          ignoreState: true
-        }
-      })
-      .state('pay', {
-        url: '/pay',
-        templateUrl: 'modules/core/client/views/pay.client.view.html',
         data: {
           ignoreState: true
         }
