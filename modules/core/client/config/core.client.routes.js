@@ -59,6 +59,13 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
           ignoreState: true
         }
       })
+      .state('pay', {
+        url: '/pay',
+        templateUrl: 'modules/core/client/views/pay.client.view.html',
+        data: {
+          ignoreState: true
+        }
+      })
       .state('admin-panel', {
         url: '/admin-panel',
         templateUrl: 'modules/core/client/views/adminPanel.client.view.html',
