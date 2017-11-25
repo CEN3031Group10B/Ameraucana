@@ -52,6 +52,38 @@ describe('MenuItem CRUD tests', function() {
     });
   });
 
+  it('should be able to delete a menu item', function(done) {
+    agent.post('/api/menu-item').send(pizzaMenuItem).expect(200).end(function (err, res) {
+      agent.get('/api/menu-items').end(function(err, res) {
+        agent.delete(res.body[0]._id).expect(200).end(function(err, res) {
+          agent.get('/api/menu-items').end(function(err, res) {
+            done();
+          });
+        });
+      });
+    });
+  });
+
+  it('should be able to update a menu item', function(done) {
+    agent.post('/api/menu-item').send(pizzaMenuItem).expect(200).end(function (err, res) {
+      agent.get('/api/menu-items').end(function(err, res) {
+        var item = {
+          name: "BananaPizza",
+          description: "Fruity Pizza",
+          price: "12.00",
+          category: "Pizza",
+          show: true
+        }
+
+        agent.put(res.body[0]._id).send(item).expect(200).end(function(err, res) {
+          agent.get('/api/menu-items').end(function(err, res) {
+            done();
+          });
+        });
+      });
+    });
+  });
+
   afterEach(function (done) {
     MenuItem.remove().exec(done);
   });
