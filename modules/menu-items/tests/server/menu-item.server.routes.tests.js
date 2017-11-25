@@ -3,6 +3,9 @@
 /**
  * Module dependencies.
  */
+process.env.NODE_ENV = 'test';
+
+
 var should = require('should'),
   mongoose = require('mongoose'),
   path = require('path'),
@@ -67,7 +70,7 @@ describe('MenuItem CRUD tests', function() {
   it('should be able to update a menu item', function(done) {
     agent.post('/api/menu-item').send(pizzaMenuItem).expect(200).end(function (err, res) {
       agent.get('/api/menu-items').end(function(err, res) {
-        var item = {
+        var body = {
           name: "BananaPizza",
           description: "Fruity Pizza",
           price: "12.00",
@@ -75,10 +78,8 @@ describe('MenuItem CRUD tests', function() {
           show: true
         }
 
-        agent.put(res.body[0]._id).send(item).expect(200).end(function(err, res) {
-          agent.get('/api/menu-items').end(function(err, res) {
-            done();
-          });
+        agent.put(res.body[0]._id, body).expect(200).end(function(err, res) {
+          done();
         });
       });
     });
