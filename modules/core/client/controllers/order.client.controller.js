@@ -15,170 +15,107 @@ angular.module('core').controller('OrderController', ['$scope', 'Authentication'
       });
     };
 
-    $scope.addToCart = function(item){
-      console.log(item);
-      $scope.item = item;
+    //cart items
+    var cart = [];
 
+    $scope.addedToCart = function(item, count){
+      $scope.item = item;
+      $scope.count = count;
+      loadCart();
+      cart.push(item);
+      console.log(cart);
+      for(var i  = 0; i < count; i++){
+        if(cart[i].item === item){
+          cart[i].count += count;
+          console.log(count);
+          return;
+        }
+      }
+      saveCart();
     };
 
+    //list Items
+    function listCart(){
+      var copyCart = [];
+      for(var i in cart){
+        var item = cart[i];
+        var itemCopy = {};
+        copyCart.push(item);
+      }
+      return copyCart;
+    }
+
+    //remove item from the cart
+    $scope.remove = function(item){
+      $scope.item = item;
+      for(var i in cart){
+        if(cart[i].item === item){
+          cart[i].item --;
+          cart.splice(i, 1);
+          saveCart();
+          console.log(cart);
+          break;
+        }
+      }
+    };
+
+    console.log(cart);
+    //save cart
+    function saveCart(){
+      localStorage.setItem("Cart", JSON.stringify(cart));
+    }
+
+    //load items from cart
+    function loadCart(){
+      cart = JSON.parse(localStorage.getItem("Cart"));
+
+        console.log(listCart());
+    }
+
+    loadCart();
+
+    //display cart items
+    $scope.display = function(){
+
+      var displayCart = listCart();
+      var output = "";
+      for(var i = 0; i < displayCart.length; i++){
+        output += displayCart[i];
+      }
+      return output;
+    };
+
+    console.log(cart);
 
 
-    // //Modal for Adding Item
-    // $scope.showAddItem = function (){
-    //   $scope.addItem = true;
+
+    // $scope.addItemtoCart = function(item, count){
+    //   var cart = [];
+    //   var Item = function(item, count){
+    //     // this.name = name;
+    //     $scope.item = item;
+    //   };
+    //   for(var i in cart){
+    //     if(cart[i].item === item){
+    //       cart[i].count += count;
+    //       return;
+    //     }
+    //   }
+    //   var items = new Item(item, count);
+    //   cart.push(items);
+    //   console.log(cart);
     // };
-    // $scope.hideAddItem = function() {
-    //   $scope.addItem = false;
-    // };
 
-    // $scope.items = [
-    //   {
-    //     title: 'Marinated Olives',
-    //     description: '',
-    //     price: '$6',
-    //     option: '*Vegan'
-    //   },
-    //   {
-    //     title: 'Charcuterie Plate',
-    //     description: 'Ask Your Server For Daily Special',
-    //     price: '$11',
-    //     option: ''
-    //   },
-    //   {
-    //     title: 'Roasted Italian Sausage',
-    //     description: 'Italian Sausage, Eggplant Peperonata',
-    //     price: '$8',
-    //     option: ''
-    //   },
-    //   {
-    //     title: 'Greek Salad',
-    //     description: 'Romaine, House Vinaigrette, Thinly Sliced Red Onion, Olives, Cucumber, Feta',
-    //     price: '$6',
-    //     option: ''
-    //   },
-    //   {
-    //     title: 'Caesar Salad',
-    //     description: 'Romaine, Traditional Cesar Dressing, Sesame Bread Crumbs, Parmigiano Reggiano',
-    //     price: '$6',
-    //     option: ''
-    //   }
-    // ];
+
+    // $scope.cartItems = function(added){
+    //   var cart = [];
+    //   $scope.item = item;
+    //   items.push(added);
+    //   var JSONAddedItems = JSON.stringify(items);
+    //   localStorage.setItem('items', JSONAddedItems);
+    //   var addedItems = JSON.parse(localStorage.items);
     //
-    // $scope.pizzas = [
-    //   {
-    //     title: 'The Marge',
-    //     description: 'Bianco DiNapoli Crushed Tomatoes, Fior Di Latte, Basil, Olive Oil, Sea Salt',
-    //     price: '$12',
-    //     option: 'ADD: Pepperoni $4, Meatballs $4, White Anchovies $3, Olives $2'
-    //   },
-    //   {
-    //     title: 'The Spicy Pancetta',
-    //     description: 'Fior Di Latte, Thinly Sliced Pancetta, Basil, Crushed Red Pepper Flakes, Parmigiano, Reggiano, Local Honey',
-    //     price: '$16',
-    //     option: ''
-    //   },
-    //   {
-    //     title: 'Mortadella Vetri',
-    //     description: 'Thinly Sliced Mortadella, Fior Di Latte, Pistachio Pesto',
-    //     price: '$16',
-    //     option: ''
-    //   },
-    //   {
-    //     title: 'The Falco',
-    //     description: 'Blanco DiNapoli Crushed Tomatoes, Fior Di Latte, Parmigiano Reggiano, Thinly Sliced Red Onion, Pepperoni, Sesame Bread Crumbs',
-    //     price: '$16',
-    //     option: ''
-    //   },
-    //   {
-    //     title: 'Fontina Fungo',
-    //     description: 'Fontina, Portobello Mushrooms, Rosemary, Olive Oil, Sea Salt',
-    //     price: '$14',
-    //     option: 'ADD: Pancetta $4'
-    //   },
-    //   {
-    //     title: 'Fromage A Trois',
-    //     description: 'Fior Di Latte, Forfonzola, Parmigiano Reggiano, Thinly Sliced Red Onion, Oregano, Olive Oil',
-    //     price: '$14',
-    //     option: 'ADD: Pancetta $4 Add: Pepperoni $4'
-    //   },
-    //   {
-    //     title: 'Marinere',
-    //     description: 'Bianco DiNapoli Crushed Tomatoes, Sliced Garlic, Oregano, Olive Oil, Sea Salt',
-    //     price: '$10',
-    //     option: 'ADD: Olives $2, Red Onions $1, White Anchovies $3 *Vegan'
-    //   }
-    // ];
-    //
-    // $scope.desserts = [
-    //   {
-    //     title: 'Tiramisu',
-    //     description: '',
-    //     price: '$6',
-    //     option: ''
-    //   },
-    //   {
-    //     title: 'Dessert Special',
-    //     description: '',
-    //     price: '$6',
-    //     option: ''
-    //   }
-    // ];
-    //
-    // $scope.beverages = [
-    //   {
-    //     title: 'Mexican Coke',
-    //     description: '',
-    //     price: '$3',
-    //     option: ''
-    //   },
-    //   {
-    //     title: 'Diet Coke',
-    //     description: '',
-    //     price: '$1.5',
-    //     option: ''
-    //   },
-    //   {
-    //     title: 'San Pellegrino',
-    //     description: '',
-    //     price: '$2',
-    //     option: ''
-    //   },
-    //   {
-    //     title: 'Drip Coffee',
-    //     description: '',
-    //     price: '$2',
-    //     option: ''
-    //   },
-    //   {
-    //     title: 'La Croix',
-    //     description: '',
-    //     price: '$1.5',
-    //     option: ''
-    //   },
-    //   {
-    //     title: 'Opus Nitro Cold Brew Coffee',
-    //     description: '',
-    //     price: '$5',
-    //     option: ''
-    //   },
-    //   {
-    //     title: 'Miller High Life Bottles',
-    //     description: '',
-    //     price: '$3.5',
-    //     option: ''
-    //   },
-    //   {
-    //     title: 'Bell\'s Two Hearted Can',
-    //     description: '',
-    //     price: '$5',
-    //     option: ''
-    //   },
-    //   {
-    //     title: 'Maeloc Dry Cider Bottle',
-    //     description: '',
-    //     price: '$5',
-    //     option: ''
-    //   }
-    // ];
+    //   console.log(addedItems);
+    // };
   }
 ]);

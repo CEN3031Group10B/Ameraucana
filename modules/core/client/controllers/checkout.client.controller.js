@@ -4,5 +4,6 @@ angular.module('core').controller('CheckoutController', ['$scope', 'Authenticati
   function ($scope, Authentication) {
     // This provides Authentication context.
     $scope.authentication = Authentication;
+
   }
 ]);
