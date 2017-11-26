@@ -318,3 +318,55 @@ a.mit:hover{
   margin-top: 100px;
   z-index: 1001;
 }
+
+/*============+===========*/
+/*+++++ ADMIN STYLES +++++*/
+/*===========+============*/
+.admin-wrapper {
+  margin: auto;
+  width: 85%;
+}
+
+.admin-table {
+  margin-bottom: 5%;
+}
+
+.admin-section-title {
+    font-family: Cooper Black;
+    font-size: 25px;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-style: normal;
+    line-height: 1em;
+    text-decoration: none;
+    max-width: 100%;
+    display: inline-block;
+    box-sizing: border-box;
+    margin-bottom: 2%;
+    position: relative;
+    z-index: inherit;
+}
+
+.item-row {
+  width: 10%;
+}
+
+.description-row {
+  width: 60%;
+}
+
+.price-row {
+  width: 10%;
+}
+
+.edit-row {
+  width: 10%;
+}
+
+.delete-row {
+  width: 10%;
+}
+
+.hide-row {
+  width: 10%;
+}

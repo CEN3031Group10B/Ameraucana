@@ -48,14 +48,14 @@
         <div class="admin-wrapper" ng-init="getMenu()">
 
           <div class="admin-section-title">SMALL PLATES</div>
-          <table class="table table-striped">
+          <table class="table table-striped admin-table">
             <tr>
-              <th>Item</th>
-              <th>Description</th>
-              <th>Price</th>
-              <th>Edit</th>
-              <th>Delete</th>
-              <th>Hide</th>
+              <th class="item-row">Item</th>
+              <th class="description-row">Description</th>
+              <th class="price-row">Price</th>
+              <th class="edit-row">Edit</th>
+              <th class="delete-row">Delete</th>
+              <th class="hide-row">Hide</th>
             </tr>
             <tr ng-repeat="item in items | filter: 'Small Plate' | orderBy: 'name'">
               <td>{{item.name}}</td>
@@ -81,14 +81,14 @@
           </table>
 
           <div class="admin-section-title">PIZZA</div>
-          <table class="table table-striped">
+          <table class="table table-striped admin-table">
             <tr>
-              <th>Item</th>
-              <th>Description</th>
-              <th>Price</th>
-              <th>Edit</th>
-              <th>Delete</th>
-              <th>Hide</th>
+              <th class="item-row">Item</th>
+              <th class="description-row">Description</th>
+              <th class="price-row">Price</th>
+              <th class="edit-row">Edit</th>
+              <th class="delete-row">Delete</th>
+              <th class="hide-row">Hide</th>
             </tr>
             <tr ng-repeat="item in items | filter: 'Pizza' | orderBy: 'name'">
               <td>{{item.name}}</td>
@@ -114,14 +114,14 @@
           </table>
 
           <div class="admin-section-title">DESSERTS</div>
-          <table class="table table-striped">
+          <table class="table table-striped admin-table">
             <tr>
-              <th>Item</th>
-              <th>Description</th>
-              <th>Price</th>
-              <th>Edit</th>
-              <th>Delete</th>
-              <th>Hide</th>
+              <th class="item-row">Item</th>
+              <th class="description-row">Description</th>
+              <th class="price-row">Price</th>
+              <th class="edit-row">Edit</th>
+              <th class="delete-row">Delete</th>
+              <th class="hide-row">Hide</th>
             </tr>
             <tr ng-repeat="item in items | filter: 'Dessert' | orderBy: 'name'">
               <td>{{item.name}}</td>
@@ -147,14 +147,14 @@
           </table>
 
           <div class="admin-section-title">BEVERAGES</div>
-          <table class="table table-striped">
+          <table class="table table-striped admin-table">
             <tr>
-              <th>Item</th>
-              <th>Description</th>
-              <th>Price</th>
-              <th>Edit</th>
-              <th>Delete</th>
-              <th>Hide</th>
+              <th class="item-row">Item</th>
+              <th class="description-row">Description</th>
+              <th class="price-row">Price</th>
+              <th class="edit-row">Edit</th>
+              <th class="delete-row">Delete</th>
+              <th class="hide-row">Hide</th>
             </tr>
             <tr ng-repeat="item in items | filter: 'Beverage' | orderBy: 'name'">
               <td>{{item.name}}</td>
