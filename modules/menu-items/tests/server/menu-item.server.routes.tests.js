@@ -15,7 +15,7 @@ var should = require('should'),
   User = require('../../../users/server/models/user.server.model.js');
 
 
-mongoose.connect('mongodb://admin:password@ds161164.mlab.com:61164/ameraucana');
+mongoose.connect('mongodb://admin:password@ds157740.mlab.com:57740/db-test');
 /**
  * Globals
  */
