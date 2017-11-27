@@ -50,13 +50,14 @@ angular.module('core').controller('OrderController', ['$scope', 'Authentication'
       }
       return copyCart;
     }
+    console.log(cart);
 
     //remove item from the cart
-    $scope.remove = function(item){
-      $scope.item = item;
+    $scope.remove = function(name){
+      $scope.name = name;
       for(var i in cart){
-        if(cart[i].item === item){
-          cart[i].item --;
+        if(cart[i].name === name){
+          cart[i].name --;
           cart.splice(i, 1);
           saveCart();
           console.log(cart);
@@ -65,10 +66,10 @@ angular.module('core').controller('OrderController', ['$scope', 'Authentication'
       }
     };
 
-    console.log(cart);
     //save cart
     function saveCart(){
       localStorage.setItem("Cart", JSON.stringify(cart));
+
     }
 
     //load items from cart
@@ -89,10 +90,9 @@ angular.module('core').controller('OrderController', ['$scope', 'Authentication'
       for(var i = 0; i < displayCart.length; i++){
         output += displayCart[i];
       }
-      
+
       return output;
     };
-
     console.log(cart);
     // function display(){
     //
