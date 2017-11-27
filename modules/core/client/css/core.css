@@ -1,51 +1,16 @@
 .content {
-  margin-top: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
+  /* Values of 0 doesn't need a unit specified */
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
 }
 
-.container{
-  width: 50%;
-}
-
-.undecorated-link:hover {
-  text-decoration: none;
-}
-[ng\:cloak],
-[ng-cloak],
-[x-ng-cloak],
-.ng-cloak,
-.x-ng-cloak {
+[ng\:cloak], [ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
 }
-.header-profile-image {
-  opacity: 0.8;
-  height: 28px;
-  width: 28px;
-  border-radius: 50%;
-  margin-right: 5px;
-}
-.open .header-profile-image,
-a:hover .header-profile-image {
-  opacity: 1;
-}
-.user-header-dropdown-toggle {
-  padding-top: 0 !important;
-  padding-bottom: 11px !important;
-}
-.error-text {
-  display: none;
-}
-.has-error .help-block.error-text {
-  display: block;
-}
-.has-error .help-inline.error-text {
-  display: inline;
-}
 
-
-/*NAV-BAR-*/
-.navbar-nav.navbar-right li a{
+/* navbar styles */
+.navbar-nav.navbar-right li a {
   align-items: flex-end;
   margin: 0;
   padding-top: 20px;
@@ -56,40 +21,22 @@ a:hover .header-profile-image {
   color: white;
 }
 
-.navbar-nav.navbar-right li a:hover{
+.navbar-nav.navbar-right li a:hover {
   color: white;
   opacity: .75;
   text-decoration: none;
   background-color: none;
 }
 
-.navbar-header, .navbar-inverse{
+.navbar-header, .navbar-inverse {
   height: 150px;
   background: none;
   border: none;
   overflow: auto;
 }
 
-/*MENU STYLES*/
-@font-face {
-      font-family: Futura;
-      src: url(Futura.woff);
-      font-family: Copper Black;
-      src: url(Copper_Black.woff);
-    }
-.menu-section-title{
-  text-align: center;
-  font-family: Cooper Black;
-  font-weight: 800;
-  font-size: 40px;
-  text-transform: uppercase;
-  font-style: normal;
-  letter-spacing: .015em;
-  line-height: 2.25em;
-  text-decoration: none;
-  color: #333;
+/* menu styles */
 
-}
 .menu-wrapper {
     font-family: futura-pt;
     font-weight: 300;
@@ -98,25 +45,22 @@ a:hover .header-profile-image {
     font-style: normal;
     letter-spacing: .015em;
     text-decoration: none;
-    margin: 0 0 .5em;
+    margin: auto;
     line-height: 1.8em;
     color: #333;
     padding: 100px 9%;
+    width: 90%;
 }
-.justify-content-md-center{
+
+.justify-content-md-center {
   color: #a3a3a3;
   font-family: Futura;
   font-weight: 300;
   font-size: 20px;
-
 }
-.menu-item-options{
-  font-size: .8em;
-  font-style: italic;
 
-}
-/*TEXT and parallax*/
-p#title{
+/* text and parallax */
+.page-title {
   position: relative;
   text-align: center;
   font-family: Cooper Black;
@@ -124,11 +68,10 @@ p#title{
   font-weight: 900;
   color: white;
 }
-.parallax{
-/* Set a specific height */
+
+.parallax {
   height: 230px;
   padding: 0;
-/* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: bottom;
   background-repeat: no-repeat;
@@ -137,7 +80,7 @@ p#title{
   opacity: .90;
 }
 
-.glyphicon-shopping-cart{
+.glyphicon-shopping-cart {
   padding-top: .2em;
   font-size: 1.1em;
 }
@@ -149,7 +92,6 @@ p#title{
   height: auto;
   position: absolute;
   transform: translate3d(0px, 0px, 0px);
-  opacity: .78;
   border: 0;
   z-index: -1;
 }
@@ -163,8 +105,8 @@ p#title{
   opacity: 1;
   position: absolute;
   z-index: inherit;
-
 }
+
 .image{
   max-width: 68%;
   height: auto;
@@ -194,17 +136,16 @@ li {
   text-transform: uppercase;
   color: white;
 }
-.title-wrapper {
 
+.title-wrapper {
   display: flex;
   justify-content: center;
   left: 0;
   width: 100%;
   height: auto;
-
 }
 
-h1.page-title{
+h1.page-title {
     /*font-family: "Source Sans Pro",sans-serif;*/
     font-weight: 700;
     font-family: "cooper-black-std";
@@ -247,32 +188,6 @@ h1{
 .container {
     padding: 0;
     width: 100%;
-}
-
-/*.menu-item {
-    display: inline;
-    font-family: Futura;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 18px;
-    letter-spacing: .015em;
-    line-height: 1.8em;
-    color: #a3a3a3;
-    margin: 1em;
-    text-decoration: none;
-}*/
-
-.col {
-  height: 125px;
-  float: left;
-}
-
-.col.half {
-  width: 50%;
-  display: table-cell;
-  vertical-align: bottom;
-  padding-top: 20px;
-  padding-left: 80px;
 }
 
 img.logo {
@@ -359,25 +274,100 @@ a.mit:hover{
   text-decoration: none;
 
 }
-.col-sm-8{
-  font-size: 20px;
+
+/*=======================*/
+/*+++++ MENU STYLES +++++*/
+/*=======================*/
+.menu-section-title {
   color: #333;
-  font-family: futura-pt;
+  font-family: Cooper Black;
+  font-size: 40px;
   font-style: normal;
-  font-weight: 300;
-}
-.col-xs-2{
-  font-size: 22px;
-  color: #333;
-  font-family: futura-pt;
-  font-style: normal;
-  font-weight: 300;
-}
-.description{
-  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: .015em;
+  line-height: 2.25em;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
-#myModal{
+.item-header {
+  color: Black;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  text-transform: none;
+  font-style: normal;
+  letter-spacing: .015em;
+  text-decoration: none;
+  margin-top: 1em;
+  line-height: 1.8em;
+}
+
+.item-description {
+  color: #a3a3a3;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  font-style: normal;
+  letter-spacing: .015em;
+}
+
+.myModal {
   margin-top: 100px;
   z-index: 1001;
+}
+
+/*============+===========*/
+/*+++++ ADMIN STYLES +++++*/
+/*===========+============*/
+.admin-wrapper {
+  margin: auto;
+  width: 85%;
+}
+
+.admin-table {
+  margin-bottom: 5%;
+}
+
+.admin-section-title {
+    font-family: Cooper Black;
+    font-size: 25px;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-style: normal;
+    line-height: 1em;
+    text-decoration: none;
+    max-width: 100%;
+    display: inline-block;
+    box-sizing: border-box;
+    margin-bottom: 2%;
+    position: relative;
+    z-index: inherit;
+}
+
+.item-row {
+  width: 10%;
+}
+
+.description-row {
+  width: 60%;
+}
+
+.price-row {
+  width: 10%;
+}
+
+.edit-row {
+  width: 10%;
+}
+
+.delete-row {
+  width: 10%;
+}
+
+.hide-row {
+  width: 10%;
 }
