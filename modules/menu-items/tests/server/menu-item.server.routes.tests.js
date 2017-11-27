@@ -22,10 +22,10 @@ mongoose.connect('mongodb://admin:password@ds157740.mlab.com:57740/db-test');
 var pizzaMenuItem, menuItem_id, app, agent;
 
 pizzaMenuItem = {
-  name: "Pizza with Olives",
-  description: "Yummy slice of zza",
-  price: "1.89",
-  category: "Food",
+  name: 'Pizza with Olives',
+  description: 'Yummy slice of zza',
+  price: '1.89',
+  category: 'Food',
   show: true
 };
 
@@ -71,12 +71,12 @@ describe('MenuItem CRUD tests', function() {
     agent.post('/api/menu-item').send(pizzaMenuItem).expect(200).end(function (err, res) {
       agent.get('/api/menu-items').end(function(err, res) {
         var body = {
-          name: "BananaPizza",
-          description: "Fruity Pizza",
-          price: "12.00",
-          category: "Pizza",
+          name: 'BananaPizza',
+          description: 'Fruity Pizza',
+          price: '12.00',
+          category: 'Pizza',
           show: true
-        }
+        };
 
         agent.put(res.body[0]._id, body).expect(200).end(function(err, res) {
           done();

@@ -15,10 +15,10 @@ mongoose.connect('mongodb://admin:password@ds157740.mlab.com:57740/db-test');
 var pizzaMenuItem, menuItem_id;
 
 pizzaMenuItem = {
-  name: "PepZa",
-  description: "Yummy slice of zza",
-  price: "1.89",
-  category: "Food",
+  name: 'PepZa',
+  description: 'Yummy slice of zza',
+  price: '1.89',
+  category: 'Food',
   show: true
 };
 

@@ -143,7 +143,7 @@ angular.module('core').controller('adminPanelController', ['$scope', '$statePara
         show: true
       };
 
-      console.log("ITEM - LINE 146");
+      console.log('ITEM - LINE 146');
       console.log(item);
 
       $http.put('http://localhost:3000/' + item._id, item).success(function(response) {
