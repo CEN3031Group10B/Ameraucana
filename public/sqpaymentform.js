@@ -228,7 +228,4 @@ var chargeCardWithNonce = function(nonce) {
       }
   }
   http.send(params);
-//   setTimeout(function () {
-//     window.location.href = "/home"; //will redirect
-//  }, 2000); //will call the function after 2 secs.
 }

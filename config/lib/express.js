@@ -93,12 +93,10 @@ module.exports.initMiddleware = function (app) {
   app.use(cookieParser());
   app.use(flash());
 
-  // temp 11-25
+  // Added Square Charge API to express middleware
   app.post('/charges/charge_card', function(req,res,next){
-    // SANDBOX IDs FOR TESTING. CHANGE TO TAKE REAL PAYMENTS
     var applicationId = "sq0idp-r34HdSnJVWqMweH3dnJrGA";
     var accessToken = "sq0atp-RdSPeJa5qDMea0exHOjeRQ";
-    //var locationId = "3WFRS6WCFCHAR";
     var locationId;
     // url that processes the payment
     var base_url = "https://connect.squareup.com/v2";
@@ -144,6 +142,7 @@ module.exports.initMiddleware = function (app) {
     });
   
   });
+  // End of Square Charge API
 
 };
 

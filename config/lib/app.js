@@ -9,9 +9,8 @@ var config = require('../config'),
   chalk = require('chalk'),
   seed = require('./seed');
 
-//
+// used to connect to Square API
 var unirest = require('unirest');
-//
 
 function seedDB() {
   if (config.seedDB && config.seedDB.seed) {
