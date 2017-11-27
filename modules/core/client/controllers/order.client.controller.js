@@ -82,22 +82,34 @@ angular.module('core').controller('OrderController', ['$scope', 'Authentication'
 
 
     //display cart items
-    function display(){
+    $scope.display = function(){
 
       var displayCart = listCart();
-      var output = " ";
-      var price = " ";
+      var output = "";
       for(var i = 0; i < displayCart.length; i++){
-        output += displayCart[i].name;
-        price += displayCart[i].price;
+        output += displayCart[i];
       }
-      document.getElementById("item5").innerHTML = output;
-      console.log(output, price);
-    }
-
-    display();
+      
+      return output;
+    };
 
     console.log(cart);
+    // function display(){
+    //
+    //   var displayCart = listCart();
+    //   var output = " ";
+    //   var price = " ";
+    //   for(var i = 0; i < displayCart.length; i++){
+    //     output += displayCart[i].name;
+    //     price += displayCart[i].price;
+    //   }
+    //   document.getElementById("item5").innerHTML = output;
+    //   console.log(output, price);
+    // }
+    //
+    // display();
+    //
+    // console.log(cart);
 
 
 
