@@ -20,7 +20,6 @@ var config = require('../config'),
   path = require('path');
 
   //
-  //var router = express.Router();
   var unirest = require('unirest');
   //
   
@@ -96,9 +95,12 @@ module.exports.initMiddleware = function (app) {
 
   // temp 11-25
   app.post('/charges/charge_card', function(req,res,next){
-    var applicationId = "sandbox-sq0idp-r34HdSnJVWqMweH3dnJrGA";
-    var accessToken = "sandbox-sq0atb-JcdJNHyiKmpmgkaDtb74hg"
-    var locationId = "3WFRS6WCFCHAR";
+    // SANDBOX IDs FOR TESTING. CHANGE TO TAKE REAL PAYMENTS
+    var applicationId = "sq0idp-r34HdSnJVWqMweH3dnJrGA";
+    var accessToken = "sq0atp-RdSPeJa5qDMea0exHOjeRQ";
+    //var locationId = "3WFRS6WCFCHAR";
+    var locationId;
+    // url that processes the payment
     var base_url = "https://connect.squareup.com/v2";
     var product_cost = {"001": 100, "002": 200, "003": 300};
 
@@ -114,9 +116,7 @@ module.exports.initMiddleware = function (app) {
     // Make sure amount is a valid integer
     var amount = product_cost[request_params.product_id];
   
-    // To learn more about splitting transactions with additional recipients,
-    // see the Transactions API documentation on our [developer site]
-    // (https://docs.connect.squareup.com/payments/transactions/overview#mpt-overview).
+    // information the Square REST API needs to process a payment
     var request_body = {
       card_nonce: request_params.nonce,
       amount_money: {
@@ -127,8 +127,6 @@ module.exports.initMiddleware = function (app) {
     };
   
     locationId = request_params.location_id;
-  
-    // UPDATE SANDBOX TO BE APPLICATION ACCESS TOKEN
   
     unirest.post(base_url + '/locations/' + locationId + "/transactions")
     .headers({

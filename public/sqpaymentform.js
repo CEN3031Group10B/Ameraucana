@@ -1,6 +1,7 @@
 'use strict';
+// SANDBOX IDs FOR TESTING. CHANGE TO TAKE REAL PAYMENTS 
 // Set the application ID
-var applicationId = "sandbox-sq0idp-r34HdSnJVWqMweH3dnJrGA";
+var applicationId = "sq0idp-r34HdSnJVWqMweH3dnJrGA";
 
 // Set the location ID
 var locationId = "3WFRS6WCFCHAR";
@@ -223,9 +224,11 @@ var chargeCardWithNonce = function(nonce) {
             error_html += "<li> " + data.errors[i].detail + " </li>";
           }
           document.getElementById("card-errors").innerHTML = error_html;
-          //document.getElementById('submit').disabled = false;
         }
       }
   }
   http.send(params);
+//   setTimeout(function () {
+//     window.location.href = "/home"; //will redirect
+//  }, 2000); //will call the function after 2 secs.
 }
