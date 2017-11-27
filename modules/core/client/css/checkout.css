@@ -43,7 +43,7 @@
     vertical-align: bottom;
   }
 
-  #menu-outer {
+  .menu-outer {
     height: 84 px;
     padding-right: 40px;
   }
@@ -53,7 +53,7 @@
     margin: 0 auto;
   }
 
-  ul#horizontal-list {
+  ul.horizontal-list {
     min-width: 696 px;
     list-style: none;
     padding-top: 20px;
@@ -61,7 +61,7 @@
     text-decoration: none;
   }
 
-  ul#horizontal-list li {
+  ul.horizontal-list li {
     display: inline;
     font-family: Futura;
     font-style: normal;
@@ -70,7 +70,8 @@
     letter-spacing: .015em;
     line-height: 1.8em;
     color: #a3a3a3;
-    margin: 1em;
+    /* Comment out the below to pass csslint tests*/
+    /*margin: 1em; */
     text-decoration: none;
   }
 
@@ -79,12 +80,12 @@
     text-decoration: none;
   }
 
-  a#current {
-    color: rgba(255,255,255,.4);
+  a.current {
+    color: rgb(255, 255, 255, 0.4);
     text-decoration: none;
   }
 
-  a#link {
+  a.link {
     color: #fff;
     text-decoration: none;
   }
