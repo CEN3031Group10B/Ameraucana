@@ -96,9 +96,9 @@ exports.deleteMenuItem = function(req, res) {
 
 exports.editMenuItem = function(req, res){
 
-  console.log("EDIT MENU ITEM - LINE 99\n");
+  console.log('EDIT MENU ITEM - LINE 99\n');
   console.log(req);
-  console.log("\n");
+  console.log('\n');
 
   var item = req.item;
 
@@ -108,9 +108,9 @@ exports.editMenuItem = function(req, res){
   item.category = req.body.category;
   item.show = req.body.show;
 
-  console.log("LINE 111\n");
+  console.log('LINE 111\n');
   console.log(item);
-  console.log("\n");
+  console.log('\n');
 
   item.save(function(err) {
     if (err) {

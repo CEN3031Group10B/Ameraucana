@@ -144,7 +144,7 @@ angular.module('core').controller('adminPanelController', ['$scope', '$statePara
         show: item.show
       };
 
-      console.log("ITEM - LINE 146");
+      console.log('ITEM - LINE 146');
       console.log(item);
 
       $http.put('http://localhost:3000/' + item._id, menuItem).success(function(response) {

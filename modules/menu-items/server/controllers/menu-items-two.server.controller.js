@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 var mongoose = require('mongoose');
 var Item = require('../models/menu-items.server.model.js');
 var User = require('../../../users/server/models/user.server.model.js');
@@ -44,7 +44,7 @@ exports.getMenuItems = function(req, res) {
         count: count
       });
     });
-    console.log("MENU ITEMS TWO");
+    console.log('MENU ITEMS TWO');
     res.json(items);
     console.log(itemsAnalytics);
   });
@@ -88,7 +88,7 @@ exports.deleteMenuItems = function(req, res) {
         count: count
       });
     });
-    console.log("MENU ITEMS TWO");
+    console.log('MENU ITEMS TWO');
     res.json(items);
     console.log(itemsAnalytics);
   });
