@@ -117,13 +117,18 @@ var paymentForm = new SqPaymentForm({
         return;
       }
 
-      alert('Nonce received: ' + nonce); /* FOR TESTING ONLY */
+      chargeCardWithNonce(nonce);
 
+
+      //alert('Nonce received: ' + nonce); /* FOR TESTING ONLY */
+
+      // temp comment out 11-25
       // Assign the nonce value to the hidden form field
-      document.getElementById('card-nonce').value = nonce;
+      //document.getElementById('card-nonce').value = nonce;
 
+      //temp comment out 11-25
       // POST the nonce form to the payment processing page
-      document.getElementById('nonce-form').submit();
+      //document.getElementById('nonce-form').submit();
 
     },
 
@@ -133,6 +138,9 @@ var paymentForm = new SqPaymentForm({
      */
     unsupportedBrowserDetected: function () {
       /* PROVIDE FEEDBACK TO SITE VISITORS */
+      alert('Unsupported Browser Detected');
+
+      return;
     },
 
     /*
@@ -171,3 +179,53 @@ var paymentForm = new SqPaymentForm({
     }
   }
 });
+
+///////
+var chargeCardWithNonce = function(nonce) {
+  var product_id = document.getElementById('product_id').value;
+  var name = document.getElementById('name').value;
+  var email = document.getElementById('email').value;
+  var street_address_1 = document.getElementById('street_address_1').value;
+  var street_address_2 = document.getElementById('street_address_2').value;
+  var city = document.getElementById('city').value;
+  var state = document.getElementById('state').value;
+  var zip = document.getElementById('zip').value;
+  
+  var http = new XMLHttpRequest();
+  var url = "/charges/charge_card";
+  var params = "location_id=" + locationId
+  + "&product_id=" + product_id 
+  + "&name=" + name 
+  + "&email=" + email 
+  + "&nonce=" + nonce
+  + "&street_address_1=" + street_address_1
+  + "&street_address_2=" + street_address_2
+  + "&city=" + city
+  + "&state=" + state
+  + "&zip=" + zip;
+
+  http.open("POST", url, true);
+
+  //Send the proper header information along with the request
+  http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  http.setRequestHeader("X-CSRF-Token", "<%= form_authenticity_token %>");
+
+  http.onreadystatechange = function() {//Call a function when the state changes.
+      if(http.readyState == 4 && http.status == 200) {
+        var data = JSON.parse(http.responseText)
+        if (data.status == 200) {
+          document.getElementById("successNotification").style.display = "block";
+          document.getElementById("nonce-form").style.display = "none";
+          window.scrollTo(0, 0);
+        }else if (data.status == 400){
+          var error_html = ""
+          for (var i =0; i < data.errors.length; i++){
+            error_html += "<li> " + data.errors[i].detail + " </li>";
+          }
+          document.getElementById("card-errors").innerHTML = error_html;
+          //document.getElementById('submit').disabled = false;
+        }
+      }
+  }
+  http.send(params);
+}

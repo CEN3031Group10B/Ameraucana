@@ -18,6 +18,11 @@ var config = require('../config'),
   flash = require('connect-flash'),
   consolidate = require('consolidate'),
   path = require('path');
+
+  //
+  //var router = express.Router();
+  var unirest = require('unirest');
+  //
   
 /**
  * Initialize local variables
@@ -88,6 +93,60 @@ module.exports.initMiddleware = function (app) {
   // Add the cookie parser and flash middleware
   app.use(cookieParser());
   app.use(flash());
+
+  // temp 11-25
+  app.post('/charges/charge_card', function(req,res,next){
+    var applicationId = "sandbox-sq0idp-r34HdSnJVWqMweH3dnJrGA";
+    var accessToken = "sandbox-sq0atb-JcdJNHyiKmpmgkaDtb74hg"
+    var locationId = "3WFRS6WCFCHAR";
+    var base_url = "https://connect.squareup.com/v2";
+    var product_cost = {"001": 100, "002": 200, "003": 300};
+
+    var request_params = req.body;
+  
+    var token = require('crypto').randomBytes(64).toString('hex');
+  
+    // Check if product exists
+    if (!product_cost.hasOwnProperty(request_params.product_id)) {
+      return res.json({status: 400, errors: [{"detail": "Product Unavailable"}] });
+    }
+  
+    // Make sure amount is a valid integer
+    var amount = product_cost[request_params.product_id];
+  
+    // To learn more about splitting transactions with additional recipients,
+    // see the Transactions API documentation on our [developer site]
+    // (https://docs.connect.squareup.com/payments/transactions/overview#mpt-overview).
+    var request_body = {
+      card_nonce: request_params.nonce,
+      amount_money: {
+        amount: amount,
+        currency: 'USD'
+      },
+      idempotency_key: token
+    };
+  
+    locationId = request_params.location_id;
+  
+    // UPDATE SANDBOX TO BE APPLICATION ACCESS TOKEN
+  
+    unirest.post(base_url + '/locations/' + locationId + "/transactions")
+    .headers({
+      'Authorization': 'Bearer ' + accessToken,
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    })
+    .send(request_body)
+    .end(function(response){
+      if (response.body.errors){
+        res.json({status: 400, errors: response.body.errors});
+      }else{
+        res.json({status: 200});
+      }
+    });
+  
+  });
+
 };
 
 /**

@@ -113,6 +113,15 @@
     font-weight: bold;
   }
 
+  #successNotification{
+    margin: 0;
+    text-align: center;
+    background-image: linear-gradient(-1deg, #72E07B 0%, #56FBD2 100%);
+    border-radius: 4px;
+    padding: 25% 30%;
+    color: white;
+    font-size: 32px;
+  }
 /* END OF SQUARE STUFF */
 
   .content {
@@ -120,12 +129,19 @@
     margin-left: 0px;
     margin-right: 0px;
   }
-  
+
   [ng\:cloak], [ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
     display: none !important;
   }
   
   /* navbar styles */
+
+  .navbar-nav.navbar-right {
+    padding: 0;
+    margin: 0;
+    width: 100;
+  }
+
   .navbar-nav.navbar-right li a {
     align-items: flex-end;
     margin: 0;
@@ -135,6 +151,7 @@
     line-height: 72px;
     height: 72px;
     color: white;
+    text-align: right;
   }
   
   .navbar-nav.navbar-right li a:hover {
@@ -230,9 +247,27 @@
   
   }
   .col{
-    padding-top: 370px;
-  
+    padding-top: 0px;
+    /* padding-top: 370px; */
   }
+
+  .col.left.half {
+    width: 50%;
+    display: table-cell;
+    vertical-align: bottom;
+    padding-top: 20px;
+    padding-left: 80px;
+    padding-bottom: 20px;
+}
+
+.col.right.half {
+  width: 50%;
+  display: table-cell;
+  vertical-align: bottom;
+  padding-top: 20px;
+  text-align: right;
+}
+
   
   u1 {
     list-style-type: none;
@@ -434,5 +469,10 @@
   #myModal {
     margin-top: 100px;
     z-index: 1001;
+  }
+
+  body {
+    padding: 0px;
+    margin: 0px;
   }
   
