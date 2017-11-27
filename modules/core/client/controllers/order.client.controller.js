@@ -16,10 +16,89 @@ angular.module('core').controller('OrderController', ['$scope', 'Authentication'
     };
 
     $scope.addToCart = function(item){
-      console.log(item);
+      //console.log(item);
       $scope.item = item;
 
     };
+
+    //cart items
+    var cart = [];
+
+    $scope.addedToCart = function(item, count){
+      $scope.item = item;
+      $scope.count = count;
+      //loadCart();
+      cart.push(item);
+      console.log(cart);
+      for(var i  = 0; i < count; i++){
+        if(cart[i].item === item){
+          cart[i].count += count;
+          console.log(count);
+          return;
+        }
+      }
+      saveCart();
+    };
+
+    //list Items
+    function listCart(){
+      var copyCart = [];
+      for(var i in cart){
+        var item = cart[i];
+        var itemCopy = {};
+        copyCart.push(item);
+      }
+      return copyCart;
+    }
+
+    //remove item from the cart
+    $scope.remove = function(item){
+      $scope.item = item;
+      for(var i in cart){
+        if(cart[i].item === item){
+          cart[i].item --;
+          cart.splice(i, 1);
+          saveCart();
+          console.log(cart);
+          break;
+        }
+      }
+    };
+
+    console.log(cart);
+    //save cart
+    function saveCart(){
+      localStorage.setItem("Cart", JSON.stringify(cart));
+    }
+
+    //load items from cart
+    function loadCart(){
+      cart = JSON.parse(localStorage.getItem("Cart"));
+
+        console.log(listCart());
+    }
+
+    loadCart();
+
+
+    //display cart items
+    function display(){
+
+      var displayCart = listCart();
+      var output = " ";
+      var price = " ";
+      for(var i = 0; i < displayCart.length; i++){
+        output += displayCart[i].name;
+        price += displayCart[i].price;
+      }
+      document.getElementById("item5").innerHTML = output;
+      console.log(output, price);
+    }
+
+    display();
+
+    console.log(cart);
+
 
 
 

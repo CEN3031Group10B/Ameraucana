@@ -43,7 +43,7 @@
                 </div>
                 <div class="col-xs-2">
                   <!-- Add Item to Cart-->
-                  <button type="button" class="btn btn-default" ng-click="addToCart(item.item)" onclick="document.getElementById('myModal').style.display='block'" class="w3-button w3-black">
+                  <button type="button" class="btn btn-default" ng-click="addToCart(item)" onclick="document.getElementById('myModal').style.display='block'" class="w3-button w3-black">
                     <span class="glyphicon glyphicon-shopping-cart"></span>
                   </button>
                 </div>
@@ -70,7 +70,7 @@
                 </div>
                 <div class="col-xs-2">
                   <!-- Add Item to Cart-->
-                  <button type="button" class="btn btn-default" ng-click="addToCart(item.item)" onclick="document.getElementById('myModal').style.display='block'" class="w3-button w3-black">
+                  <button type="button" class="btn btn-default" ng-click="addToCart(item)" onclick="document.getElementById('myModal').style.display='block'" class="w3-button w3-black">
                     <span class="glyphicon glyphicon-shopping-cart"></span>
                   </button>
                 </div>
@@ -97,7 +97,7 @@
                 </div>
                 <div class="col-xs-2">
                   <!-- Add Item to Cart-->
-                  <button type="button" class="btn btn-default" ng-click="addToCart(item.item)" onclick="document.getElementById('myModal').style.display='block'" class="w3-button w3-black">
+                  <button type="button" class="btn btn-default" ng-click="addToCart(item)" onclick="document.getElementById('myModal').style.display='block'" class="w3-button w3-black">
                     <span class="glyphicon glyphicon-shopping-cart"></span>
                   </button>
                 </div>
@@ -124,7 +124,7 @@
                 </div>
                 <div class="col-xs-2">
                   <!-- Add Item to Cart-->
-                  <button type="button" class="btn btn-default" ng-click="addToCart(item.item)" onclick="document.getElementById('myModal').style.display='block'" class="w3-button w3-black">
+                  <button type="button" class="btn btn-default" ng-click="addToCart(item)" onclick="document.getElementById('myModal').style.display='block'" class="w3-button w3-black">
                     <span class="glyphicon glyphicon-shopping-cart"></span>
                   </button>
                 </div>
@@ -146,8 +146,8 @@
             <h2>Item</h2>
         </header>
         <div class="w3-container">
-          <p>{{ item.name }} {{ item.price | currency}}</p>
-          <p>{{ item.description }}</p>
+          <p>{{ item.item.name }} {{ item.item.price | currency}}</p>
+          <p>{{ item.item.description }}</p>
           <form>
             <div class="form-group">
               <label for="comment">Request</label>
@@ -157,7 +157,8 @@
           </form>
         </div>
         <footer class="w3-container w3-blue-grey">
-          <button type="button" class="sub"><a class="mit" href="/cart">Submit</a></button>
+          <button type="button" class="sub"><a class="mit" href="/cart">Go to Cart</a></button>
+          <button type="button" class="sub" ng-click = "addedToCart(item)" onclick="document.getElementById('myModal').style.display='none'"><a class="mit" >Add to Cart</a></button>
         </footer>
       </div>
     </div>

@@ -1,8 +1,15 @@
-<div ng-controller="CartController">
+<div ng-controller="OrderController">
   <div class="well text-center"><ngcart-summary></ngcart-summary></div>
   <div class="row text-center">
-    <div class="col-xs-6 col-sm-3">
-      <img src="https://placehold.it/262x150" alt="image" />
+    <ul>
+      <p id = "item5">  </p>
+      <button type="button" class="btn btn-default" ng-click="remove()" onclick="document.getElementById('myModal').style.display='block'" class="w3-button w3-black">
+        <span class="glyphicon glyphicon-shopping-cart"></span>
+    </ul>
+
+    <div class="col-xs-6 col-sm-3" >
+
+      <img src="https://placehold.it/262x150" alt="image"/>
       <h4>My Item #1</h4>
       <p> $10.99</p>
       <ngcart-addtocart id="item1" name="My Item #1" price="10.99" quantity="1" quantity-max="5">Update Quantity</ngcart-addtocart>
