@@ -80,7 +80,7 @@ exports.signin = function (req, res, next) {
  */
 exports.signout = function (req, res) {
   req.logout();
-  res.redirect('/');
+  res.redirect('/home');
 };
 
 /**
@@ -118,7 +118,7 @@ exports.oauthCallback = function (strategy) {
         if (err) {
           return res.redirect('/authentication/signup');
         }
-        return res.redirect('http://localhost:3000/');
+        return res.redirect('http://localhost:3000/order');
       });
     })(req, res, next);
   };
