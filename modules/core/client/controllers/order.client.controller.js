@@ -52,13 +52,13 @@ angular.module('core').controller('OrderController', ['$scope', 'Authentication'
 
     //Save Cart Items
     function saveCart(){
-      localStorage.setItem("Cart", JSON.stringify(cart));
+      localStorage.setItem('Cart', JSON.stringify(cart));
 
     }
 
     //Load Items from Cart
     function loadCart(){
-      return JSON.parse(localStorage.getItem("Cart"));
+      return JSON.parse(localStorage.getItem('Cart'));
 
     }
 
@@ -78,6 +78,7 @@ angular.module('core').controller('OrderController', ['$scope', 'Authentication'
         sum += (parseFloat($scope.Cart[i].item.price));
       }
 
+      localStorage.setItem('payment', sum);
       console.log(sum);
       return sum;
     };

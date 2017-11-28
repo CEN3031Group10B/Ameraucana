@@ -70,9 +70,10 @@
 .checkout{
   font-family: 'Barlow', sans-serif;
   font-weight: 300;
-  font-size: 13px;
+  font-size: 15px;
   font-style: normal;
   border: none;
+
 }
 
 input[type=text] {

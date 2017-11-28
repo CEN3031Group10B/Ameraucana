@@ -22,7 +22,7 @@ var config = require('../config'),
   //
   var unirest = require('unirest');
   //
-  
+
 /**
  * Initialize local variables
  */
@@ -103,17 +103,20 @@ module.exports.initMiddleware = function (app) {
     var product_cost = {'001': 100, '002': 200, '003': 300};
 
     var request_params = req.body;
-  
+
     var token = require('crypto').randomBytes(64).toString('hex');
-  
+
     // Check if product exists
-    if (!product_cost.hasOwnProperty(request_params.product_id)) {
-      return res.json({status: 400, errors: [{'detail': 'Product Unavailable'}] });
-    }
-  
+    // if (!product_cost.hasOwnProperty(request_params.product_id)) {
+    //   return res.json({status: 400, errors: [{'detail': 'Product Unavailable'}] });
+    // }
+
     // Make sure amount is a valid integer
-    var amount = product_cost[request_params.product_id];
-  
+    // var amount = product_cost[request_params.product_id];
+    var amount = localStorage.getItem('payment');
+    amount = amount*100;
+    console.log(amount);
+
     // information the Square REST API needs to process a payment
     var request_body = {
       card_nonce: request_params.nonce,
@@ -123,9 +126,9 @@ module.exports.initMiddleware = function (app) {
       },
       idempotency_key: token
     };
-  
+
     locationId = request_params.location_id;
-  
+
     unirest.post(base_url + '/locations/' + locationId + '/transactions')
     .headers({
       'Authorization': 'Bearer ' + accessToken,
@@ -140,7 +143,7 @@ module.exports.initMiddleware = function (app) {
         res.json({status: 200});
       }
     });
-  
+
   });
   // End of Square Charge API
 

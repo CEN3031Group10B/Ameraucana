@@ -315,7 +315,7 @@ a.mit:hover{
   letter-spacing: .015em;
 }
 
-.myModal {
+#myModal {
   margin-top: 100px;
   z-index: 1001;
 }
