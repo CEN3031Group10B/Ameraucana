@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<div ng-controller="OrderController">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -14,6 +15,7 @@
   <!-- link to the custom styles for SqPaymentForm -->
   <link rel="stylesheet" type="text/css" href="sqpaymentform.css">
 </head>
+
 <body>
   <div class="row">
     <nav class="collapse navbar-collapse" collapse="!isCollapsed" role="navigation" style="background-color:#3c342f">
@@ -22,7 +24,7 @@
       </div>
     </nav>
   </div>
-  
+
     <div id="successNotification" style="display: none">
     Card Charged Succesfully!!
     </div>
@@ -31,12 +33,12 @@
 <div id="sq-ccbox">
 
   <form id="nonce-form">
-    <h3>Choose your food</h3>
+    <!-- <h3>Choose your food</h3>
       <select id="product_id" name="product_id">
         <option value="001">$1 Meatballs </option>
         <option value="002">$2 Pizza</option>
         <option value="003">$3 Fancy Pizza</option>
-      </select>
+      </select> -->
 
     <h3> Shipping Address </h3>
 
@@ -193,7 +195,7 @@
       <div id="sq-apple-pay-label" class="wallet-not-enabled">Apple Pay for Web not enabled</div>
       <!-- Placholder for Apple Pay for Web button -->
       <button id="sq-apple-pay" class="button-apple-pay"></button>
-    
+
       <div id="sq-masterpass-label" class="wallet-not-enabled">Masterpass not enabled</div>
       <!-- Placholder for Masterpass button -->
       <button id="sq-masterpass" class="button-masterpass"></button>
@@ -204,3 +206,4 @@
   <script type="text/javascript" src="https://js.squareup.com/v2/paymentform"></script>
 
 </body>
+</div>
