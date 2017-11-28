@@ -1,0 +1,478 @@
+/* Define how SqPaymentForm iframes should look */
+
+.sq-input {
+    border: 1px solid rgb(223, 223, 223);
+    outline-offset: -2px;
+    margin-bottom: 5px;
+    display: inline-block;
+  }
+  
+  
+  /* Define how SqPaymentForm iframes should look when they have focus */
+  
+  .sq-input--focus {
+    outline: 5px auto rgb(59, 153, 252);
+  }
+  
+  
+  /* Define how SqPaymentForm iframes should look when they contain invalid values */
+  
+  .sq-input--error {
+    outline: 5px auto rgb(255, 97, 97);
+  }
+  
+  
+  /* Customize the "Pay with Credit Card" button */
+  
+  .button-credit-card {
+    min-width: 200px;
+    min-height: 20px;
+    padding: 0;
+    margin: 5px;
+    line-height: 20px;
+    box-shadow: 2px 2px 1px rgb(200, 200, 200);
+    background: rgb(255, 255, 255);
+    border-radius: 5px;
+    border: 1px solid rgb(200, 200, 200);
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  
+  /* Customize the "{{Wallet}} not enabled" message */
+  
+  .wallet-not-enabled {
+    min-width: 200px;
+    min-height: 40px;
+    max-height: 64px;
+    padding: 0;
+    margin: 10px;
+    line-height: 40px;
+    background: #eee;
+    border-radius: 5px;
+    font-weight: lighter;
+    font-style: italic;
+    font-family: inherit;
+    display: block;
+  }
+  
+  
+  /* Customize the Apple Pay on the Web button */
+  
+  .button-apple-pay {
+    min-width: 200px;
+    min-height: 40px;
+    max-height: 64px;
+    padding: 0;
+    margin: 10px;
+    background-image: -webkit-named-image(apple-pay-logo-white);
+    background-color: black;
+    background-size: 100% 60%;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+  }
+  
+  
+  /* Customize the Masterpass button */
+  
+  .button-masterpass {
+    min-width: 200px;
+    min-height: 40px;
+    max-height: 40px;
+    padding: 0;
+    margin: 10px;
+    background-image: url(https://static.masterpass.com/dyn/img/btn/global/mp_chk_btn_147x034px.svg);
+    background-color: black;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    border-radius: 5px;
+    border-color: rgb(255, 255, 255);
+    cursor: pointer;
+    display: none;
+  }
+  
+  #sq-walletbox {
+    float: left;
+    margin: 5px;
+    padding: 10px;
+    text-align: center;
+    vertical-align: top;
+    font-weight: bold;
+  }
+  
+  #sq-ccbox {
+    float: left;
+    margin: 5px;
+    padding: 10px;
+    text-align: center;
+    vertical-align: top;
+    font-weight: bold;
+  }
+
+  #successNotification{
+    margin: 0;
+    text-align: center;
+    background-image: linear-gradient(-1deg, #72E07B 0%, #56FBD2 100%);
+    border-radius: 4px;
+    padding: 25% 30%;
+    color: white;
+    font-size: 32px;
+  }
+/* END OF SQUARE STUFF */
+
+  .content {
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  [ng\:cloak], [ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+  }
+  
+  /* navbar styles */
+
+  .navbar-nav.navbar-right {
+    padding: 0;
+    margin: 0;
+    width: 100;
+  }
+
+  .navbar-nav.navbar-right li a {
+    align-items: flex-end;
+    margin: 0;
+    padding-top: 20px;
+    border: none;
+    padding-right: 20px;
+    line-height: 72px;
+    height: 72px;
+    color: white;
+    text-align: right;
+  }
+  
+  .navbar-nav.navbar-right li a:hover {
+    color: white;
+    opacity: .75;
+    text-decoration: none;
+    background-color: none;
+  }
+  
+  .navbar-header, .navbar-inverse {
+    height: 150px;
+    background: none;
+    border: none;
+    overflow: auto;
+  }
+  
+  /* menu styles */
+  
+  .menu-wrapper {
+      font-family: futura-pt;
+      font-weight: 300;
+      font-size: 22px;
+      text-transform: none;
+      font-style: normal;
+      letter-spacing: .015em;
+      text-decoration: none;
+      margin: auto;
+      line-height: 1.8em;
+      color: #333;
+      padding: 100px 9%;
+      width: 90%;
+  }
+  
+  .justify-content-md-center {
+    color: #a3a3a3;
+    font-family: Futura;
+    font-weight: 300;
+    font-size: 20px;
+  }
+  
+  /* text and parallax */
+  .page-title {
+    position: relative;
+    text-align: center;
+    font-family: Cooper Black;
+    font-size: 100px;
+    font-weight: 900;
+    color: white;
+  }
+  
+  .parallax {
+    height: 230px;
+    padding: 0;
+    background-attachment: fixed;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: translate3d(0px, 0px, 0px);
+    opacity: .90;
+  }
+  
+  .glyphicon-shopping-cart {
+    padding-top: .2em;
+    font-size: 1.1em;
+  }
+  
+  .img-cover{
+    font-size: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    transform: translate3d(0px, 0px, 0px);
+    border: 0;
+    z-index: -1;
+  }
+  
+  .img-overlay {
+    top: 50px;
+    bottom: 0;
+    left: 0;
+    right: 20px;
+    text-align: right;
+    opacity: 1;
+    position: absolute;
+    z-index: inherit;
+  }
+  
+  .image{
+    max-width: 68%;
+    height: auto;
+    padding-top: 30px;
+  
+  }
+  .col{
+    padding-top: 0px;
+    /* padding-top: 370px; */
+  }
+
+  .col.left.half {
+    width: 50%;
+    display: table-cell;
+    vertical-align: bottom;
+    padding-top: 20px;
+    padding-left: 80px;
+    padding-bottom: 20px;
+}
+
+.col.right.half {
+  width: 50%;
+  display: table-cell;
+  vertical-align: bottom;
+  padding-top: 20px;
+  text-align: right;
+}
+
+  
+  u1 {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  li {
+    display: inline;
+    font-family: futura-pt;
+    line-height: 2em;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: .1em;
+    font-style: normal;
+    text-transform: uppercase;
+    color: white;
+  }
+  
+  .title-wrapper {
+    display: flex;
+    justify-content: center;
+    left: 0;
+    width: 100%;
+    height: auto;
+  }
+  
+  h1.page-title {
+      /*font-family: "Source Sans Pro",sans-serif;*/
+      font-weight: 700;
+      font-family: "cooper-black-std";
+      font-size: 82px;
+      text-transform: uppercase;
+      font-style: normal;
+      letter-spacing: .015em;
+      line-height: 1em;
+      text-decoration: none;
+      max-width: 100%;
+      display: inline-block;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 80px 0;
+      color: #fff;
+      position: relative;
+      z-index: inherit;
+  }
+  
+  h1{
+      /*font-family: "Source Sans Pro",sans-serif;*/
+      /*font-size: 2em;*/
+      font-weight: 600;
+      /*letter-spacing: 2px;*/
+      font-family: Cooper Black;
+      font-size: 36px;
+      /*font-weight: 400;*/
+      text-transform: uppercase;
+      font-style: normal;
+      letter-spacing: .015em;
+      text-decoration: none;
+      line-height: 1.2em;
+    }
+  
+  .button-group {
+    padding-top: 20px;
+  
+  }
+  
+  .container {
+      padding: 0;
+      width: 100%;
+  }
+  
+  img.logo {
+    width: 400px;
+    height: 68px;
+    float: left;
+    vertical-align: bottom;
+  }
+  
+  
+  
+  h1.page-title {
+    font-family: Cooper Black;
+    font-size: 82px;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-style: normal;
+    line-height: 1em;
+    text-decoration: none;
+    max-width: 100%;
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 0;
+    position: relative;
+    z-index: inherit;
+    color: #fff;
+  }
+  
+  .dropdown-menu{
+    background-color: #3c342f;
+    text-decoration: none;
+  }
+  .dropdown-menu span:hover {
+    opacity: .5;
+    text-decoration: none;
+  }
+  
+  .footer {
+    width: 100%;
+    background-color: #3c342f;
+    float: left;
+  }
+  
+  .footer-wrapper {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 80px 8%;
+    color: #fff;
+  }
+  
+  h3 {
+    font-family: Futura;
+    font-size: 22px;
+    font-weight: 300;
+    text-transform: none;
+    font-style: normal;
+    letter-spacing: .015em;
+    text-decoration: none;
+    line-height: 1.8em;
+  }
+  
+  body {
+    font-family: Proxima-Nova;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    letter-spacing: .015em;
+    line-height: 1.8em;
+    padding-top: 150px;
+  }
+  
+  .tableWrapper {
+    max-height: 400px;
+    overflow: auto;
+  }
+  
+  button.sub{
+    float: right;
+    background: none;
+    border: none;
+  }
+  a.mit:hover{
+    color: #cccccc;
+    text-decoration: none;
+  
+  }
+  
+  /*=======================*/
+  /*+++++ MENU STYLES +++++*/
+  /*=======================*/
+  .menu-section-title {
+    color: #333;
+    font-family: Cooper Black;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 800;
+    letter-spacing: .015em;
+    line-height: 2.25em;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  
+  .item-header {
+    color: Black;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-transform: none;
+    font-style: normal;
+    letter-spacing: .015em;
+    text-decoration: none;
+    margin-top: 1em;
+    line-height: 1.8em;
+  }
+  
+  .item-description {
+    color: #a3a3a3;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    font-style: normal;
+    letter-spacing: .015em;
+  }
+  
+  #myModal {
+    margin-top: 100px;
+    z-index: 1001;
+  }
+
+  body {
+    padding: 0px;
+    margin: 0px;
+  }
+  
