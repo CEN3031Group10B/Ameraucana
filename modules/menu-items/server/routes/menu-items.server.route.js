@@ -7,6 +7,6 @@ module.exports = function(app, db) {
   app.route('/api/menu-item').post(items.createMenuItem);
   app.route('/:menuItemId').delete(items.deleteMenuItem).put(items.editMenuItem);
   app.route('/api/menu-item-find-one').get(items.findOne);
-
+  app.route('/api/menu-items').get(items.getMenuItems);
   app.param('menuItemId', items.menuItemById);
 };

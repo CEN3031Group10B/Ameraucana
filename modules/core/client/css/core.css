@@ -1,7 +1,8 @@
 .content {
-  margin-top: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
+  /* Values of 0 doesn't need a unit specified */
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 [ng\:cloak], [ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
@@ -314,7 +315,7 @@ a.mit:hover{
   letter-spacing: .015em;
 }
 
-#myModal {
+.myModal {
   margin-top: 100px;
   z-index: 1001;
 }
