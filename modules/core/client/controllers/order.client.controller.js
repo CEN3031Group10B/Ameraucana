@@ -8,6 +8,7 @@ angular.module('core').controller('OrderController', ['$scope', 'Authentication'
     $scope.authentication = Authentication;
     $scope.addItem = false;
 
+    //Get Menu Items from Database
     $scope.getMenu = function(){
       $http.get('http://localhost:3000/api/menu-items-analytics').success(function(response){
         $scope.items = response;
@@ -15,170 +16,72 @@ angular.module('core').controller('OrderController', ['$scope', 'Authentication'
       });
     };
 
+    //Pushes Item selected to Modal in order.client.view
     $scope.addToCart = function(item){
-      console.log(item);
       $scope.item = item;
-
     };
 
+    //Initiate Global CART Array
+    var cart = [];
 
+    //Add an Item to the Cart
+    $scope.addedToCart = function(item){
+      var uID = Math.round((new Date()).getTime() /1000);
+      var random = Math.floor(Math.random()*1000);
+      item.$$hashKey = uID.toString() + random.toString();
+      cart.push(item);
+      //console.log(item);
+      saveCart();
+      console.log(cart);
+    };
 
-    // //Modal for Adding Item
-    // $scope.showAddItem = function (){
-    //   $scope.addItem = true;
-    // };
-    // $scope.hideAddItem = function() {
-    //   $scope.addItem = false;
-    // };
+    //Remove Item From the Cart
+    $scope.remove = function(item){
+      loadCart();
 
-    // $scope.items = [
-    //   {
-    //     title: 'Marinated Olives',
-    //     description: '',
-    //     price: '$6',
-    //     option: '*Vegan'
-    //   },
-    //   {
-    //     title: 'Charcuterie Plate',
-    //     description: 'Ask Your Server For Daily Special',
-    //     price: '$11',
-    //     option: ''
-    //   },
-    //   {
-    //     title: 'Roasted Italian Sausage',
-    //     description: 'Italian Sausage, Eggplant Peperonata',
-    //     price: '$8',
-    //     option: ''
-    //   },
-    //   {
-    //     title: 'Greek Salad',
-    //     description: 'Romaine, House Vinaigrette, Thinly Sliced Red Onion, Olives, Cucumber, Feta',
-    //     price: '$6',
-    //     option: ''
-    //   },
-    //   {
-    //     title: 'Caesar Salad',
-    //     description: 'Romaine, Traditional Cesar Dressing, Sesame Bread Crumbs, Parmigiano Reggiano',
-    //     price: '$6',
-    //     option: ''
-    //   }
-    // ];
-    //
-    // $scope.pizzas = [
-    //   {
-    //     title: 'The Marge',
-    //     description: 'Bianco DiNapoli Crushed Tomatoes, Fior Di Latte, Basil, Olive Oil, Sea Salt',
-    //     price: '$12',
-    //     option: 'ADD: Pepperoni $4, Meatballs $4, White Anchovies $3, Olives $2'
-    //   },
-    //   {
-    //     title: 'The Spicy Pancetta',
-    //     description: 'Fior Di Latte, Thinly Sliced Pancetta, Basil, Crushed Red Pepper Flakes, Parmigiano, Reggiano, Local Honey',
-    //     price: '$16',
-    //     option: ''
-    //   },
-    //   {
-    //     title: 'Mortadella Vetri',
-    //     description: 'Thinly Sliced Mortadella, Fior Di Latte, Pistachio Pesto',
-    //     price: '$16',
-    //     option: ''
-    //   },
-    //   {
-    //     title: 'The Falco',
-    //     description: 'Blanco DiNapoli Crushed Tomatoes, Fior Di Latte, Parmigiano Reggiano, Thinly Sliced Red Onion, Pepperoni, Sesame Bread Crumbs',
-    //     price: '$16',
-    //     option: ''
-    //   },
-    //   {
-    //     title: 'Fontina Fungo',
-    //     description: 'Fontina, Portobello Mushrooms, Rosemary, Olive Oil, Sea Salt',
-    //     price: '$14',
-    //     option: 'ADD: Pancetta $4'
-    //   },
-    //   {
-    //     title: 'Fromage A Trois',
-    //     description: 'Fior Di Latte, Forfonzola, Parmigiano Reggiano, Thinly Sliced Red Onion, Oregano, Olive Oil',
-    //     price: '$14',
-    //     option: 'ADD: Pancetta $4 Add: Pepperoni $4'
-    //   },
-    //   {
-    //     title: 'Marinere',
-    //     description: 'Bianco DiNapoli Crushed Tomatoes, Sliced Garlic, Oregano, Olive Oil, Sea Salt',
-    //     price: '$10',
-    //     option: 'ADD: Olives $2, Red Onions $1, White Anchovies $3 *Vegan'
-    //   }
-    // ];
-    //
-    // $scope.desserts = [
-    //   {
-    //     title: 'Tiramisu',
-    //     description: '',
-    //     price: '$6',
-    //     option: ''
-    //   },
-    //   {
-    //     title: 'Dessert Special',
-    //     description: '',
-    //     price: '$6',
-    //     option: ''
-    //   }
-    // ];
-    //
-    // $scope.beverages = [
-    //   {
-    //     title: 'Mexican Coke',
-    //     description: '',
-    //     price: '$3',
-    //     option: ''
-    //   },
-    //   {
-    //     title: 'Diet Coke',
-    //     description: '',
-    //     price: '$1.5',
-    //     option: ''
-    //   },
-    //   {
-    //     title: 'San Pellegrino',
-    //     description: '',
-    //     price: '$2',
-    //     option: ''
-    //   },
-    //   {
-    //     title: 'Drip Coffee',
-    //     description: '',
-    //     price: '$2',
-    //     option: ''
-    //   },
-    //   {
-    //     title: 'La Croix',
-    //     description: '',
-    //     price: '$1.5',
-    //     option: ''
-    //   },
-    //   {
-    //     title: 'Opus Nitro Cold Brew Coffee',
-    //     description: '',
-    //     price: '$5',
-    //     option: ''
-    //   },
-    //   {
-    //     title: 'Miller High Life Bottles',
-    //     description: '',
-    //     price: '$3.5',
-    //     option: ''
-    //   },
-    //   {
-    //     title: 'Bell\'s Two Hearted Can',
-    //     description: '',
-    //     price: '$5',
-    //     option: ''
-    //   },
-    //   {
-    //     title: 'Maeloc Dry Cider Bottle',
-    //     description: '',
-    //     price: '$5',
-    //     option: ''
-    //   }
-    // ];
+      for(var i = 0; i < $scope.Cart.length; i++){
+        if($scope.Cart[i].$$hashKey === item.$$hashKey){
+            $scope.Cart.splice(i, 1);
+
+            break;
+        }
+      }
+      saveCart();
+      console.log($scope.Cart);
+    };
+
+    //Save Cart Items
+    function saveCart(){
+      localStorage.setItem('Cart', JSON.stringify(cart));
+
+    }
+
+    //Load Items from Cart
+    function loadCart(){
+      return JSON.parse(localStorage.getItem('Cart'));
+
+    }
+
+    //Display Cart Items
+    $scope.display = function(){
+      cart = loadCart();
+      $scope.Cart = cart;
+      console.log(cart);
+    };
+
+    //Total Amount of Cart
+    $scope.total = function(item) {
+      var  sum = 0;
+
+      loadCart();
+      for (var i = 0; i < $scope.Cart.length; i++) {
+        sum += (parseFloat($scope.Cart[i].item.price));
+      }
+
+      localStorage.setItem('payment', sum);
+      console.log(sum);
+      return sum;
+    };
+
   }
 ]);

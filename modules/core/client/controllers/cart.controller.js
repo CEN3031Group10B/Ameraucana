@@ -4,7 +4,6 @@ angular.module('core').controller('CartController', ['$scope', 'ngCart', '$http'
 function($scope, ngCart, $http) {
 
   ngCart.setTaxRate(6.5);
-
     // $scope.cart = Cart;
 
     // $scope.addtoCart = function() {

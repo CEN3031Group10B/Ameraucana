@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<div ng-controller="OrderController">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <!-- link to the SqPaymentForm library -->
+  <script type="text/javascript" src="https://js.squareup.com/v2/paymentform"></script>
+
+  <!-- link to the local SqPaymentForm initialization -->
+  <script type="text/javascript" src="sqpaymentform.js"></script>
+
+  <!-- link to the custom styles for SqPaymentForm -->
+  <link rel="stylesheet" type="text/css" href="sqpaymentform.css">
+</head>
+
+<body>
+  <div class="row">
+    <nav class="collapse navbar-collapse" collapse="!isCollapsed" role="navigation" style="background-color:#3c342f">
+      <div class="col left half">
+        <a href="/home"><img src="modules/core/client/img/brand/amer_logo.png" class="logo"></a>
+      </div>
+    </nav>
+  </div>
+
+    <div id="successNotification" style="display: none">
+    Card Charged Succesfully!!
+    </div>
+
+
+<div id="sq-ccbox">
+
+  <form id="nonce-form">
+    <!-- <h3>Choose your food</h3>
+      <select id="product_id" name="product_id">
+        <option value="001">$1 Meatballs </option>
+        <option value="002">$2 Pizza</option>
+        <option value="003">$3 Fancy Pizza</option>
+      </select> -->
+
+    <h3> Shipping Address </h3>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>Name:</td>
+          <td>
+            <input type="text" id="name" name="name"  placeholder="Name"/>
+          </td>
+        </tr>
+        <tr>
+          <td>Email:</td>
+          <td>
+            <input type="email" id="email" name="email"  placeholder="Email"/>
+          </td>
+        </tr>
+        <tr>
+          <td>Street 1: </td>
+          <td>
+            <input type="text" id="street_address_1" name="street_address_1"  placeholder="Address Line 1"/>
+          </td>
+        </tr>
+        <tr>
+          <td>Street 2:</td>
+          <td>
+            <input type="text" id="street_address_2" name="street_address_2"  placeholder="Address Line 2"/>
+          </td>
+        </tr>
+        <tr>
+          <td>City</td>
+          <td>
+            <input type="text" id="city" name="city"  placeholder="City"/>
+          </td>
+        </tr>
+        <tr>
+          <td>State:</td>
+          <td>
+            <select id="state" name="state">
+              <option value=""></option>
+              <option value="AL">Alabama</option>
+              <option value="AK">Alaska</option>
+              <option value="AZ">Arizona</option>
+              <option value="AR">Arkansas</option>
+              <option value="CA">California</option>
+              <option value="CO">Colorado</option>
+              <option value="CT">Connecticut</option>
+              <option value="DE">Delaware</option>
+              <option value="DC">District of Columbia</option>
+              <option value="FL">Florida</option>
+              <option value="GA">Georgia</option>
+              <option value="HI">Hawaii</option>
+              <option value="ID">Idaho</option>
+              <option value="IL">Illinois</option>
+              <option value="IN">Indiana</option>
+              <option value="IA">Iowa</option>
+              <option value="KS">Kansas</option>
+              <option value="KY">Kentucky</option>
+              <option value="LA">Louisiana</option>
+              <option value="ME">Maine</option>
+              <option value="MD">Maryland</option>
+              <option value="MA">Massachusetts</option>
+              <option value="MI">Michigan</option>
+              <option value="MN">Minnesota</option>
+              <option value="MS">Mississippi</option>
+              <option value="MO">Missouri</option>
+              <option value="MT">Montana</option>
+              <option value="NE">Nebraska</option>
+              <option value="NV">Nevada</option>
+              <option value="NH">New Hampshire</option>
+              <option value="NJ">New Jersey</option>
+              <option value="NM">New Mexico</option>
+              <option value="NY">New York</option>
+              <option value="NC">North Carolina</option>
+              <option value="ND">North Dakota</option>
+              <option value="OH">Ohio</option>
+              <option value="OK">Oklahoma</option>
+              <option value="OR">Oregon</option>
+              <option value="PA">Pennsylvania</option>
+              <option value="RI">Rhode Island</option>
+              <option value="SC">South Carolina</option>
+              <option value="SD">South Dakota</option>
+              <option value="TN">Tennessee</option>
+              <option value="TX">Texas</option>
+              <option value="UT">Utah</option>
+              <option value="VT">Vermont</option>
+              <option value="VA">Virginia</option>
+              <option value="WA">Washington</option>
+              <option value="WV">West Virginia</option>
+              <option value="WI">Wisconsin</option>
+              <option value="WY">Wyoming</option>
+            </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Zip</td>
+        <td>
+          <input type="text" id="zip" name="zip"  placeholder="Zip"/>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div id="card-errors">
+  </div>
+
+  <h3> Card Information </h3>
+
+      <table>
+        <tbody>
+          <tr>
+            <td>Card Number:</td>
+            <td>
+              <div id="sq-card-number"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>CVV:</td>
+            <td>
+              <div id="sq-cvv"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>Expiration Date: </td>
+            <td>
+              <div id="sq-expiration-date"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>Postal Code:</td>
+            <td>
+              <div id="sq-postal-code"></div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <button id="sq-creditcard" class="button-credit-card" onclick="requestCardNonce(event)">
+                Pay with card
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!--
+        After a nonce is generated it will be assigned to this hidden input field.
+      -->
+      <input type="hidden" id="card-nonce" name="nonce">
+    </form>
+  </div>
+
+  <div id="sq-walletbox">
+      <h2>Pay with a Digital Wallet</h2>
+      <div id="sq-apple-pay-label" class="wallet-not-enabled">Apple Pay for Web not enabled</div>
+      <!-- Placholder for Apple Pay for Web button -->
+      <button id="sq-apple-pay" class="button-apple-pay"></button>
+
+      <div id="sq-masterpass-label" class="wallet-not-enabled">Masterpass not enabled</div>
+      <!-- Placholder for Masterpass button -->
+      <button id="sq-masterpass" class="button-masterpass"></button>
+  </div>
+
+
+  <!-- link to the SqPaymentForm library -->
+  <script type="text/javascript" src="https://js.squareup.com/v2/paymentform"></script>
+
+</body>
+</div>

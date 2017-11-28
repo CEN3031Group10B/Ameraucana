@@ -34,7 +34,7 @@ module.exports = {
       'modules/core/client/app/init.js',
       'modules/*/client/*.js',
       'modules/*/client/**/*.js',
-      'public/lib/ngCart/dist/ngCart.js' 
+      'public/lib/ngCart/dist/ngCart.js'
     ],
     views: ['modules/*/client/views/**/*.html'],
     templates: ['build/templates.js']

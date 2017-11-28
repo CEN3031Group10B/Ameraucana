@@ -1,0 +1,115 @@
+.menu-wrapper {
+    font-family: futura-pt;
+    font-weight: 300;
+    font-size: 22px;
+    text-transform: none;
+    font-style: normal;
+    letter-spacing: .015em;
+    text-decoration: none;
+    margin: auto;
+    line-height: 1.8em;
+    color: #333;
+    padding: 100px 9%;
+    width: 90%;
+}
+
+/*=======================*/
+/*+++++ CART STYLES +++++*/
+/*=======================*/
+.menu-section-title {
+  color: #333;
+  font-family: Cooper Black;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: .015em;
+  line-height: 2.25em;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.item-header {
+  color: Black;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  text-transform: none;
+  font-style: normal;
+  letter-spacing: .015em;
+  text-decoration: none;
+  margin-top: 1em;
+  line-height: 1.8em;
+}
+
+.item-description {
+  color: #a3a3a3;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  font-style: normal;
+  letter-spacing: .015em;
+}
+
+/*=======================*/
+/*++++ BUTTON STYLES ++++*/
+/*=======================*/
+
+.remove{
+
+  font-family: 'Barlow', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  font-style: normal;
+  border: none;
+
+}
+
+.checkout{
+  font-family: 'Barlow', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  font-style: normal;
+  border: none;
+
+}
+
+input[type=text] {
+    text-align: left;
+    box-sizing: border-box;
+    width: 35%;
+    color: none;
+    border-style: none;
+}
+
+/*======================*/
+/*+ FOOTER STYLE +*/
+/*======================*/
+
+.footer {
+  width: 100%;
+  background-color: #3c342f;
+  float: left;
+}
+
+.footer-wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 80px 8%;
+  color: #fff;
+}
+
+
+
+h3.footer-wrapper {
+  font-family: Futura;
+  font-size: 22px;
+  font-weight: 300;
+  text-transform: none;
+  font-style: normal;
+  letter-spacing: .015em;
+  text-decoration: none;
+  line-height: 1.8em;
+}
