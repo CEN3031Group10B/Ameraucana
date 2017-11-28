@@ -183,7 +183,7 @@ var paymentForm = new SqPaymentForm({
 
 ///////
 var chargeCardWithNonce = function(nonce) {
-  var product_id = document.getElementById('product_id').value;
+  // var product_id = document.getElementById('product_id').value;
   var name = document.getElementById('name').value;
   var email = document.getElementById('email').value;
   var street_address_1 = document.getElementById('street_address_1').value;
