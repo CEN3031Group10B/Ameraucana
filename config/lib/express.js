@@ -95,12 +95,12 @@ module.exports.initMiddleware = function (app) {
 
   // Added Square Charge API to express middleware
   app.post('/charges/charge_card', function(req,res,next){
-    var applicationId = "sq0idp-r34HdSnJVWqMweH3dnJrGA";
-    var accessToken = "sq0atp-RdSPeJa5qDMea0exHOjeRQ";
+    var applicationId = 'sq0idp-r34HdSnJVWqMweH3dnJrGA';
+    var accessToken = 'sq0atp-RdSPeJa5qDMea0exHOjeRQ';
     var locationId;
     // url that processes the payment
-    var base_url = "https://connect.squareup.com/v2";
-    var product_cost = {"001": 100, "002": 200, "003": 300};
+    var base_url = 'https://connect.squareup.com/v2';
+    var product_cost = {'001': 100, '002': 200, '003': 300};
 
     var request_params = req.body;
   
@@ -108,7 +108,7 @@ module.exports.initMiddleware = function (app) {
   
     // Check if product exists
     if (!product_cost.hasOwnProperty(request_params.product_id)) {
-      return res.json({status: 400, errors: [{"detail": "Product Unavailable"}] });
+      return res.json({status: 400, errors: [{'detail': 'Product Unavailable'}] });
     }
   
     // Make sure amount is a valid integer
@@ -126,7 +126,7 @@ module.exports.initMiddleware = function (app) {
   
     locationId = request_params.location_id;
   
-    unirest.post(base_url + '/locations/' + locationId + "/transactions")
+    unirest.post(base_url + '/locations/' + locationId + '/transactions')
     .headers({
       'Authorization': 'Bearer ' + accessToken,
       'Accept': 'application/json',
