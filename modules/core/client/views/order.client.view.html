@@ -157,9 +157,30 @@
           </form>
         </div>
         <footer class="w3-container w3-blue-grey">
-          <button type="button" class="sub"><a class="mit" href="/cart">Go to Cart</a></button>
-          <button type="button" class="sub" ng-click = "addedToCart(item)" onclick="document.getElementById('myModal').style.display='none'"><a class="mit" >Add to Cart</a></button>
+          <button type="button" class="sub" ng-click = "addedToCart(item)" onclick="document.getElementById('myModal').style.display='none'; document.getElementById('myModal1').style.display='block'"><a class="mit" >Add to Cart</a></button>
         </footer>
       </div>
     </div>
+
+    <div id="myModal1" class="w3-modal w3-animate-opacity">
+      <div class="w3-modal-content w3-animate-bottom w3-card-4">
+        <header class="w3-container w3-blue-grey">
+          <span onclick="document.getElementById('myModal1').style.display='none'"
+          class="w3-button w3-large w3-display-topright">&times;</span>
+            <h2>Item</h2>
+        </header>
+        <div class="w3-container">
+          <p>You have added</p>
+          <p>{{ item.item.name }} {{ item.item.price | currency}}</p>
+          <p>{{ item.item.description }}</p>
+          <p>to your cart</p>
+        </div>
+        <footer class="w3-container w3-blue-grey">
+          <button type="button" class="sub" onclick="document.getElementById('myModal1').style.display='none'"><a class="mit" >Continue Shopping</a></button>
+          <button type="button" class="sub"><a class="mit" href="/cart">Go to Cart</a></button>
+        </footer>
+      </div>
+    </div>
+
+
 </section>

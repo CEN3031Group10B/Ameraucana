@@ -3,8 +3,11 @@
   <link href="https://fonts.googleapis.com/css?family=Quicksand:300" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Barlow" rel="stylesheet">
   <!-- <div class="well text-center"><ngcart-summary></ngcart-summary></div> -->
+
   <div class="menu-wrapper" ng-init = "display()">
-    <div class="menu-section-title">Items In Your Cart</div>
+    <div class="row">
+      <div class="menu-section-title">Items In Your Cart</div>
+    </div>
       <div class="row">
         <div class="row" ng-repeat="item in Cart track by $index">
           <div class="row" ng-show="item.item.show">
@@ -22,14 +25,56 @@
             </div>
             <div class="col-xs-2">
               <!-- Remove a single Item from cart-->
-              <button type="button" class="remove" ng-click="remove(item)">Remove Item</button>
+              <button type="button" class="remove btn-sm btn-warning" ng-click="remove(item)">
+                  <span class="glyphicon glyphicon-trash"> Remove</span>
+              </button>
             </div>
           </div>
         </div>
-        <label class="menu-wrapper item-header">Total Cost: $<input type="text" ng-value = "total(item)" disabled ="disableEditting"></label>
-
+        <div class="row">
+          <div class="col-sm-3 col-sm-offset-9 total">
+            <label class="item-header">Total Cost: $<input type="text" ng-value = "total(item)" disabled ="disableEditting"></label>
+            <div class="row">
+              <div class="col-sm-7 col-sm-offset-3 procede">
+                <button type="button" class="checkout btn-sm btn-success">Procede to Checkout</button>
+              </div>
+            </div>
+          </div>
+        </div>
         <!-- <button type="button" class="remove" ng-click="clear()">Clear</button> -->
       </div>
+    </div>
+
+    <!--FOOTER-->
+    <div class="row">
+        <div class="footer">
+            <div class="footer-wrapper">
+                <h3>LOCATION</h3>
+                <p>
+                    2410 NW 43rd St
+                    <br>
+                    Gainesville, FL - 32606
+                    <br>
+                    (352) 505-6575
+                </p>
+                <h3>HOURS</h3>
+                <p>
+                    Tues -&nbsp;Thurs
+                    <br>
+                    5 - 9pm
+                </p>
+                <p>
+                    Fri -&nbsp;Sat
+                    <br>
+                    5 - 10pm (Or When Dough Runs Out)
+                </p>
+                <p>
+                    Sun - Mon
+                    <br>
+                    CLOSED
+                </p>
+            </div>
+        </div>
     </div>
   </div>
 
