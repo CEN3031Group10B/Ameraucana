@@ -1,11 +1,41 @@
 <div ng-controller="OrderController">
-  <div class="well text-center"><ngcart-summary></ngcart-summary></div>
-  <div class="row text-center">
+  <link rel="stylesheet" href="cart.css">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand:300" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Barlow" rel="stylesheet">
+  <!-- <div class="well text-center"><ngcart-summary></ngcart-summary></div> -->
+  <div class="menu-wrapper" ng-init = "display()">
+    <div class="menu-section-title">Items In Your Cart</div>
+      <div class="row">
+        <div class="row" ng-repeat="item in Cart track by $index">
+          <div class="row" ng-show="item.item.show">
+            <div class="col-sm-8 col-sm-offset-2 item-header">
+              {{ item.item.name }}
+            </div>
+            <div class="col-xs-2 item-header">
+              {{ item.item.price | currency}}
+            </div>
+          </div>
 
-      <button type="button" class="remove" ng-click="remove()">Remove Item</button>
-      <button type="button" class="remove" ng-click="clear()">Clear</button>
-  
-    <div class="col-xs-6 col-sm-3" >
+          <div class="row" ng-show="item.item.show">
+            <div class="col-xs-8 col-xs-offset-2 item-description">
+              {{ item.item.description }}
+            </div>
+            <div class="col-xs-2">
+              <!-- Remove a single Item from cart-->
+              <button type="button" class="remove" ng-click="remove(item)">Remove Item</button>
+            </div>
+          </div>
+        </div>
+        <label class="menu-wrapper item-header">Total Cost: $<input type="text" ng-value = "total(item)" disabled ="disableEditting"></label>
+
+        <!-- <button type="button" class="remove" ng-click="clear()">Clear</button> -->
+      </div>
+    </div>
+  </div>
+
+
+
+    <!-- <div class="col-xs-6 col-sm-3" >
 
       <img src="https://placehold.it/262x150" alt="image"/>
       <h4>My Item #1</h4>
@@ -55,5 +85,4 @@
   <span class="">{{ ngCart.getTotalItems() }}
     <ng-pluralize count="ngCart.getTotalItems()" when="{1: 'item', 'other':'items'}"></ng-pluralize>
     <br/>{{ ngCart.totalCost() | currency }}
-  </span>
-</script>
+  </span> -->
