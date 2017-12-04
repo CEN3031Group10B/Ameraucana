@@ -41,7 +41,6 @@ angular.module('core').controller('OrderController', ['$scope', 'Authentication'
 
     //Remove Item From the Cart
     $scope.remove = function(item){
-      loadCart();
 
       for(var i = 0; i < $scope.Cart.length; i++){
         if($scope.Cart[i].$$hashKey === item.$$hashKey){

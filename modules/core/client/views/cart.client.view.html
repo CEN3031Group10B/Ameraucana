@@ -37,10 +37,12 @@
           <div class="col-sm-3 col-sm-offset-9 total">
             <label class="item-header">Total Cost: $<input type="text" ng-value = "total(item)" disabled ="disableEditting"></label>
             <div class="row">
-              <div class="col-sm-7 col-sm-offset-2 procede">
+              <div class="col-sm-3 col-sm-offset-1 procede">
                 <button type="button" class="checkout btn-sm btn-success">
-                    <a href="/order" onclick="location.reload()"> Order More </a>
+                    <a class="more" href="/order" onclick="location.reload()">Order More</a>
                 </button>
+              </div>
+                <div class="col-sm-7 procede">
                 <button type="button" class="checkout btn-sm btn-success">
                   <a href="/" onclick="location.reload()" style="color: white; text-decoration: none;">Proceed to Checkout</a>
                 </button>

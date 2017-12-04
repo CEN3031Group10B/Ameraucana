@@ -84,6 +84,16 @@ input[type=text] {
     border-style: none;
 }
 
+.more{
+  text-decoration: none;
+  color: white;
+}
+
+.more:hover{
+  color: white;
+  opacity: 50%;
+  text-decoration: none;
+}
 /*======================*/
 /*+ FOOTER STYLE +*/
 /*======================*/
