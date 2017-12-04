@@ -100,12 +100,16 @@ module.exports.initMiddleware = function (app) {
     var locationId;
     // url that processes the payment
     var base_url = 'https://connect.squareup.com/v2';
+
     // var product_cost = {'001': 100, '002': 200, '003': 300};
     var amount = JSON.parse(localStorage.getItem('payment'));
     amount = amount*100;
     console.log('amount: ', JSON.parse(amount));
     var product_cost = {'001': amount};
 
+
+
+    //var product_cost = {'001': 100, '002': 200, '003': 300};
 
 
     var request_params = req.body;
@@ -119,7 +123,13 @@ module.exports.initMiddleware = function (app) {
 
     // Make sure amount is a valid integer
     // var amount = product_cost[request_params.product_id];
+<<<<<<< HEAD
 
+=======
+    var amount = request_params.price;
+    amount = parseInt(amount);
+    amount = amount * 100;
+>>>>>>> development
 
     // information the Square REST API needs to process a payment
     var request_body = {

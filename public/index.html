@@ -13,6 +13,10 @@
 
   <!-- link to the custom styles for SqPaymentForm -->
   <link rel="stylesheet" type="text/css" href="sqpaymentform.css">
+
+  <script>
+    var cost = localStorage.payment;
+  </script>
 </head>
 
 <body>
@@ -32,10 +36,12 @@
 <div id="sq-ccbox">
 
   <form id="nonce-form">
+
     <h3>Choose your food</h3>
       <div id="product_id" name="product_id">
         <span value="001"></span>
       </div>
+
 
     <h3> Shipping Address </h3>
 
@@ -171,6 +177,12 @@
             </td>
           </tr>
           <tr>
+              <td>Price:</td>
+              <td>
+                  <input type="text" id="price" value="default">
+              </td>
+          </tr>
+          <tr>
             <td colspan="2">
               <button id="sq-creditcard" class="button-credit-card" onclick="requestCardNonce(event)">
                 Pay with card
@@ -179,6 +191,10 @@
           </tr>
         </tbody>
       </table>
+
+      <script>
+          document.getElementById("price").value = localStorage.payment;
+      </script>
 
       <!--
         After a nonce is generated it will be assigned to this hidden input field.
