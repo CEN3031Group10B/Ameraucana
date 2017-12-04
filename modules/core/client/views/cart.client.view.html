@@ -26,9 +26,12 @@
             <div class="col-xs-2">
               <!-- Remove a single Item from cart-->
               <button type="button" class="remove btn-sm btn-warning" ng-click="remove(item)">
-                  <span class="glyphicon glyphicon-trash"> Remove</span>
+                  <span class="glyphicon glyphicon-trash"> Remove </span>
               </button>
             </div>
+          </div>
+          <div class="row">
+            {{item.item.special}}
           </div>
         </div>
         <div class="row">
@@ -36,6 +39,9 @@
             <label class="item-header">Total Cost: $<input type="text" ng-value = "total(item)" disabled ="disableEditting"></label>
             <div class="row">
               <div class="col-sm-7 col-sm-offset-2 procede">
+                <button type="button" class="checkout btn-sm btn-success">
+                    <a href="/order" onclick="location.reload()"> Order More </a>
+                </button>
                 <button type="button" class="checkout btn-sm btn-success">
                   <a href="/" onclick="location.reload()" style="color: white; text-decoration: none;">Proceed to Checkout</a>
                 </button>
