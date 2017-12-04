@@ -123,14 +123,6 @@ var paymentForm = new SqPaymentForm({
 
       //alert('Nonce received: ' + nonce); /* FOR TESTING ONLY */
 
-      // temp comment out 11-25
-      // Assign the nonce value to the hidden form field
-      //document.getElementById('card-nonce').value = nonce;
-
-      //temp comment out 11-25
-      // POST the nonce form to the payment processing page
-      //document.getElementById('nonce-form').submit();
-
     },
 
     /*
@@ -183,7 +175,7 @@ var paymentForm = new SqPaymentForm({
 
 ///////
 var chargeCardWithNonce = function(nonce) {
-  var product_id = document.getElementById('product_id').value;
+  var price = document.getElementById('price').value;
   var name = document.getElementById('name').value;
   var email = document.getElementById('email').value;
   var street_address_1 = document.getElementById('street_address_1').value;
@@ -191,11 +183,13 @@ var chargeCardWithNonce = function(nonce) {
   var city = document.getElementById('city').value;
   var state = document.getElementById('state').value;
   var zip = document.getElementById('zip').value;
-  
+
+  console.log(price);
+
   var http = new XMLHttpRequest();
   var url = "/charges/charge_card";
   var params = "location_id=" + locationId
-  + "&product_id=" + product_id 
+  + "&price=" + price 
   + "&name=" + name 
   + "&email=" + email 
   + "&nonce=" + nonce
