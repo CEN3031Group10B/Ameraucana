@@ -20,7 +20,7 @@ describe("Midway: Testing Modules", function() {
         deps = module.value('appName').requires;
       });
 
-      it()
+      it("should ")
     })
   })
 })
