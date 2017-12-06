@@ -65,6 +65,13 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
         // templateUrl: 'modules/core/client/views/tabs.html',
         data: {
           ignoreState: true,
+        },
+        resolve: {
+          forbidden: function(Authentication, $location) {
+            if (!Authentication.user.admin) {
+              $location.url('/forbidden');
+            }
+          }
         }
       });
   }
