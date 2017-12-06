@@ -2,7 +2,6 @@
   <link rel="stylesheet" href="cart.css">
   <link href="https://fonts.googleapis.com/css?family=Quicksand:300" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Barlow" rel="stylesheet">
-  <!-- <div class="well text-center"><ngcart-summary></ngcart-summary></div> -->
 
   <div class="menu-wrapper" ng-init = "display()">
     <div class="row">
@@ -26,16 +25,24 @@
             <div class="col-xs-2">
               <!-- Remove a single Item from cart-->
               <button type="button" class="remove btn-sm btn-warning" ng-click="remove(item)">
-                  <span class="glyphicon glyphicon-trash"> Remove</span>
+                  <span class="glyphicon glyphicon-trash"> Remove </span>
               </button>
             </div>
+          </div>
+          <div class="row">
+            {{item.item.special}}
           </div>
         </div>
         <div class="row">
           <div class="col-sm-3 col-sm-offset-9 total">
             <label class="item-header">Total Cost: $<input type="text" ng-value = "total(item)" disabled ="disableEditting"></label>
             <div class="row">
-              <div class="col-sm-7 col-sm-offset-2 procede">
+              <div class="col-sm-3 col-sm-offset-1 procede">
+                <button type="button" class="checkout btn-sm btn-success">
+                    <a class="more" href="/order" onclick="location.reload()">Order More</a>
+                </button>
+              </div>
+                <div class="col-sm-7 procede">
                 <button type="button" class="checkout btn-sm btn-success">
                   <a href="/" onclick="location.reload()" style="color: white; text-decoration: none;">Proceed to Checkout</a>
                 </button>
@@ -43,94 +50,6 @@
             </div>
           </div>
         </div>
-        <!-- <button type="button" class="remove" ng-click="clear()">Clear</button> -->
       </div>
     </div>
-
-    <!--FOOTER-->
-    <!-- <div class="row">
-        <div class="footer">
-            <div class="footer-wrapper">
-                <h3>LOCATION</h3>
-                <p>
-                    2410 NW 43rd St
-                    <br>
-                    Gainesville, FL - 32606
-                    <br>
-                    (352) 505-6575
-                </p>
-                <h3>HOURS</h3>
-                <p>
-                    Tues -&nbsp;Thurs
-                    <br>
-                    5 - 9pm
-                </p>
-                <p>
-                    Fri -&nbsp;Sat
-                    <br>
-                    5 - 10pm (Or When Dough Runs Out)
-                </p>
-                <p>
-                    Sun - Mon
-                    <br>
-                    CLOSED
-                </p>
-            </div>
-        </div>
-    </div>
-  </div> -->
-
-
-
-    <!-- <div class="col-xs-6 col-sm-3" >
-
-      <img src="https://placehold.it/262x150" alt="image"/>
-      <h4>My Item #1</h4>
-      <p> $10.99</p>
-      <ngcart-addtocart id="item1" name="My Item #1" price="10.99" quantity="1" quantity-max="5">Update Quantity</ngcart-addtocart>
-    </div>
-    <div class="col-xs-6 col-sm-3">
-      <img src="https://placehold.it/262x150" alt="image" />
-      <h4>My Item #2</h4>
-      <p> $15.29</p>
-      <ngcart-addtocart id="item2" name="My Item #2" price="15.29" quantity="1" quantity-max="5">Update Quantity</ngcart-addtocart>
-    </div>
-      <div class="col-xs-6 col-sm-3">
-      <img src="https://placehold.it/262x150" alt="image" />
-      <h4>My Item #3</h4>
-      <p> $25.75</p>
-      <ngcart-addtocart id="item3" name="My Item #3" price="25.75" quantity="3" quantity-max="10">Update Quantity</ngcart-addtocart>
-    </div>
-    <div class="col-xs-6 col-sm-3">
-      <img src="https://placehold.it/262x150" alt="image" />
-      <h4>My Item #4</h4>
-      <p> $29.25</p>
-      <ngcart-addtocart id="item4" name="My Item #4" price="29.25" quantity="1" quantity-max="10">Update Quantity</ngcart-addtocart>
-    </div>
-    <div>
-      <!-- Payment Page is at root (index.html). This goes there and refreshes -->
-
 </div>
-<!-- <script type="text/ng-template" id="template/ngCart/addtocart.html">
-  <div ng-hide="attrs.id">
-    <a class="btn btn-lg btn-primary" ng-disabled="true" ng-transclude></a>
-  </div>
-  <div ng-show="attrs.id">
-    <div>
-      <span ng-show="quantityMax">
-        <select name="quantity" id="quantity" ng-model="q" ng-options=" v for v in qtyOpt"></select>
-      </span>
-      <a class="btn btn-sm btn-primary" ng-click="ngCart.addItem(id, name, price, q, data)" ng-transclude></a>
-    </div>
-    <span ng-show="inCart()">
-    <br>
-    <p class="alert alert-info">This item is in your cart. <a ng-click="ngCart.removeItemById(id)" style="cursor: pointer;">Remove</a></p>
-    </span>
-    </div>
-    </script>
-
-<script type="text/ng-template" id="template/ngCart/summary.html">
-  <span class="">{{ ngCart.getTotalItems() }}
-    <ng-pluralize count="ngCart.getTotalItems()" when="{1: 'item', 'other':'items'}"></ng-pluralize>
-    <br/>{{ ngCart.totalCost() | currency }}
-  </span> -->
