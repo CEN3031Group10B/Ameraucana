@@ -6,24 +6,24 @@
     margin-bottom: 5px;
     display: inline-block;
   }
-  
-  
+
+
   /* Define how SqPaymentForm iframes should look when they have focus */
-  
+
   .sq-input--focus {
     outline: 5px auto rgb(59, 153, 252);
   }
-  
-  
+
+
   /* Define how SqPaymentForm iframes should look when they contain invalid values */
-  
+
   .sq-input--error {
     outline: 5px auto rgb(255, 97, 97);
   }
-  
-  
+
+
   /* Customize the "Pay with Credit Card" button */
-  
+
   .button-credit-card {
     min-width: 200px;
     min-height: 20px;
@@ -37,10 +37,10 @@
     font-weight: bold;
     cursor: pointer;
   }
-  
-  
+
+
   /* Customize the "{{Wallet}} not enabled" message */
-  
+
   .wallet-not-enabled {
     min-width: 200px;
     min-height: 40px;
@@ -55,10 +55,10 @@
     font-family: inherit;
     display: block;
   }
-  
-  
+
+
   /* Customize the Apple Pay on the Web button */
-  
+
   .button-apple-pay {
     min-width: 200px;
     min-height: 40px;
@@ -74,10 +74,10 @@
     cursor: pointer;
     display: none;
   }
-  
-  
+
+
   /* Customize the Masterpass button */
-  
+
   .button-masterpass {
     min-width: 200px;
     min-height: 40px;
@@ -94,7 +94,7 @@
     cursor: pointer;
     display: none;
   }
-  
+
   #sq-walletbox {
     float: left;
     margin: 5px;
@@ -103,7 +103,7 @@
     vertical-align: top;
     font-weight: bold;
   }
-  
+
   #sq-ccbox {
     float: left;
     margin: 5px;
@@ -133,7 +133,7 @@
   [ng\:cloak], [ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
     display: none !important;
   }
-  
+
   /* navbar styles */
 
   .navbar-nav.navbar-right {
@@ -153,23 +153,23 @@
     color: white;
     text-align: right;
   }
-  
+
   .navbar-nav.navbar-right li a:hover {
     color: white;
     opacity: .75;
     text-decoration: none;
     background-color: none;
   }
-  
+
   .navbar-header, .navbar-inverse {
     height: 150px;
     background: none;
     border: none;
     overflow: auto;
   }
-  
+
   /* menu styles */
-  
+
   .menu-wrapper {
       font-family: futura-pt;
       font-weight: 300;
@@ -184,14 +184,14 @@
       padding: 100px 9%;
       width: 90%;
   }
-  
+
   .justify-content-md-center {
     color: #a3a3a3;
     font-family: Futura;
     font-weight: 300;
     font-size: 20px;
   }
-  
+
   /* text and parallax */
   .page-title {
     position: relative;
@@ -201,7 +201,7 @@
     font-weight: 900;
     color: white;
   }
-  
+
   .parallax {
     height: 230px;
     padding: 0;
@@ -212,12 +212,12 @@
     transform: translate3d(0px, 0px, 0px);
     opacity: .90;
   }
-  
+
   .glyphicon-shopping-cart {
     padding-top: .2em;
     font-size: 1.1em;
   }
-  
+
   .img-cover{
     font-size: 0;
     left: 0;
@@ -228,7 +228,7 @@
     border: 0;
     z-index: -1;
   }
-  
+
   .img-overlay {
     top: 50px;
     bottom: 0;
@@ -239,12 +239,12 @@
     position: absolute;
     z-index: inherit;
   }
-  
+
   .image{
     max-width: 68%;
     height: auto;
     padding-top: 30px;
-  
+
   }
   .col{
     padding-top: 0px;
@@ -268,14 +268,14 @@
   text-align: right;
 }
 
-  
+
   u1 {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
   }
-  
+
   li {
     display: inline;
     font-family: futura-pt;
@@ -287,7 +287,7 @@
     text-transform: uppercase;
     color: white;
   }
-  
+
   .title-wrapper {
     display: flex;
     justify-content: center;
@@ -295,7 +295,7 @@
     width: 100%;
     height: auto;
   }
-  
+
   h1.page-title {
       /*font-family: "Source Sans Pro",sans-serif;*/
       font-weight: 700;
@@ -315,7 +315,7 @@
       position: relative;
       z-index: inherit;
   }
-  
+
   h1{
       /*font-family: "Source Sans Pro",sans-serif;*/
       /*font-size: 2em;*/
@@ -330,26 +330,26 @@
       text-decoration: none;
       line-height: 1.2em;
     }
-  
+
   .button-group {
     padding-top: 20px;
-  
+
   }
-  
+
   .container {
       padding: 0;
       width: 100%;
   }
-  
+
   img.logo {
     width: 400px;
     height: 68px;
     float: left;
     vertical-align: bottom;
   }
-  
-  
-  
+
+
+
   h1.page-title {
     font-family: Cooper Black;
     font-size: 82px;
@@ -366,7 +366,7 @@
     z-index: inherit;
     color: #fff;
   }
-  
+
   .dropdown-menu{
     background-color: #3c342f;
     text-decoration: none;
@@ -375,31 +375,33 @@
     opacity: .5;
     text-decoration: none;
   }
-  
+
   .footer {
     width: 100%;
     background-color: #3c342f;
     float: left;
   }
-  
+
   .footer-wrapper {
     max-width: 960px;
     margin: 0 auto;
     padding: 80px 8%;
     color: #fff;
   }
-  
+
   h3 {
-    font-family: Futura;
-    font-size: 22px;
+    color: Black;
+    font-family: 'Quicksand', sans-serif;
     font-weight: 300;
+    font-size: 20px;
     text-transform: none;
     font-style: normal;
     letter-spacing: .015em;
     text-decoration: none;
+    margin-top: 1em;
     line-height: 1.8em;
   }
-  
+
   body {
     font-family: Proxima-Nova;
     font-style: normal;
@@ -409,12 +411,12 @@
     line-height: 1.8em;
     padding-top: 150px;
   }
-  
+
   .tableWrapper {
     max-height: 400px;
     overflow: auto;
   }
-  
+
   button.sub{
     float: right;
     background: none;
@@ -423,9 +425,9 @@
   a.mit:hover{
     color: #cccccc;
     text-decoration: none;
-  
+
   }
-  
+
   /*=======================*/
   /*+++++ MENU STYLES +++++*/
   /*=======================*/
@@ -443,7 +445,7 @@
     text-decoration: none;
     text-transform: uppercase;
   }
-  
+
   .item-header {
     color: Black;
     font-family: 'Quicksand', sans-serif;
@@ -456,7 +458,7 @@
     margin-top: 1em;
     line-height: 1.8em;
   }
-  
+
   .item-description {
     color: #a3a3a3;
     font-family: 'Barlow', sans-serif;
@@ -465,7 +467,7 @@
     font-style: normal;
     letter-spacing: .015em;
   }
-  
+
   #myModal {
     margin-top: 100px;
     z-index: 1001;
@@ -475,4 +477,3 @@
     padding: 0px;
     margin: 0px;
   }
-  
