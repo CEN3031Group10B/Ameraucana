@@ -42,7 +42,22 @@
   text-decoration: none;
   margin-top: 1em;
   line-height: 1.8em;
+
 }
+/*===========Checkout Buttons==========*/
+.total{
+  padding-top: 20px;
+}
+
+.payment{
+  padding-top: 20px;
+}
+
+.procede{
+  padding-left: 117px;
+  padding-top: 7px;
+}
+/*=======End of Checkout Buttons======*/
 
 .item-description {
   color: #a3a3a3;
@@ -76,14 +91,19 @@
 
 }
 
-input[type=text] {
+input[type=number] {
     text-align: left;
+    font-size: 20px;
     box-sizing: border-box;
     width: 35%;
     color: none;
     border-style: none;
 }
 
+.input-group-addon{
+  font-size: 20px;
+  border: none;
+}
 .more{
   text-decoration: none;
   color: white;
