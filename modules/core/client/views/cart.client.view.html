@@ -33,16 +33,20 @@
             {{item.item.special}}
           </div>
         </div>
-        <div class="row">
-          <div class="col-sm-3 col-sm-offset-9 total">
-            <label class="item-header">Total Cost: $<input type="text" ng-value = "total(item)" disabled ="disableEditting"></label>
+        <div class="row payment">
+          <div class="col-sm-2 col-sm-offset-8"><label class="item-header" style="float:right;">Total Cost:</label></div>
+          <div class="col-sm-2 total">
+            <div class="input-group">
+              <span class="input-group-addon">$</span>
+              <input type="number" ng-value = "total(item)" id="c2" disabled ="disableEditting"/>
+            </div>
+            <!-- <label class="item-header">Total Cost: <span class="input-group-addon">$</span><input type="text" ng-value = "total(item)" disabled ="disableEditting"></label> -->
+            </div>
             <div class="row">
-              <div class="col-sm-3 col-sm-offset-1 procede">
-                <button type="button" class="checkout btn-sm btn-success">
+              <div class="col-sm-4 col-sm-offset-8 procede">
+                <button type="button" class="checkout btn-sm btn-info">
                     <a class="more" href="/order" onclick="location.reload()">Order More</a>
                 </button>
-              </div>
-                <div class="col-sm-7 procede">
                 <button type="button" class="checkout btn-sm btn-success">
                   <a href="/" onclick="location.reload()" style="color: white; text-decoration: none;">Proceed to Checkout</a>
                 </button>
@@ -51,5 +55,4 @@
           </div>
         </div>
       </div>
-    </div>
-</div>
+   </div>

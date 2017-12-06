@@ -35,6 +35,7 @@ angular.module('core').controller('OrderController', ['$scope', 'Authentication'
     };
 
     window.onbeforeunload = function (item) {
+      var special;
       item.special = localStorage.setItem('comment-save', document.getElementById('commment').input);
 
     };
